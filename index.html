@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loot Box Store | فروش UC</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080b12;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #202532;
+      background: #0b0f18;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f5b400;
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #f5b400;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f5b400;
+      color: #111;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 30px 6% 70px;
+    }
+
+    .section h2 {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #111621;
+      border: 1px solid #252c3a;
+      border-radius: 16px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #f5b400;
+    }
+
+    .uc {
+      font-size: 27px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .price {
+      color: #f5b400;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .buy {
+      width: 100%;
+      border: none;
+      padding: 11px;
+      border-radius: 9px;
+      background: #f5b400;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy:hover {
+      opacity: 0.85;
+    }
+
+    .info {
+      max-width: 800px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .info-box {
+      background: #111621;
+      border: 1px solid #252c3a;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .info-box span {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      border-top: 1px solid #202532;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      nav a {
+        margin-right: 8px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎁 <span>Loot Box</span> Store</div>
+
+  <nav>
+    <a href="#">خانه</a>
+    <a href="#products">UC</a>
+    <a href="#">پشتیبانی</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>خرید سریع <span>UC پابجی</span></h1>
+  <p>شارژ سریع و مطمئن UC با تجربه‌ای متفاوت</p>
+  <a href="#products" class="btn">مشاهده بسته‌ها</a>
+</section>
+
+<section class="section" id="products">
+  <h2>🎮 بسته‌های UC</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <div>💎</div>
+      <div class="uc">60 UC</div>
+      <div class="price">197,000 تومان</div>
+      <button class="buy" onclick="buy(60)">خرید</button>
+    </div>
+
+    <div class="card">
+      <div>💎</div>
+      <div class="uc">180 UC</div>
+      <div class="price">قیمت به‌زودی</div>
+      <button class="buy" onclick="buy(180)">خرید</button>
+    </div>
+
+    <div class="card">
+      <div>💎</div>
+      <div class="uc">325 UC</div>
+      <div class="price">قیمت به‌زودی</div>
+      <button class="buy" onclick="buy(325)">خرید</button>
+    </div>
+
+    <div class="card">
+      <div>💎</div>
+      <div class="uc">660 UC</div>
+      <div class="price">1,970,000 تومان</div>
+      <button class="buy" onclick="buy(660)">خرید</button>
+    </div>
+
+    <div class="card">
+      <div>💎</div>
+      <div class="uc">1800 UC</div>
+      <div class="price">4,925,000 تومان</div>
+      <button class="buy" onclick="buy(1800)">خرید</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="info">
+
+    <div class="info-box">
+      <strong>⚡ سریع</strong>
+      <span>پردازش خودکار سفارش</span>
+    </div>
+
+    <div class="info-box">
+      <strong>🔐 امن</strong>
+      <span>پرداخت از طریق درگاه</span>
+    </div>
+
+    <div class="info-box">
+      <strong>🤖 هوشمند</strong>
+      <span>پشتیبانی AI</span>
+    </div>
+
+    <div class="info-box">
+      <strong>🎁 Loot Box</strong>
+      <span>تجربه جذاب تحویل</span>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Loot Box Store — تمامی حقوق محفوظ است.
+</footer>
+
+<script>
+  function buy(amount) {
+    alert(
+      "شما بسته " + amount +
+      " UC را انتخاب کردید.\n\n" +
+      "سیستم پرداخت و تحویل خودکار در مرحله بعد اضافه می‌شود."
+    );
+  }
+</script>
+
+</body>
+</html>
