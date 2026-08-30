@@ -1,7 +1,12 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Loot Box Store</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loot Box Store</title>
+
+<style>
 
 *{
   box-sizing:border-box;
@@ -80,21 +85,9 @@ header{
   overflow:hidden;
 
   background:
-    radial-gradient(
-      circle at 75% 45%,
-      rgba(255,196,0,.20),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 15% 80%,
-      rgba(255,100,0,.08),
-      transparent 30%
-    ),
-    linear-gradient(
-      120deg,
-      #07090d,
-      #111722
-    );
+    radial-gradient(circle at 75% 45%,rgba(255,196,0,.20),transparent 30%),
+    radial-gradient(circle at 15% 80%,rgba(255,100,0,.08),transparent 30%),
+    linear-gradient(120deg,#07090d,#111722);
 }
 
 .hero:after{
@@ -102,12 +95,7 @@ header{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(
-      90deg,
-      #07090d 0%,
-      transparent 65%,
-      #07090d 100%
-    );
+    linear-gradient(90deg,#07090d 0%,transparent 65%,#07090d 100%);
   pointer-events:none;
 }
 
@@ -145,11 +133,7 @@ header{
   border-radius:12px;
   cursor:pointer;
   font-weight:900;
-  background:linear-gradient(
-    135deg,
-    var(--gold),
-    var(--orange)
-  );
+  background:linear-gradient(135deg,var(--gold),var(--orange));
   color:#111;
 }
 
@@ -181,16 +165,8 @@ section{
   cursor:pointer;
   padding:22px;
   border-radius:18px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #121721,
-      #0c1016
-    );
-
+  background:linear-gradient(145deg,#121721,#0c1016);
   border:1px solid var(--border);
-
   transition:.25s;
 }
 
@@ -198,9 +174,7 @@ section{
 .category.active{
   transform:translateY(-5px);
   border-color:var(--gold);
-
-  box-shadow:
-    0 15px 45px rgba(0,0,0,.35);
+  box-shadow:0 15px 45px rgba(0,0,0,.35);
 }
 
 .category-image{
@@ -208,9 +182,7 @@ section{
   margin-bottom:15px;
   border-radius:13px;
   overflow:hidden;
-
   background:#080b10;
-
   display:grid;
   place-items:center;
 }
@@ -239,20 +211,10 @@ section{
 
 .product{
   display:none;
-
   padding:13px;
-
   border-radius:18px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #121721,
-      #0c1016
-    );
-
+  background:linear-gradient(145deg,#121721,#0c1016);
   border:1px solid var(--border);
-
   transition:.25s;
 }
 
@@ -268,13 +230,9 @@ section{
 .product-image{
   height:170px;
   margin-bottom:15px;
-
   border-radius:14px;
-
   background:#080b10;
-
   overflow:hidden;
-
   display:grid;
   place-items:center;
 }
@@ -292,14 +250,12 @@ section{
 .product-info{
   margin-top:7px;
   min-height:30px;
-
   color:var(--muted);
   font-size:12px;
 }
 
 .price{
   margin:15px 0;
-
   color:var(--gold);
   font-size:17px;
   font-weight:900;
@@ -308,19 +264,10 @@ section{
 .buy{
   width:100%;
   padding:12px;
-
   border:0;
   border-radius:10px;
-
   cursor:pointer;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--gold),
-      var(--orange)
-    );
-
+  background:linear-gradient(135deg,var(--gold),var(--orange));
   color:#111;
   font-weight:900;
 }
@@ -337,13 +284,9 @@ section{
 
 .feature{
   padding:25px;
-
   text-align:center;
-
   border-radius:18px;
-
   background:#10141c;
-
   border:1px solid var(--border);
 }
 
@@ -371,18 +314,12 @@ section{
 .modal{
   position:fixed;
   inset:0;
-
   z-index:9999;
-
   display:none;
-
   align-items:center;
   justify-content:center;
-
   padding:20px;
-
   background:rgba(0,0,0,.82);
-
   backdrop-filter:blur(10px);
 }
 
@@ -392,24 +329,17 @@ section{
 
 .modal-box{
   width:min(460px,100%);
-
   background:#10151e;
-
   border:1px solid #303947;
-
   border-radius:22px;
-
   padding:24px;
-
-  box-shadow:
-    0 30px 100px #000;
+  box-shadow:0 30px 100px #000;
 }
 
 .modal-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   margin-bottom:20px;
 }
 
@@ -420,71 +350,49 @@ section{
 .close{
   border:0;
   background:none;
-
   color:#aaa;
-
   font-size:28px;
-
   cursor:pointer;
 }
 
 .selected{
   padding:15px;
-
   border-radius:13px;
-
   background:#080b10;
-
   border:1px solid var(--border);
-
   margin-bottom:18px;
 }
 
 .selected small{
   display:block;
-
   color:#858e9d;
-
   font-size:11px;
 }
 
 .selected strong{
   display:block;
-
   margin:7px 0;
-
   color:var(--gold);
-
   font-size:17px;
 }
 
 .modal-box label{
   display:block;
-
   margin-bottom:8px;
-
   font-size:13px;
 }
 
 .modal-box input{
   width:100%;
   height:50px;
-
   padding:0 15px;
-
   background:#080b10;
-
   border:1px solid #303846;
-
   border-radius:11px;
-
   color:#fff;
-
   outline:none;
-
   direction:ltr;
   text-align:left;
-
   font-size:15px;
 }
 
@@ -494,34 +402,22 @@ section{
 
 .account-loading{
   display:none;
-
   align-items:center;
-
   gap:10px;
-
   margin-top:17px;
-
   padding:13px;
-
   border-radius:11px;
-
   background:#181d26;
-
   color:#c5cbd4;
-
   font-size:12px;
 }
 
 .loader{
   width:18px;
   height:18px;
-
   border:2px solid #444;
-
   border-top-color:var(--gold);
-
   border-radius:50%;
-
   animation:spin .7s linear infinite;
 }
 
@@ -533,37 +429,24 @@ section{
 
 .account-result{
   display:none;
-
   margin-top:17px;
-
   padding:15px;
-
   border-radius:13px;
-
   background:rgba(0,190,100,.07);
-
   border:1px solid rgba(0,190,100,.35);
 }
 
 .account-title{
   margin-bottom:12px;
-
   color:#55df9a;
-
   font-weight:bold;
 }
 
 .account-row{
   display:flex;
-
   justify-content:space-between;
-
   padding:8px 0;
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.06);
-
+  border-bottom:1px solid rgba(255,255,255,.06);
   font-size:12px;
 }
 
@@ -581,64 +464,37 @@ section{
 
 .account-error{
   display:none;
-
   margin-top:15px;
-
   padding:12px;
-
   border-radius:10px;
-
   background:rgba(255,50,50,.08);
-
-  border:
-    1px solid
-    rgba(255,50,50,.3);
-
+  border:1px solid rgba(255,50,50,.3);
   color:#ff8d8d;
-
   font-size:12px;
 }
 
 .continue-btn{
   width:100%;
-
   height:48px;
-
   margin-top:18px;
-
   border:0;
-
   border-radius:11px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--gold),
-      var(--orange)
-    );
-
+  background:linear-gradient(135deg,var(--gold),var(--orange));
   color:#111;
-
   font-weight:bold;
-
   cursor:pointer;
 }
 
 .continue-btn:disabled{
   opacity:.35;
-
   cursor:not-allowed;
 }
 
 footer{
   padding:35px;
-
   text-align:center;
-
   color:#707887;
-
   border-top:1px solid var(--border);
-
   font-size:12px;
 }
 
@@ -696,337 +552,738 @@ footer{
 
 }
 
-</style></head><body><header><div class="nav">  <div class="logo">
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+  <div class="logo">
     Loot Box <span>Store</span>
-  </div>  <div class="nav-links"><a href="#">خانه</a>
+  </div>
 
-<a href="#categories">
-  دسته‌بندی
-</a>
+  <div class="nav-links">
 
-<a href="#products">
-  محصولات
-</a>
+    <a href="#">خانه</a>
 
-<a href="#support">
-  پشتیبانی
-</a>
+    <a href="#categories">
+      دسته‌بندی
+    </a>
 
-  </div></div></header><section class="hero"><div class="container hero-content">  <h1>
+    <a href="#products">
+      محصولات
+    </a>
+
+    <a href="#support">
+      پشتیبانی
+    </a>
+
+  </div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+  <h1>
     فروشگاه
     <span>گیمینگ</span>
-  </h1>  <p>
+  </h1>
+
+  <p>
     UC، Prime، Prime Plus و پک‌های ویژه
     را انتخاب کنید و سفارش خود را ثبت کنید.
-  </p><button
-class="hero-button"
-onclick="showCategory('uc')">
+  </p>
 
-مشاهده UC
+  <button
+    class="hero-button"
+    onclick="showCategory('uc')">
+    مشاهده UC
+  </button>
 
-  </button></div></section><section id="categories"><div class="container"><div class="title">  <h2>
+</div>
+
+</section>
+
+<section id="categories">
+
+<div class="container">
+
+<div class="title">
+
+  <h2>
     دسته‌بندی محصولات
-  </h2>  <p>
+  </h2>
+
+  <p>
     دسته موردنظر خود را انتخاب کنید
-  </p></div><div class="categories"><div
-  class="category active"
-  onclick="showCategory('uc')">  <div class="category-image">
+  </p>
+
+</div>
+
+<div class="categories">
+
+<div class="category active" onclick="showCategory('uc')">
+
+  <div class="category-image">
     <img src="" alt="UC">
-  </div>  <h3>UC</h3>  <p>بسته‌های UC</p></div><div
-  class="category"
-  onclick="showCategory('prime')">  <div class="category-image">
+  </div>
+
+  <h3>UC</h3>
+
+  <p>بسته‌های UC</p>
+
+</div>
+
+<div class="category" onclick="showCategory('prime')">
+
+  <div class="category-image">
     <img src="" alt="Prime">
-  </div>  <h3>Prime</h3>  <p>اشتراک Prime</p></div><div
-  class="category"
-  onclick="showCategory('primeplus')">  <div class="category-image">
+  </div>
+
+  <h3>Prime</h3>
+
+  <p>اشتراک Prime</p>
+
+</div>
+
+<div class="category" onclick="showCategory('primeplus')">
+
+  <div class="category-image">
     <img src="" alt="Prime Plus">
-  </div>  <h3>Prime Plus</h3>  <p>اشتراک Prime Plus</p></div><div
-  class="category"
-  onclick="showCategory('onetime')">  <div class="category-image">
+  </div>
+
+  <h3>Prime Plus</h3>
+
+  <p>اشتراک Prime Plus</p>
+
+</div>
+
+<div class="category" onclick="showCategory('onetime')">
+
+  <div class="category-image">
     <img src="" alt="One Time">
-  </div>  <h3>پک‌های یک‌بارخرید</h3>  <p>پک‌های ویژه</p></div></div></div></section><section id="products"><div class="container"><div class="title">  <h2 id="productTitle">
+  </div>
+
+  <h3>پک‌های یک‌بارخرید</h3>
+
+  <p>پک‌های ویژه</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<div class="container">
+
+<div class="title">
+
+  <h2 id="productTitle">
     UC
-  </h2>  <p id="productSubtitle">
+  </h2>
+
+  <p id="productSubtitle">
     بسته موردنظر خود را انتخاب کنید
-  </p></div><div class="products"><div class="product show" data-category="uc">  <div class="product-image">
+  </p>
+
+</div>
+
+<div class="products">
+
+<div class="product show" data-category="uc">
+
+  <div class="product-image">
     <img src="" alt="60 UC">
-  </div>  <h3>60 UC</h3>  <div class="product-info">
+  </div>
+
+  <h3>60 UC</h3>
+
+  <div class="product-info">
     بسته UC
-  </div>  <div class="price">
+  </div>
+
+  <div class="price">
     197,000 تومان
-  </div><button
-class="buy"
-onclick="openBuy('60 UC','197,000 تومان')">
-خرید
-</button>
+  </div>
 
-</div><div class="product show" data-category="uc">  <div class="product-image">
+  <button
+    class="buy"
+    onclick="openBuy('60 UC','197,000 تومان')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product show" data-category="uc">
+
+  <div class="product-image">
     <img src="" alt="180 UC">
-  </div>  <h3>180 UC</h3>  <div class="product-info">
-    بسته UC
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('180 UC','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product show" data-category="uc">  <div class="product-image">
+  <h3>180 UC</h3>
+
+  <div class="product-info">
+    بسته UC
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('180 UC','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product show" data-category="uc">
+
+  <div class="product-image">
     <img src="" alt="325 UC">
-  </div>  <h3>325 UC</h3>  <div class="product-info">
+  </div>
+
+  <h3>325 UC</h3>
+
+  <div class="product-info">
     بسته UC
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('325 UC','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product show" data-category="uc">  <div class="product-image">
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('325 UC','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product show" data-category="uc">
+
+  <div class="product-image">
     <img src="" alt="660 UC">
-  </div>  <h3>660 UC</h3>  <div class="product-info">
+  </div>
+
+  <h3>660 UC</h3>
+
+  <div class="product-info">
     بسته محبوب
-  </div>  <div class="price">
+  </div>
+
+  <div class="price">
     1,970,000 تومان
-  </div><button
-class="buy"
-onclick="openBuy('660 UC','1,970,000 تومان')">
-خرید
-</button>
+  </div>
 
-</div><div class="product show" data-category="uc">  <div class="product-image">
+  <button
+    class="buy"
+    onclick="openBuy('660 UC','1,970,000 تومان')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product show" data-category="uc">
+
+  <div class="product-image">
     <img src="" alt="1800 UC">
-  </div>  <h3>1800 UC</h3>  <div class="product-info">
+  </div>
+
+  <h3>1800 UC</h3>
+
+  <div class="product-info">
     بسته ویژه
-  </div>  <div class="price">
+  </div>
+
+  <div class="price">
     4,925,000 تومان
-  </div><button
-class="buy"
-onclick="openBuy('1800 UC','4,925,000 تومان')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="prime">  <div class="product-image">
+  <button
+    class="buy"
+    onclick="openBuy('1800 UC','4,925,000 تومان')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="prime">
+
+  <div class="product-image">
     <img src="" alt="Prime 1 Month">
-  </div>  <h3>Prime — 1 ماه</h3>  <div class="product-info">
-    اشتراک Prime
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime — 1 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="prime">  <div class="product-image">
+  <h3>Prime — 1 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime — 1 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="prime">
+
+  <div class="product-image">
     <img src="" alt="Prime 3 Months">
-  </div>  <h3>Prime — 3 ماه</h3>  <div class="product-info">
-    اشتراک Prime
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime — 3 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="prime">  <div class="product-image">
+  <h3>Prime — 3 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime — 3 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="prime">
+
+  <div class="product-image">
     <img src="" alt="Prime 6 Months">
-  </div>  <h3>Prime — 6 ماه</h3>  <div class="product-info">
-    اشتراک Prime
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime — 6 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="prime">  <div class="product-image">
+  <h3>Prime — 6 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime — 6 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="prime">
+
+  <div class="product-image">
     <img src="" alt="Prime 12 Months">
-  </div>  <h3>Prime — 12 ماه</h3>  <div class="product-info">
+  </div>
+
+  <h3>Prime — 12 ماه</h3>
+
+  <div class="product-info">
     اشتراک Prime
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime — 12 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="primeplus">  <div class="product-image">
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime — 12 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="primeplus">
+
+  <div class="product-image">
     <img src="" alt="Prime Plus 1 Month">
-  </div>  <h3>Prime Plus — 1 ماه</h3>  <div class="product-info">
-    اشتراک Prime Plus
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime Plus — 1 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="primeplus">  <div class="product-image">
+  <h3>Prime Plus — 1 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime Plus — 1 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="primeplus">
+
+  <div class="product-image">
     <img src="" alt="Prime Plus 3 Months">
-  </div>  <h3>Prime Plus — 3 ماه</h3>  <div class="product-info">
-    اشتراک Prime Plus
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime Plus — 3 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="primeplus">  <div class="product-image">
+  <h3>Prime Plus — 3 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime Plus — 3 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="primeplus">
+
+  <div class="product-image">
     <img src="" alt="Prime Plus 6 Months">
-  </div>  <h3>Prime Plus — 6 ماه</h3>  <div class="product-info">
-    اشتراک Prime Plus
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime Plus — 6 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="primeplus">  <div class="product-image">
+  <h3>Prime Plus — 6 ماه</h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime Plus — 6 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="primeplus">
+
+  <div class="product-image">
     <img src="" alt="Prime Plus 12 Months">
-  </div>  <h3>Prime Plus — 12 ماه</h3>  <div class="product-info">
+  </div>
+
+  <h3>Prime Plus — 12 ماه</h3>
+
+  <div class="product-info">
     اشتراک Prime Plus
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('Prime Plus — 12 ماه','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="onetime">  <div class="product-image">
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('Prime Plus — 12 ماه','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="onetime">
+
+  <div class="product-image">
     <img src="" alt="One Time Pack 1">
-  </div>  <h3>پک یک‌بارخرید اول</h3>  <div class="product-info">
+  </div>
+
+  <h3>پک یک‌بارخرید اول</h3>
+
+  <div class="product-info">
     قابل خرید یک‌بار برای هر اکانت
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('پک یک‌بارخرید اول','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="onetime">  <div class="product-image">
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('پک یک‌بارخرید اول','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="onetime">
+
+  <div class="product-image">
     <img src="" alt="One Time Pack 2">
-  </div>  <h3>پک یک‌بارخرید دوم</h3>  <div class="product-info">
-    پک ویژه
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('پک یک‌بارخرید دوم','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div><div class="product" data-category="onetime">  <div class="product-image">
+  <h3>پک یک‌بارخرید دوم</h3>
+
+  <div class="product-info">
+    پک ویژه
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('پک یک‌بارخرید دوم','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+<div class="product" data-category="onetime">
+
+  <div class="product-image">
     <img src="" alt="One Time Pack 3">
-  </div>  <h3>پک یک‌بارخرید سوم</h3>  <div class="product-info">
-    پک ویژه
-  </div>  <div class="price">
-    قیمت به‌زودی
-  </div><button
-class="buy"
-onclick="openBuy('پک یک‌بارخرید سوم','قیمت به‌زودی')">
-خرید
-</button>
+  </div>
 
-</div></div></div></section><section id="support"><div class="container"><div class="title">  <h2>
+  <h3>پک یک‌بارخرید سوم</h3>
+
+  <div class="product-info">
+    پک ویژه
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy('پک یک‌بارخرید سوم','قیمت به‌زودی')">
+    خرید
+  </button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="support">
+
+<div class="container">
+
+<div class="title">
+
+  <h2>
     Loot Box Store
-  </h2>  <p>
+  </h2>
+
+  <p>
     تجربه خرید ساده و حرفه‌ای
-  </p></div><div class="features"><div class="feature">  <div class="feature-image">
+  </p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+  <div class="feature-image">
     <img src="" alt="Fast">
-  </div>  <h3>
+  </div>
+
+  <h3>
     پردازش سریع
-  </h3>  <p>
+  </h3>
+
+  <p>
     سفارش شما پس از پرداخت وارد
     مرحله پردازش می‌شود.
-  </p></div><div class="feature">  <div class="feature-image">
+  </p>
+
+</div>
+
+<div class="feature">
+
+  <div class="feature-image">
     <img src="" alt="Secure">
-  </div>  <h3>
+  </div>
+
+  <h3>
     پرداخت امن
-  </h3>  <p>
+  </h3>
+
+  <p>
     درگاه پرداخت در مرحله بعد
     به سایت متصل خواهد شد.
-  </p></div><div class="feature">  <div class="feature-image">
+  </p>
+
+</div>
+
+<div class="feature">
+
+  <div class="feature-image">
     <img src="" alt="Support">
-  </div>  <h3>
+  </div>
+
+  <h3>
     پشتیبانی
-  </h3>  <p>
+  </h3>
+
+  <p>
     سیستم پشتیبانی و پیگیری سفارش
     در ادامه اضافه خواهد شد.
-  </p></div></div></div></section><div class="modal" id="buyModal"><div class="modal-box"><div class="modal-top">  <h2>
-    تکمیل سفارش
-  </h2><button
-class="close"
-onclick="closeBuy()">
-×
-</button>
+  </p>
 
-</div><div class="selected">  <small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="modal" id="buyModal">
+
+<div class="modal-box">
+
+<div class="modal-top">
+
+  <h2>
+    تکمیل سفارش
+  </h2>
+
+  <button
+    class="close"
+    onclick="closeBuy()">
+    ×
+  </button>
+
+</div>
+
+<div class="selected">
+
+  <small>
     محصول انتخاب‌شده
-  </small>  <strong id="selectedProduct">
+  </small>
+
+  <strong id="selectedProduct">
     ---
-  </strong>  <small id="selectedPrice">
+  </strong>
+
+  <small id="selectedPrice">
     ---
-  </small></div><label for="playerId">
+  </small>
+
+</div>
+
+<label for="playerId">
   Player ID
-</label><input
-id="playerId"
-type="text"
-inputmode="numeric"
-maxlength="20"
-autocomplete="off"
-placeholder="Player ID خود را وارد کنید">
+</label>
+
+<input
+  id="playerId"
+  type="text"
+  inputmode="numeric"
+  maxlength="20"
+  autocomplete="off"
+  placeholder="Player ID خود را وارد کنید">
 
 <div
   id="accountLoading"
-  class="account-loading">  <div class="loader"></div>  <span>
+  class="account-loading">
+
+  <div class="loader"></div>
+
+  <span>
     در حال بررسی Player ID...
-  </span></div><div
+  </span>
+
+</div>
+
+<div
   id="accountResult"
-  class="account-result">  <div class="account-title">
+  class="account-result">
+
+  <div class="account-title">
     اکانت پیدا شد ✓
-  </div>  <div class="account-row"><span>
-  Player ID
-</span>
+  </div>
 
-<b id="resultId">
-  ---
-</b>
+  <div class="account-row">
 
-  </div>  <div class="account-row"><span>
-  نام اکانت
-</span>
+    <span>
+      Player ID
+    </span>
 
-<b id="resultName">
-  ---
-</b>
+    <b id="resultId">
+      ---
+    </b>
 
-  </div></div><div
+  </div>
+
+  <div class="account-row">
+
+    <span>
+      نام اکانت
+    </span>
+
+    <b id="resultName">
+      ---
+    </b>
+
+  </div>
+
+</div>
+
+<div
   id="accountError"
   class="account-error">
-</div><button
-id="continueBtn"
-class="continue-btn"
-onclick="continueOrder()"
-disabled>
+</div>
 
-ادامه سفارش
+<button
+  id="continueBtn"
+  class="continue-btn"
+  onclick="continueOrder()"
+  disabled>
 
-</button></div></div><footer>© 2026 Loot Box Store
+  ادامه سفارش
 
-</footer><script>
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+  © 2026 Loot Box Store
+
+</footer>
+
+<script>
 
 const API_URL =
   "https://loot-box-api.mash43304.workers.dev/check-player";
@@ -1105,6 +1362,7 @@ function showCategory(category){
     .scrollIntoView({
       behavior:"smooth"
     });
+
 }
 
 let selectedProduct = "";
@@ -1151,9 +1409,11 @@ function openBuy(product,price){
     .classList.add("open");
 
   setTimeout(()=>{
+
     document
       .getElementById("playerId")
       .focus();
+
   },150);
 
 }
@@ -1177,22 +1437,27 @@ async function checkId(){
       .trim();
 
   const loading =
-    document.getElementById("accountLoading");
+    document
+      .getElementById("accountLoading");
 
   const result =
-    document.getElementById("accountResult");
+    document
+      .getElementById("accountResult");
 
   const error =
-    document.getElementById("accountError");
+    document
+      .getElementById("accountError");
 
   const continueButton =
-    document.getElementById("continueBtn");
+    document
+      .getElementById("continueBtn");
 
   clearTimeout(lookupTimer);
 
   loading.style.display = "none";
   result.style.display = "none";
   error.style.display = "none";
+
   continueButton.disabled = true;
   verifiedId = "";
 
@@ -1216,7 +1481,7 @@ async function checkId(){
 
   loading.style.display = "flex";
 
-  lookupTimer = setTimeout(async ()=>{
+  lookupTimer = setTimeout(async function(){
 
     try{
 
@@ -1227,12 +1492,19 @@ async function checkId(){
           encodeURIComponent(input)
         );
 
-      let data = null;
+      const text =
+        await response.text();
+
+      let data;
 
       try{
-        data = await response.json();
-      }catch{
+
+        data = JSON.parse(text);
+
+      }catch(e){
+
         data = null;
+
       }
 
       loading.style.display = "none";
@@ -1240,26 +1512,31 @@ async function checkId(){
       if(!response.ok){
 
         error.textContent =
-          data?.error ||
-          "Player ID پیدا نشد.";
+          data && (data.error || data.message)
+          ? (data.error || data.message)
+          : "Player ID معتبر نیست.";
 
         error.style.display = "block";
 
         return;
       }
 
-      const valid =
-        data?.success === true ||
-        data?.valid === true ||
-        data?.status === "success" ||
-        data?.status === "valid";
-
-      if(!valid){
+      if(!data){
 
         error.textContent =
-          data?.error ||
-          data?.message ||
-          "این Player ID معتبر نیست یا پیدا نشد.";
+          "پاسخ نامعتبر از سرور دریافت شد.";
+
+        error.style.display = "block";
+
+        return;
+      }
+
+      if(data.success === false){
+
+        error.textContent =
+          data.error ||
+          data.message ||
+          "Player ID پیدا نشد.";
 
         error.style.display = "block";
 
@@ -1275,10 +1552,13 @@ async function checkId(){
       document
         .getElementById("resultName")
         .textContent =
-          data?.nickname ||
-          data?.name ||
-          data?.player_name ||
-          data?.username ||
+          data.nickname ||
+          data.name ||
+          data.player_name ||
+          data.username ||
+          data.playerName ||
+          data.player?.nickname ||
+          data.player?.name ||
           "اکانت پیدا شد";
 
       result.style.display = "block";
@@ -1293,6 +1573,8 @@ async function checkId(){
         "خطا در اتصال به سیستم بررسی آیدی.";
 
       error.style.display = "block";
+
+      console.error(e);
 
     }
 
@@ -1336,5 +1618,7 @@ document
     }
   );
 
-</script></body>
+</script>
+
+</body>
 </html>
