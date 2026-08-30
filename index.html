@@ -3,32 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Loot Box Store</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 body{
   font-family:Tahoma,Arial,sans-serif;
   background:#07090d;
   color:#fff;
 }
-button{font-family:inherit}
-a{text-decoration:none;color:inherit}
+
+button,
+input{
+  font-family:inherit;
+}
 
 :root{
   --gold:#ffc400;
-  --orange:#ff8500;
-  --dark:#090c12;
+  --orange:#ff8200;
+  --bg:#07090d;
   --card:#111620;
-  --border:#252d3a;
-  --muted:#8d96a6;
+  --border:#293240;
+  --muted:#929baa;
 }
+
+/* HEADER */
 
 header{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(7,9,13,.92);
+  background:rgba(7,9,13,.94);
   backdrop-filter:blur(15px);
   border-bottom:1px solid var(--border);
 }
@@ -36,7 +48,7 @@ header{
 .nav{
   width:92%;
   max-width:1200px;
-  height:72px;
+  height:70px;
   margin:auto;
   display:flex;
   align-items:center;
@@ -44,65 +56,84 @@ header{
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
   font-size:20px;
+  font-weight:900;
 }
 
-.logo-mark{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
-  display:grid;
-  place-items:center;
-  color:#111;
+.logo span{
+  color:var(--gold);
 }
-
-.logo span{color:var(--gold)}
 
 .nav-links{
   display:flex;
-  gap:25px;
-  color:#aeb5c1;
-  font-size:14px;
+  gap:24px;
 }
 
-.nav-links a:hover{color:white}
+.nav-links a{
+  color:#aeb5c1;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+/* HERO */
 
 .hero{
-  min-height:480px;
+  min-height:430px;
+  display:flex;
+  align-items:center;
   position:relative;
   overflow:hidden;
+
   background:
-    radial-gradient(circle at 75% 45%,rgba(255,190,0,.18),transparent 28%),
-    radial-gradient(circle at 20% 20%,rgba(255,100,0,.08),transparent 30%),
-    #080b11;
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(255,196,0,.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(255,100,0,.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      120deg,
+      #07090d,
+      #111722
+    );
 }
 
 .hero:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,#080b11 10%,transparent 60%,#080b11 100%);
+  background:
+    linear-gradient(
+      90deg,
+      #07090d 0%,
+      transparent 65%,
+      #07090d 100%
+    );
   pointer-events:none;
+}
+
+.container{
+  width:92%;
+  max-width:1200px;
+  margin:auto;
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  width:92%;
-  max-width:1200px;
-  margin:auto;
-  padding-top:100px;
 }
 
 .hero h1{
-  font-size:clamp(38px,6vw,70px);
+  font-size:clamp(40px,6vw,70px);
   line-height:1.1;
-  max-width:700px;
 }
 
 .hero h1 span{
@@ -110,47 +141,30 @@ header{
 }
 
 .hero p{
+  max-width:600px;
   margin-top:20px;
   color:var(--muted);
-  max-width:580px;
   line-height:2;
 }
 
 .hero-button{
-  margin-top:30px;
+  margin-top:25px;
   padding:14px 25px;
   border:0;
   border-radius:12px;
   cursor:pointer;
-  font-weight:bold;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
+  font-weight:900;
+  background:linear-gradient(
+    135deg,
+    var(--gold),
+    var(--orange)
+  );
+  color:#111;
 }
 
-.hero-box{
-  position:absolute;
-  left:8%;
-  top:90px;
-  width:340px;
-  height:300px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,196,0,.20),transparent 65%);
-}
+/* SECTIONS */
 
-.hero-box img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:none;
-}
-
-.hero-box.show-image img{
-  display:block;
-}
-
-.section{
-  width:92%;
-  max-width:1200px;
-  margin:auto;
+section{
   padding:60px 0;
 }
 
@@ -163,10 +177,12 @@ header{
 }
 
 .title p{
-  color:var(--muted);
   margin-top:8px;
+  color:var(--muted);
   font-size:13px;
 }
+
+/* CATEGORIES */
 
 .categories{
   display:grid;
@@ -176,10 +192,18 @@ header{
 
 .category{
   cursor:pointer;
-  padding:25px;
-  background:linear-gradient(145deg,#121721,#0d1118);
-  border:1px solid var(--border);
+  padding:22px;
   border-radius:18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121721,
+      #0c1016
+    );
+
+  border:1px solid var(--border);
+
   transition:.25s;
 }
 
@@ -187,17 +211,21 @@ header{
 .category.active{
   transform:translateY(-5px);
   border-color:var(--gold);
-  box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,.35);
 }
 
 .category-image{
   height:105px;
   margin-bottom:15px;
   border-radius:13px;
+  overflow:hidden;
+
   background:#080b10;
+
   display:grid;
   place-items:center;
-  overflow:hidden;
 }
 
 .category-image img{
@@ -211,10 +239,12 @@ header{
 }
 
 .category p{
+  margin-top:7px;
   color:var(--muted);
   font-size:12px;
-  margin-top:7px;
 }
+
+/* PRODUCTS */
 
 .products{
   display:grid;
@@ -224,14 +254,24 @@ header{
 
 .product{
   display:none;
-  background:linear-gradient(145deg,#121721,#0c1016);
-  border:1px solid var(--border);
-  border-radius:18px;
+
   padding:13px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121721,
+      #0c1016
+    );
+
+  border:1px solid var(--border);
+
   transition:.25s;
 }
 
-.product.visible{
+.product.show{
   display:block;
 }
 
@@ -242,12 +282,16 @@ header{
 
 .product-image{
   height:170px;
-  background:#080b10;
+  margin-bottom:15px;
+
   border-radius:14px;
+
+  background:#080b10;
+
   overflow:hidden;
+
   display:grid;
   place-items:center;
-  margin-bottom:15px;
 }
 
 .product-image img{
@@ -256,71 +300,51 @@ header{
   object-fit:contain;
 }
 
-.product-image.placeholder{
-  background:
-    radial-gradient(circle,rgba(255,196,0,.15),transparent 55%),
-    #080b10;
-}
-
 .product h3{
-  font-size:17px;
+  font-size:16px;
 }
 
 .product-info{
-  color:var(--muted);
-  font-size:12px;
   margin-top:7px;
   min-height:30px;
+
+  color:var(--muted);
+  font-size:12px;
 }
 
 .price{
+  margin:15px 0;
+
   color:var(--gold);
   font-size:17px;
-  font-weight:bold;
-  margin:15px 0;
+  font-weight:900;
 }
 
 .buy{
   width:100%;
   padding:12px;
+
   border:0;
   border-radius:10px;
+
   cursor:pointer;
-  font-weight:bold;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--orange)
+    );
+
+  color:#111;
+  font-weight:900;
 }
 
 .buy:hover{
   filter:brightness(1.1);
 }
 
-.empty{
-  display:none;
-  padding:50px;
-  text-align:center;
-  color:var(--muted);
-  border:1px dashed var(--border);
-  border-radius:18px;
-}
-
-.one-time{
-  margin-top:25px;
-  padding:30px;
-  border-radius:20px;
-  border:1px solid var(--border);
-  background:
-    radial-gradient(circle at 80% 50%,rgba(255,196,0,.12),transparent 30%),
-    #10141c;
-}
-
-.one-time h2{
-  margin-bottom:10px;
-}
-
-.one-time p{
-  color:var(--muted);
-  line-height:2;
-}
+/* FEATURES */
 
 .features{
   display:grid;
@@ -330,14 +354,18 @@ header{
 
 .feature{
   padding:25px;
+
   text-align:center;
-  border:1px solid var(--border);
+
   border-radius:18px;
+
   background:#10141c;
+
+  border:1px solid var(--border);
 }
 
 .feature-image{
-  height:100px;
+  height:90px;
   margin-bottom:15px;
 }
 
@@ -357,51 +385,333 @@ header{
   line-height:1.8;
 }
 
-footer{
-  padding:35px;
-  text-align:center;
-  color:#707887;
-  border-top:1px solid var(--border);
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  z-index:9999;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.82);
+
+  backdrop-filter:blur(10px);
+}
+
+.modal.open{
+  display:flex;
+}
+
+.modal-box{
+  width:min(460px,100%);
+
+  background:#10151e;
+
+  border:1px solid #303947;
+
+  border-radius:22px;
+
+  padding:24px;
+
+  box-shadow:
+    0 30px 100px #000;
+}
+
+.modal-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:20px;
+}
+
+.modal-top h2{
+  font-size:21px;
+}
+
+.close{
+  border:0;
+  background:none;
+
+  color:#aaa;
+
+  font-size:28px;
+
+  cursor:pointer;
+}
+
+/* SELECTED PRODUCT */
+
+.selected{
+  padding:15px;
+
+  border-radius:13px;
+
+  background:#080b10;
+
+  border:1px solid var(--border);
+
+  margin-bottom:18px;
+}
+
+.selected small{
+  display:block;
+
+  color:#858e9d;
+
+  font-size:11px;
+}
+
+.selected strong{
+  display:block;
+
+  margin:7px 0;
+
+  color:var(--gold);
+
+  font-size:17px;
+}
+
+/* PLAYER ID */
+
+.modal-box label{
+  display:block;
+
+  margin-bottom:8px;
+
+  font-size:13px;
+}
+
+.modal-box input{
+  width:100%;
+  height:50px;
+
+  padding:0 15px;
+
+  background:#080b10;
+
+  border:1px solid #303846;
+
+  border-radius:11px;
+
+  color:#fff;
+
+  outline:none;
+
+  direction:ltr;
+  text-align:left;
+
+  font-size:15px;
+}
+
+.modal-box input:focus{
+  border-color:var(--gold);
+}
+
+.id-hint{
+  margin-top:8px;
+
+  color:#858e9d;
+
+  font-size:11px;
+
+  line-height:1.8;
+}
+
+/* LOADING */
+
+.account-loading{
+  display:none;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-top:17px;
+
+  padding:13px;
+
+  border-radius:11px;
+
+  background:#181d26;
+
+  color:#c5cbd4;
+
   font-size:12px;
 }
 
-@media(max-width:900px){
-  .categories{
-    grid-template-columns:repeat(2,1fr);
-  }
+.loader{
+  width:18px;
+  height:18px;
 
+  border:2px solid #444;
+
+  border-top-color:var(--gold);
+
+  border-radius:50%;
+
+  animation:spin .7s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* ACCOUNT RESULT */
+
+.account-result{
+  display:none;
+
+  margin-top:17px;
+
+  padding:15px;
+
+  border-radius:13px;
+
+  background:rgba(0,190,100,.07);
+
+  border:1px solid rgba(0,190,100,.35);
+}
+
+.account-title{
+  margin-bottom:12px;
+
+  color:#55df9a;
+
+  font-weight:bold;
+}
+
+.account-row{
+  display:flex;
+
+  justify-content:space-between;
+
+  padding:8px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.06);
+
+  font-size:12px;
+}
+
+.account-row:last-child{
+  border-bottom:0;
+}
+
+.account-row span{
+  color:#8d96a5;
+}
+
+.account-row b{
+  color:#fff;
+}
+
+/* ERROR */
+
+.account-error{
+  display:none;
+
+  margin-top:15px;
+
+  padding:12px;
+
+  border-radius:10px;
+
+  background:rgba(255,50,50,.08);
+
+  border:
+    1px solid
+    rgba(255,50,50,.3);
+
+  color:#ff8d8d;
+
+  font-size:12px;
+}
+
+/* CONTINUE */
+
+.continue-btn{
+  width:100%;
+
+  height:48px;
+
+  margin-top:18px;
+
+  border:0;
+
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--orange)
+    );
+
+  color:#111;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+.continue-btn:disabled{
+  opacity:.35;
+
+  cursor:not-allowed;
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px;
+
+  text-align:center;
+
+  color:#707887;
+
+  border-top:1px solid var(--border);
+
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .categories,
   .products{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .hero-box{
-    opacity:.25;
-    left:0;
-  }
-}
-
-@media(max-width:600px){
   .nav-links{
     display:none;
   }
 
+}
+
+@media(max-width:600px){
+
   .hero{
-    min-height:430px;
+    min-height:370px;
   }
 
-  .hero-content{
-    padding-top:75px;
+  .hero h1{
+    font-size:42px;
   }
 
-  .hero-box{
-    width:250px;
-    height:250px;
-    left:-30px;
-    top:100px;
-  }
-
-  .categories{
-    grid-template-columns:repeat(2,1fr);
+  .categories,
+  .products{
     gap:10px;
   }
 
@@ -413,17 +723,12 @@ footer{
     height:80px;
   }
 
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
-
   .product{
     padding:9px;
   }
 
   .product-image{
-    height:120px;
+    height:125px;
   }
 
   .product h3{
@@ -433,398 +738,1119 @@ footer{
   .features{
     grid-template-columns:1fr;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
 <div class="nav">
 
   <div class="logo">
-    <div class="logo-mark">LB</div>
-    <div>Loot Box <span>Store</span></div>
+    Loot Box <span>Store</span>
   </div>
 
   <div class="nav-links">
+
     <a href="#">خانه</a>
-    <a href="#categories">دسته‌بندی</a>
-    <a href="#products">محصولات</a>
-    <a href="#support">پشتیبانی</a>
+
+    <a href="#categories">
+      دسته‌بندی
+    </a>
+
+    <a href="#products">
+      محصولات
+    </a>
+
+    <a href="#support">
+      پشتیبانی
+    </a>
+
   </div>
 
 </div>
+
 </header>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
-  <div class="hero-content">
+<div class="container hero-content">
 
-    <h1>
-      فروشگاه حرفه‌ای
-      <span>گیمینگ</span>
-    </h1>
+  <h1>
+    فروشگاه
+    <span>گیمینگ</span>
+  </h1>
 
-    <p>
-      UC، Prime، Prime Plus و پک‌های ویژه
-      با تجربه خرید سریع و ساده.
-    </p>
+  <p>
+    UC، Prime، Prime Plus و پک‌های ویژه
+    را انتخاب کنید و سفارش خود را ثبت کنید.
+  </p>
 
-    <button class="hero-button"
-            onclick="showCategory('uc')">
-      مشاهده UC
-    </button>
+  <button
+    class="hero-button"
+    onclick="showCategory('uc')">
 
-  </div>
+    مشاهده UC
 
-  <div class="hero-box">
-    <!-- تصویر اصلی سایت را بعداً اینجا قرار می‌دهیم -->
-    <img src="" alt="Loot Box">
-  </div>
+  </button>
+
+</div>
 
 </section>
 
-<section class="section" id="categories">
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+<div class="container">
 
 <div class="title">
-  <h2>دسته‌بندی محصولات</h2>
-  <p>دسته موردنظر خودت را انتخاب کن</p>
+
+  <h2>
+    دسته‌بندی محصولات
+  </h2>
+
+  <p>
+    دسته موردنظر خود را انتخاب کنید
+  </p>
+
 </div>
+
 
 <div class="categories">
 
-  <div class="category active"
-       onclick="showCategory('uc')">
 
-    <div class="category-image">
-      <img src="" alt="UC">
-    </div>
+<!-- UC -->
 
-    <h3>UC</h3>
-    <p>تمام بسته‌های UC</p>
+<div
+  class="category active"
+  onclick="showCategory('uc')">
 
-  </div>
+  <div class="category-image">
 
-  <div class="category"
-       onclick="showCategory('prime')">
-
-    <div class="category-image">
-      <img src="" alt="Prime">
-    </div>
-
-    <h3>Prime</h3>
-    <p>اشتراک‌های Prime</p>
+    <img
+      src=""
+      alt="UC">
 
   </div>
 
-  <div class="category"
-       onclick="showCategory('primeplus')">
+  <h3>
+    UC
+  </h3>
 
-    <div class="category-image">
-      <img src="" alt="Prime Plus">
-    </div>
+  <p>
+    بسته‌های UC
+  </p>
 
-    <h3>Prime Plus</h3>
-    <p>اشتراک‌های Prime Plus</p>
+</div>
+
+
+<!-- PRIME -->
+
+<div
+  class="category"
+  onclick="showCategory('prime')">
+
+  <div class="category-image">
+
+    <img
+      src=""
+      alt="Prime">
 
   </div>
 
-  <div class="category"
-       onclick="showCategory('onetime')">
+  <h3>
+    Prime
+  </h3>
 
-    <div class="category-image">
-      <img src="" alt="One Time Packs">
-    </div>
+  <p>
+    اشتراک Prime
+  </p>
 
-    <h3>پک‌های یک‌بارخرید</h3>
-    <p>پک‌های ویژه هر اکانت</p>
+</div>
+
+
+<!-- PRIME PLUS -->
+
+<div
+  class="category"
+  onclick="showCategory('primeplus')">
+
+  <div class="category-image">
+
+    <img
+      src=""
+      alt="Prime Plus">
 
   </div>
+
+  <h3>
+    Prime Plus
+  </h3>
+
+  <p>
+    اشتراک Prime Plus
+  </p>
+
+</div>
+
+
+<!-- ONE TIME -->
+
+<div
+  class="category"
+  onclick="showCategory('onetime')">
+
+  <div class="category-image">
+
+    <img
+      src=""
+      alt="One Time">
+
+  </div>
+
+  <h3>
+    پک‌های یک‌بارخرید
+  </h3>
+
+  <p>
+    پک‌های ویژه
+  </p>
+
+</div>
+
+
+</div>
 
 </div>
 
 </section>
 
-<section class="section" id="products">
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="container">
+
 
 <div class="title">
-  <h2 id="productTitle">UC</h2>
+
+  <h2 id="productTitle">
+    UC
+  </h2>
+
   <p id="productSubtitle">
     بسته موردنظر خود را انتخاب کنید
   </p>
+
 </div>
+
 
 <div class="products">
 
-  <!-- UC -->
 
-  <div class="product visible" data-category="uc">
-    <div class="product-image placeholder">
-      <img src="" alt="60 UC">
-    </div>
-    <h3>60 UC</h3>
-    <div class="product-info">بسته UC</div>
-    <div class="price">197,000 تومان</div>
-    <button class="buy"
-            onclick="buy('60 UC')">
-      خرید
-    </button>
+<!-- 60 UC -->
+
+<div
+  class="product show"
+  data-category="uc">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="60 UC">
+
   </div>
 
-  <div class="product visible" data-category="uc">
-    <div class="product-image placeholder">
-      <img src="" alt="180 UC">
-    </div>
-    <h3>180 UC</h3>
-    <div class="product-info">بسته UC</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('180 UC')">
-      خرید
-    </button>
+  <h3>
+    60 UC
+  </h3>
+
+  <div class="product-info">
+    بسته UC
   </div>
 
-  <div class="product visible" data-category="uc">
-    <div class="product-image placeholder">
-      <img src="" alt="325 UC">
-    </div>
-    <h3>325 UC</h3>
-    <div class="product-info">بسته UC</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('325 UC')">
-      خرید
-    </button>
+  <div class="price">
+    197,000 تومان
   </div>
 
-  <div class="product visible" data-category="uc">
-    <div class="product-image placeholder">
-      <img src="" alt="660 UC">
-    </div>
-    <h3>660 UC</h3>
-    <div class="product-info">بسته محبوب</div>
-    <div class="price">1,970,000 تومان</div>
-    <button class="buy"
-            onclick="buy('660 UC')">
-      خرید
-    </button>
-  </div>
+  <button
+    class="buy"
+    onclick="openBuy(
+      '60 UC',
+      '197,000 تومان'
+    )">
 
-  <div class="product visible" data-category="uc">
-    <div class="product-image placeholder">
-      <img src="" alt="1800 UC">
-    </div>
-    <h3>1800 UC</h3>
-    <div class="product-info">بسته ویژه</div>
-    <div class="price">4,925,000 تومان</div>
-    <button class="buy"
-            onclick="buy('1800 UC')">
-      خرید
-    </button>
-  </div>
+    خرید
 
-  <!-- PRIME -->
-
-  <div class="product" data-category="prime">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime 1 Month">
-    </div>
-    <h3>Prime — 1 ماه</h3>
-    <div class="product-info">اشتراک Prime</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime 1 Month')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime 3 Months">
-    </div>
-    <h3>Prime — 3 ماه</h3>
-    <div class="product-info">اشتراک Prime</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime 3 Months')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime 6 Months">
-    </div>
-    <h3>Prime — 6 ماه</h3>
-    <div class="product-info">اشتراک Prime</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime 6 Months')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime 12 Months">
-    </div>
-    <h3>Prime — 12 ماه</h3>
-    <div class="product-info">اشتراک Prime</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime 12 Months')">
-      خرید
-    </button>
-  </div>
-
-  <!-- PRIME PLUS -->
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime Plus 1 Month">
-    </div>
-    <h3>Prime Plus — 1 ماه</h3>
-    <div class="product-info">اشتراک Prime Plus</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime Plus 1 Month')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime Plus 3 Months">
-    </div>
-    <h3>Prime Plus — 3 ماه</h3>
-    <div class="product-info">اشتراک Prime Plus</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime Plus 3 Months')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime Plus 6 Months">
-    </div>
-    <h3>Prime Plus — 6 ماه</h3>
-    <div class="product-info">اشتراک Prime Plus</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime Plus 6 Months')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image placeholder">
-      <img src="" alt="Prime Plus 12 Months">
-    </div>
-    <h3>Prime Plus — 12 ماه</h3>
-    <div class="product-info">اشتراک Prime Plus</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('Prime Plus 12 Months')">
-      خرید
-    </button>
-  </div>
-
-  <!-- ONE TIME -->
-
-  <div class="product" data-category="onetime">
-    <div class="product-image placeholder">
-      <img src="" alt="First Purchase Pack">
-    </div>
-    <h3>پک یک‌بارخرید اول</h3>
-    <div class="product-info">قابل خرید یک‌بار برای هر اکانت</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('First Purchase Pack')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="onetime">
-    <div class="product-image placeholder">
-      <img src="" alt="One Time Pack 2">
-    </div>
-    <h3>پک یک‌بارخرید دوم</h3>
-    <div class="product-info">پک ویژه</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('One Time Pack 2')">
-      خرید
-    </button>
-  </div>
-
-  <div class="product" data-category="onetime">
-    <div class="product-image placeholder">
-      <img src="" alt="One Time Pack 3">
-    </div>
-    <h3>پک یک‌بارخرید سوم</h3>
-    <div class="product-info">پک ویژه</div>
-    <div class="price">قیمت به‌زودی</div>
-    <button class="buy"
-            onclick="buy('One Time Pack 3')">
-      خرید
-    </button>
-  </div>
+  </button>
 
 </div>
 
-<div class="empty" id="empty">
-محصولی برای این دسته پیدا نشد.
+
+<!-- 180 UC -->
+
+<div
+  class="product show"
+  data-category="uc">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="180 UC">
+
+  </div>
+
+  <h3>
+    180 UC
+  </h3>
+
+  <div class="product-info">
+    بسته UC
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      '180 UC',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- 325 UC -->
+
+<div
+  class="product show"
+  data-category="uc">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="325 UC">
+
+  </div>
+
+  <h3>
+    325 UC
+  </h3>
+
+  <div class="product-info">
+    بسته UC
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      '325 UC',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- 660 UC -->
+
+<div
+  class="product show"
+  data-category="uc">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="660 UC">
+
+  </div>
+
+  <h3>
+    660 UC
+  </h3>
+
+  <div class="product-info">
+    بسته محبوب
+  </div>
+
+  <div class="price">
+    1,970,000 تومان
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      '660 UC',
+      '1,970,000 تومان'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- 1800 UC -->
+
+<div
+  class="product show"
+  data-category="uc">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="1800 UC">
+
+  </div>
+
+  <h3>
+    1800 UC
+  </h3>
+
+  <div class="product-info">
+    بسته ویژه
+  </div>
+
+  <div class="price">
+    4,925,000 تومان
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      '1800 UC',
+      '4,925,000 تومان'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- PRIME -->
+
+<div
+  class="product"
+  data-category="prime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime 1 Month">
+
+  </div>
+
+  <h3>
+    Prime — 1 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime — 1 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="prime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime 3 Months">
+
+  </div>
+
+  <h3>
+    Prime — 3 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime — 3 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="prime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime 6 Months">
+
+  </div>
+
+  <h3>
+    Prime — 6 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime — 6 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="prime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime 12 Months">
+
+  </div>
+
+  <h3>
+    Prime — 12 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime — 12 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- PRIME PLUS -->
+
+<div
+  class="product"
+  data-category="primeplus">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime Plus 1 Month">
+
+  </div>
+
+  <h3>
+    Prime Plus — 1 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime Plus — 1 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="primeplus">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime Plus 3 Months">
+
+  </div>
+
+  <h3>
+    Prime Plus — 3 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime Plus — 3 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="primeplus">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime Plus 6 Months">
+
+  </div>
+
+  <h3>
+    Prime Plus — 6 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime Plus — 6 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="primeplus">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="Prime Plus 12 Months">
+
+  </div>
+
+  <h3>
+    Prime Plus — 12 ماه
+  </h3>
+
+  <div class="product-info">
+    اشتراک Prime Plus
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'Prime Plus — 12 ماه',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<!-- ONE TIME PACKS -->
+
+<div
+  class="product"
+  data-category="onetime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="One Time Pack 1">
+
+  </div>
+
+  <h3>
+    پک یک‌بارخرید اول
+  </h3>
+
+  <div class="product-info">
+    قابل خرید یک‌بار برای هر اکانت
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'پک یک‌بارخرید اول',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="onetime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="One Time Pack 2">
+
+  </div>
+
+  <h3>
+    پک یک‌بارخرید دوم
+  </h3>
+
+  <div class="product-info">
+    پک ویژه
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'پک یک‌بارخرید دوم',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+<div
+  class="product"
+  data-category="onetime">
+
+  <div class="product-image">
+
+    <img
+      src=""
+      alt="One Time Pack 3">
+
+  </div>
+
+  <h3>
+    پک یک‌بارخرید سوم
+  </h3>
+
+  <div class="product-info">
+    پک ویژه
+  </div>
+
+  <div class="price">
+    قیمت به‌زودی
+  </div>
+
+  <button
+    class="buy"
+    onclick="openBuy(
+      'پک یک‌بارخرید سوم',
+      'قیمت به‌زودی'
+    )">
+
+    خرید
+
+  </button>
+
+</div>
+
+
+</div>
+
 </div>
 
 </section>
 
-<section class="section" id="support">
+
+<!-- SUPPORT -->
+
+<section id="support">
+
+<div class="container">
 
 <div class="title">
-  <h2>Loot Box Store</h2>
-  <p>تجربه خرید ساده و حرفه‌ای</p>
+
+  <h2>
+    Loot Box Store
+  </h2>
+
+  <p>
+    تجربه خرید ساده و حرفه‌ای
+  </p>
+
 </div>
+
 
 <div class="features">
 
-  <div class="feature">
-    <div class="feature-image">
-      <img src="" alt="Fast">
-    </div>
-    <h3>پردازش سریع</h3>
-    <p>سیستم سفارش برای پردازش سریع طراحی می‌شود.</p>
+
+<div class="feature">
+
+  <div class="feature-image">
+
+    <img src="" alt="Fast">
+
   </div>
 
-  <div class="feature">
-    <div class="feature-image">
-      <img src="" alt="Secure">
-    </div>
-    <h3>پرداخت امن</h3>
-    <p>درگاه پرداخت در مرحله بعد اضافه خواهد شد.</p>
+  <h3>
+    پردازش سریع
+  </h3>
+
+  <p>
+    سفارش شما پس از پرداخت وارد
+    مرحله پردازش می‌شود.
+  </p>
+
+</div>
+
+
+<div class="feature">
+
+  <div class="feature-image">
+
+    <img src="" alt="Secure">
+
   </div>
 
-  <div class="feature">
-    <div class="feature-image">
-      <img src="" alt="Support">
-    </div>
-    <h3>پشتیبانی</h3>
-    <p>سیستم پشتیبانی و پیگیری سفارش در ادامه ساخته می‌شود.</p>
+  <h3>
+    پرداخت امن
+  </h3>
+
+  <p>
+    درگاه پرداخت در مرحله بعد
+    به سایت متصل خواهد شد.
+  </p>
+
+</div>
+
+
+<div class="feature">
+
+  <div class="feature-image">
+
+    <img src="" alt="Support">
+
   </div>
+
+  <h3>
+    پشتیبانی
+  </h3>
+
+  <p>
+    سیستم پشتیبانی و پیگیری سفارش
+    در ادامه اضافه خواهد شد.
+  </p>
+
+</div>
+
+
+</div>
 
 </div>
 
 </section>
 
+
+<!-- BUY MODAL -->
+
+<div
+  class="modal"
+  id="buyModal">
+
+
+<div class="modal-box">
+
+
+<div class="modal-top">
+
+  <h2>
+    تکمیل سفارش
+  </h2>
+
+  <button
+    class="close"
+    onclick="closeBuy()">
+
+    ×
+
+  </button>
+
+</div>
+
+
+<!-- SELECTED -->
+
+<div class="selected">
+
+  <small>
+    محصول انتخاب‌شده
+  </small>
+
+  <strong
+    id="selectedProduct">
+    ---
+  </strong>
+
+  <small
+    id="selectedPrice">
+    ---
+  </small>
+
+</div>
+
+
+<!-- PLAYER ID -->
+
+<label for="playerId">
+
+  Player ID
+
+</label>
+
+
+<input
+  id="playerId"
+  type="text"
+  inputmode="numeric"
+  maxlength="20"
+  autocomplete="off"
+  placeholder="Player ID خود را وارد کنید"
+  oninput="checkId()">
+
+
+<div class="id-hint">
+
+  Player ID را از پروفایل PUBG Mobile
+  کپی کنید. رمز عبور لازم نیست.
+
+</div>
+
+
+<!-- LOADING -->
+
+<div
+  id="accountLoading"
+  class="account-loading">
+
+  <div class="loader"></div>
+
+  <span>
+    در حال بررسی Player ID...
+  </span>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div
+  id="accountResult"
+  class="account-result">
+
+  <div class="account-title">
+    اطلاعات واردشده
+  </div>
+
+  <div class="account-row">
+
+    <span>
+      Player ID
+    </span>
+
+    <b id="resultId">
+      ---
+    </b>
+
+  </div>
+
+  <div class="account-row">
+
+    <span>
+      نام اکانت
+    </span>
+
+    <b id="resultName">
+      نیازمند اتصال API
+    </b>
+
+  </div>
+
+</div>
+
+
+<!-- ERROR -->
+
+<div
+  id="accountError"
+  class="account-error">
+</div>
+
+
+<!-- CONTINUE -->
+
+<button
+  id="continueBtn"
+  class="continue-btn"
+  onclick="continueOrder()"
+  disabled>
+
+  ادامه سفارش
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
-© 2026 Loot Box Store
+
+  © 2026 Loot Box Store
+
 </footer>
+
 
 <script>
 
-const names={
+
+/* CATEGORY */
+
+const categoryInfo = {
+
   uc:{
     title:"UC",
     subtitle:"تمام بسته‌های UC را انتخاب کنید"
@@ -844,64 +1870,321 @@ const names={
     title:"پک‌های یک‌بارخرید",
     subtitle:"پک‌های ویژه قابل خرید یک‌باره"
   }
+
 };
+
 
 function showCategory(category){
 
-  document.querySelectorAll(".product")
+  document
+    .querySelectorAll(".product")
     .forEach(product=>{
 
-      if(product.dataset.category===category){
-        product.classList.add("visible");
+      if(
+        product.dataset.category === category
+      ){
+
+        product.classList.add("show");
+
       }else{
-        product.classList.remove("visible");
+
+        product.classList.remove("show");
+
       }
 
     });
 
-  document.querySelectorAll(".category")
+
+  document
+    .querySelectorAll(".category")
     .forEach(item=>{
+
       item.classList.remove("active");
+
     });
 
-  const categories=
-    document.querySelectorAll(".category");
 
-  const index={
+  const indexes = {
+
     uc:0,
     prime:1,
     primeplus:2,
     onetime:3
-  }[category];
 
-  if(categories[index]){
-    categories[index].classList.add("active");
+  };
+
+
+  const selectedCategory =
+    document.querySelectorAll(".category")
+    [indexes[category]];
+
+
+  if(selectedCategory){
+
+    selectedCategory.classList.add("active");
+
   }
 
-  document.getElementById("productTitle")
-    .textContent=names[category].title;
 
-  document.getElementById("productSubtitle")
-    .textContent=names[category].subtitle;
+  document
+    .getElementById("productTitle")
+    .textContent =
+      categoryInfo[category].title;
 
-  document.getElementById("products")
+
+  document
+    .getElementById("productSubtitle")
+    .textContent =
+      categoryInfo[category].subtitle;
+
+
+  document
+    .getElementById("products")
     .scrollIntoView({
-      behavior:"smooth",
-      block:"start"
+      behavior:"smooth"
     });
+
 }
 
-function buy(product){
+
+/* BUY */
+
+let selectedProduct = "";
+let selectedPrice = "";
+let verifiedId = "";
+
+
+function openBuy(product,price){
+
+  selectedProduct = product;
+
+  selectedPrice = price;
+
+  verifiedId = "";
+
+
+  document
+    .getElementById("selectedProduct")
+    .textContent = product;
+
+
+  document
+    .getElementById("selectedPrice")
+    .textContent = price;
+
+
+  document
+    .getElementById("playerId")
+    .value = "";
+
+
+  document
+    .getElementById("accountLoading")
+    .style.display = "none";
+
+
+  document
+    .getElementById("accountResult")
+    .style.display = "none";
+
+
+  document
+    .getElementById("accountError")
+    .style.display = "none";
+
+
+  document
+    .getElementById("continueBtn")
+    .disabled = true;
+
+
+  document
+    .getElementById("buyModal")
+    .classList.add("open");
+
+
+  setTimeout(()=>{
+
+    document
+      .getElementById("playerId")
+      .focus();
+
+  },150);
+
+}
+
+
+/* CLOSE */
+
+function closeBuy(){
+
+  document
+    .getElementById("buyModal")
+    .classList.remove("open");
+
+}
+
+
+/* PLAYER ID */
+
+let lookupTimer = null;
+
+
+function checkId(){
+
+  const input =
+    document
+      .getElementById("playerId")
+      .value
+      .trim();
+
+
+  const loading =
+    document
+      .getElementById("accountLoading");
+
+
+  const result =
+    document
+      .getElementById("accountResult");
+
+
+  const error =
+    document
+      .getElementById("accountError");
+
+
+  const continueButton =
+    document
+      .getElementById("continueBtn");
+
+
+  clearTimeout(lookupTimer);
+
+
+  loading.style.display = "none";
+
+  result.style.display = "none";
+
+  error.style.display = "none";
+
+  continueButton.disabled = true;
+
+  verifiedId = "";
+
+
+  if(input.length === 0){
+
+    return;
+
+  }
+
+
+  if(!/^[0-9]+$/.test(input)){
+
+    error.textContent =
+      "Player ID باید فقط شامل عدد باشد.";
+
+    error.style.display = "block";
+
+    return;
+
+  }
+
+
+  if(input.length < 6){
+
+    return;
+
+  }
+
+
+  loading.style.display = "flex";
+
+
+  lookupTimer = setTimeout(()=>{
+
+    /*
+      این قسمت محل اتصال API واقعی است.
+
+      تا زمانی که API واقعی متصل نشده،
+      نام بازیکن ساخته یا حدس زده نمی‌شود.
+    */
+
+
+    loading.style.display = "none";
+
+
+    verifiedId = input;
+
+
+    document
+      .getElementById("resultId")
+      .textContent = input;
+
+
+    document
+      .getElementById("resultName")
+      .textContent =
+        "برای نمایش نام واقعی، API لازم است";
+
+
+    result.style.display = "block";
+
+
+    continueButton.disabled = false;
+
+
+  },800);
+
+}
+
+
+/* CONTINUE */
+
+function continueOrder(){
+
+  if(!verifiedId){
+
+    return;
+
+  }
+
 
   alert(
-    "محصول انتخاب شد:\n\n"+
-    product+
-    "\n\nصفحه ورود Player ID و پرداخت در مرحله بعد اضافه می‌شود."
+
+    "محصول: " +
+    selectedProduct +
+
+    "\nPlayer ID: " +
+    verifiedId +
+
+    "\n\nمرحله پرداخت در ادامه اضافه می‌شود."
+
   );
 
 }
 
+
+/* CLOSE WITH BACKGROUND */
+
+document
+  .getElementById("buyModal")
+  .addEventListener(
+    "click",
+    function(event){
+
+      if(event.target === this){
+
+        closeBuy();
+
+      }
+
+    }
+  );
+
+
 </script>
 
 </body>
-  </html>
+    </html>
