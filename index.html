@@ -1,1982 +1,1297 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b16">
-<title>Loot Box Store | فروشگاه گیمینگ</title><style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#080812">
+<title>Loot Box | فروشگاه گیمینگ</title>
 
-:root{
-  --bg:#070914;
-  --bg2:#0b1020;
-  --card:rgba(18,24,43,.78);
-  --card2:#11182b;
-  --gold:#ffd21c;
-  --orange:#ff7a00;
-  --pink:#ff2f92;
-  --purple:#8b5cf6;
-  --cyan:#20d9ff;
-  --green:#39e58c;
-  --red:#ff4d6d;
-  --text:#fff;
-  --muted:#9ba5bb;
-  --border:rgba(255,255,255,.10);
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:
-    radial-gradient(circle at 10% 10%,rgba(139,92,246,.15),transparent 28%),
-    radial-gradient(circle at 90% 15%,rgba(32,217,255,.10),transparent 25%),
-    radial-gradient(circle at 50% 90%,rgba(255,47,146,.08),transparent 30%),
-    var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  overflow-x:hidden;
+font-family:Tahoma,Arial,sans-serif;
+background:#070711;
+color:#fff;
+overflow-x:hidden
+}
+button,input{font-family:inherit}
+:root{
+--gold:#ffd000;
+--orange:#ff6b00;
+--pink:#ff267d;
+--purple:#8b5cff;
+--cyan:#00d9ff;
+--bg:#070711;
+--card:#10101c;
+--card2:#151522;
+--border:rgba(255,255,255,.09);
+--muted:#9699aa;
+--green:#37e69a
 }
 
+/* BACKGROUND */
 body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.25;
-  background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:45px 45px;
-  mask-image:linear-gradient(to bottom,#000,transparent 90%);
+content:"";
+position:fixed;
+inset:0;
+z-index:-3;
+background:
+radial-gradient(circle at 15% 15%,rgba(139,92,255,.14),transparent 28%),
+radial-gradient(circle at 85% 25%,rgba(255,38,125,.12),transparent 25%),
+radial-gradient(circle at 50% 100%,rgba(0,217,255,.08),transparent 30%),
+#070711
 }
-
-button,input{
-  font-family:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(5,8,18,.78);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-
-.nav{
-  width:92%;
-  max-width:1250px;
-  height:76px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:-.5px;
-}
-
-.logo-icon{
-  width:40px;
-  height:40px;
-  border-radius:13px;
-  display:grid;
-  place-items:center;
-  color:#111;
-  background:linear-gradient(135deg,var(--gold),var(--orange),var(--pink));
-  box-shadow:0 0 30px rgba(255,190,0,.25);
-}
-
-.logo span{
-  background:linear-gradient(90deg,var(--gold),#fff,var(--cyan));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-.nav-links a{
-  color:#aeb8ca;
-  text-decoration:none;
-  font-size:13px;
-  transition:.25s;
-}
-
-.nav-links a:hover{
-  color:#fff;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:590px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-}
-
-.hero-glow{
-  position:absolute;
-  width:520px;
-  height:520px;
-  border-radius:50%;
-  right:5%;
-  top:50%;
-  transform:translateY(-50%);
-  background:
-    radial-gradient(circle,
-      rgba(255,210,28,.22),
-      rgba(255,122,0,.10) 30%,
-      rgba(139,92,246,.06) 55%,
-      transparent 70%);
-  filter:blur(5px);
-}
-
-.hero-glow2{
-  position:absolute;
-  width:280px;
-  height:280px;
-  left:5%;
-  bottom:-100px;
-  border-radius:50%;
-  background:rgba(255,47,146,.12);
-  filter:blur(70px);
+body:after{
+content:"";
+position:fixed;
+inset:0;
+z-index:-2;
+opacity:.18;
+background-image:
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+background-size:45px 45px;
+pointer-events:none
 }
 
 .container{
-  width:92%;
-  max-width:1250px;
-  margin:auto;
+width:min(1180px,92%);
+margin:auto
 }
 
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(7,7,17,.72);
+border-bottom:1px solid var(--border);
+backdrop-filter:blur(22px)
+}
+.nav{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+.logo{
+font-size:23px;
+font-weight:1000;
+letter-spacing:-1px
+}
+.logo span{
+background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));
+-webkit-background-clip:text;
+color:transparent
+}
+.nav-links{
+display:flex;
+gap:27px
+}
+.nav-links a{
+color:#bfc1ce;
+text-decoration:none;
+font-size:13px;
+transition:.2s
+}
+.nav-links a:hover{color:#fff}
+.nav-btn{
+padding:10px 17px;
+border-radius:12px;
+background:rgba(255,255,255,.06);
+border:1px solid var(--border);
+color:#fff;
+text-decoration:none;
+font-size:12px
+}
+
+/* HERO */
+.hero{
+min-height:610px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden
+}
+.hero-orb{
+position:absolute;
+border-radius:50%;
+filter:blur(2px);
+pointer-events:none
+}
+.orb1{
+width:380px;height:380px;
+background:rgba(139,92,255,.16);
+right:-120px;top:70px
+}
+.orb2{
+width:260px;height:260px;
+background:rgba(255,38,125,.12);
+left:-70px;bottom:20px
+}
 .hero-content{
-  position:relative;
-  z-index:3;
-  max-width:760px;
+position:relative;
+z-index:2;
+padding:70px 0
 }
-
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:9px 14px;
-  border:1px solid rgba(255,210,28,.25);
-  border-radius:999px;
-  background:rgba(255,210,28,.07);
-  color:#ffe477;
-  font-size:12px;
-  margin-bottom:22px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:9px 14px;
+border-radius:999px;
+background:rgba(255,255,255,.055);
+border:1px solid var(--border);
+color:#d7d8e2;
+font-size:11px;
+margin-bottom:20px
 }
-
-.badge-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 12px var(--green);
+.badge i{
+width:7px;height:7px;
+border-radius:50%;
+background:var(--green);
+box-shadow:0 0 14px var(--green)
 }
-
 .hero h1{
-  font-size:clamp(46px,7vw,82px);
-  line-height:1.05;
-  letter-spacing:-3px;
+font-size:clamp(43px,7vw,82px);
+line-height:1.08;
+letter-spacing:-3px;
+max-width:850px
 }
-
-.gradient-text{
-  background:linear-gradient(
-    90deg,
-    var(--gold),
-    var(--orange),
-    var(--pink),
-    var(--purple)
-  );
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.hero h1 span{
+background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));
+-webkit-background-clip:text;
+color:transparent
 }
-
 .hero p{
-  max-width:680px;
-  margin-top:24px;
-  color:var(--muted);
-  font-size:15px;
-  line-height:2.1;
+max-width:650px;
+margin-top:22px;
+color:#a4a6b5;
+line-height:2.1;
+font-size:14px
 }
-
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
+.hero-actions{
+display:flex;
+gap:12px;
+margin-top:30px;
+flex-wrap:wrap
 }
-
-.hero-button{
-  border:0;
-  padding:15px 24px;
-  border-radius:13px;
-  color:#111;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
-  box-shadow:0 12px 35px rgba(255,145,0,.22);
-  transition:.25s;
+.primary-btn{
+border:0;
+padding:15px 25px;
+border-radius:14px;
+font-weight:900;
+cursor:pointer;
+color:#111;
+background:linear-gradient(135deg,var(--gold),var(--orange));
+box-shadow:0 12px 35px rgba(255,107,0,.2);
+transition:.25s
 }
-
-.hero-button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 18px 45px rgba(255,145,0,.30);
+.primary-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 45px rgba(255,107,0,.32)
 }
-
-.hero-secondary{
-  padding:15px 24px;
-  border-radius:13px;
-  border:1px solid var(--border);
-  color:#fff;
-  background:rgba(255,255,255,.05);
-  font-weight:700;
+.secondary-btn{
+padding:14px 23px;
+border-radius:14px;
+background:rgba(255,255,255,.055);
+border:1px solid var(--border);
+color:#fff;
+cursor:pointer
 }
-
-.hero-secondary:hover{
-  background:rgba(255,255,255,.09);
-}
-
-/* floating cards */
-
-.hero-card{
-  position:absolute;
-  z-index:2;
-  right:8%;
-  top:50%;
-  transform:translateY(-50%) rotate(4deg);
-  width:290px;
-  height:360px;
-  border-radius:30px;
-  padding:22px;
-  background:
-    linear-gradient(145deg,rgba(255,210,28,.15),rgba(139,92,246,.13)),
-    rgba(16,21,39,.85);
-  border:1px solid rgba(255,255,255,.13);
-  box-shadow:
-    0 35px 90px rgba(0,0,0,.5),
-    0 0 80px rgba(139,92,246,.10);
-  backdrop-filter:blur(18px);
-  animation:float 5s ease-in-out infinite;
-}
-
-.hero-card-inner{
-  height:100%;
-  border-radius:22px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at 50% 30%,rgba(255,210,28,.18),transparent 35%),
-    rgba(5,8,17,.6);
-  border:1px solid rgba(255,255,255,.07);
-}
-
-.hero-card-icon{
-  font-size:85px;
-  filter:drop-shadow(0 0 25px rgba(255,210,28,.35));
-}
-
-.hero-card strong{
-  margin-top:18px;
-  font-size:24px;
-}
-
-.hero-card small{
-  margin-top:8px;
-  color:var(--muted);
-}
-
-@keyframes float{
-  0%,100%{margin-top:0}
-  50%{margin-top:-15px}
-}
-
-/* ================= STATS ================= */
-
 .stats{
-  position:relative;
-  z-index:5;
-  margin-top:-55px;
+display:flex;
+gap:12px;
+margin-top:38px;
+flex-wrap:wrap
 }
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
 .stat{
-  padding:22px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:rgba(14,19,34,.82);
-  backdrop-filter:blur(15px);
-  display:flex;
-  align-items:center;
-  gap:15px;
+padding:13px 18px;
+border:1px solid var(--border);
+background:rgba(255,255,255,.035);
+border-radius:14px
+}
+.stat b{display:block;font-size:16px}
+.stat span{font-size:10px;color:var(--muted);display:block;margin-top:4px}
+
+/* SECTION */
+section{padding:75px 0}
+.section-head{
+display:flex;
+align-items:end;
+justify-content:space-between;
+gap:20px;
+margin-bottom:27px
+}
+.section-title h2{
+font-size:30px;
+letter-spacing:-1px
+}
+.section-title p{
+font-size:12px;
+color:var(--muted);
+margin-top:8px
+}
+.live{
+font-size:11px;
+color:var(--green)
 }
 
-.stat-icon{
-  width:50px;
-  height:50px;
-  border-radius:15px;
-  display:grid;
-  place-items:center;
-  font-size:22px;
-  background:linear-gradient(135deg,rgba(255,210,28,.16),rgba(139,92,246,.14));
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.stat strong{
-  display:block;
-  font-size:16px;
-}
-
-.stat span{
-  display:block;
-  margin-top:5px;
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* ================= SECTION ================= */
-
-section{
-  padding:90px 0;
-}
-
-.title{
-  margin-bottom:30px;
-}
-
-.title-row{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.title h2{
-  font-size:30px;
-  letter-spacing:-1px;
-}
-
-.title p{
-  margin-top:9px;
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= CATEGORIES ================= */
-
+/* CATEGORIES */
 .categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
-
 .category{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  padding:24px;
-  border-radius:22px;
-  background:
-    linear-gradient(145deg,rgba(20,27,48,.9),rgba(10,14,27,.9));
-  border:1px solid var(--border);
-  transition:.3s;
+position:relative;
+overflow:hidden;
+cursor:pointer;
+padding:20px;
+min-height:170px;
+border-radius:20px;
+background:
+linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+border:1px solid var(--border);
+transition:.3s
 }
-
-.category:before{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:130px;
-  right:-50px;
-  top:-50px;
-  border-radius:50%;
-  background:var(--category-color,#ffd21c);
-  opacity:.08;
-  filter:blur(10px);
+.category:after{
+content:"";
+position:absolute;
+width:100px;height:100px;
+border-radius:50%;
+right:-40px;top:-40px;
+background:rgba(139,92,255,.15);
+filter:blur(10px)
 }
-
-.category:hover,
+.category:hover,.category.active{
+transform:translateY(-6px);
+border-color:rgba(255,208,0,.5);
+box-shadow:0 20px 55px rgba(0,0,0,.3)
+}
 .category.active{
-  transform:translateY(-7px);
-  border-color:rgba(255,210,28,.45);
-  box-shadow:0 25px 55px rgba(0,0,0,.35);
+background:linear-gradient(145deg,rgba(255,208,0,.10),rgba(255,255,255,.025))
 }
-
-.category.active{
-  background:
-    linear-gradient(145deg,rgba(255,210,28,.10),rgba(139,92,246,.08)),
-    rgba(15,21,38,.95);
+.cat-icon{
+height:72px;
+width:72px;
+border-radius:18px;
+display:grid;
+place-items:center;
+font-size:28px;
+margin-bottom:17px;
+background:linear-gradient(135deg,rgba(255,208,0,.18),rgba(255,38,125,.12));
+border:1px solid rgba(255,255,255,.08)
 }
-
-.category-image{
-  height:125px;
-  border-radius:17px;
-  display:grid;
-  place-items:center;
-  margin-bottom:18px;
-  background:
-    radial-gradient(circle at center,rgba(255,255,255,.07),transparent 55%),
-    #080c18;
-  border:1px solid rgba(255,255,255,.06);
-  overflow:hidden;
-}
-
-.category-symbol{
-  font-size:55px;
-  filter:drop-shadow(0 0 20px rgba(255,210,28,.22));
-}
-
-.category h3{
-  font-size:18px;
-}
-
+.category h3{font-size:16px}
 .category p{
-  margin-top:8px;
-  color:var(--muted);
-  font-size:12px;
+margin-top:7px;
+font-size:11px;
+color:var(--muted)
 }
 
-/* ================= PRODUCTS ================= */
-
+/* PRODUCTS */
 .products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:17px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px
 }
-
 .product{
-  display:none;
-  position:relative;
-  overflow:hidden;
-  padding:12px;
-  border-radius:22px;
-  background:
-    linear-gradient(145deg,rgba(19,26,46,.95),rgba(10,14,26,.95));
-  border:1px solid var(--border);
-  transition:.3s;
+display:none;
+position:relative;
+padding:13px;
+border-radius:20px;
+background:linear-gradient(145deg,#12121f,#0d0d17);
+border:1px solid var(--border);
+transition:.3s;
+overflow:hidden
 }
-
-.product.show{
-  display:block;
-  animation:productIn .35s ease both;
-}
-
-@keyframes productIn{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
+.product.show{display:block}
 .product:hover{
-  transform:translateY(-7px);
-  border-color:rgba(255,210,28,.35);
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
+transform:translateY(-7px);
+border-color:rgba(255,208,0,.45);
+box-shadow:0 20px 55px rgba(0,0,0,.3)
 }
-
 .product-image{
-  height:175px;
-  border-radius:17px;
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(circle at center,rgba(139,92,246,.12),transparent 55%),
-    #080c18;
-  border:1px solid rgba(255,255,255,.06);
+height:170px;
+border-radius:15px;
+display:grid;
+place-items:center;
+margin-bottom:16px;
+background:
+radial-gradient(circle at 50% 30%,rgba(139,92,255,.18),transparent 55%),
+#080812;
+border:1px solid rgba(255,255,255,.05)
 }
-
-.product-symbol{
-  font-size:70px;
-  filter:drop-shadow(0 0 25px rgba(255,210,28,.25));
+.product-emoji{
+font-size:58px;
+filter:drop-shadow(0 10px 25px rgba(255,208,0,.2))
 }
-
-.product-content{
-  padding:5px 4px 3px;
-}
-
-.product h3{
-  margin-top:12px;
-  font-size:16px;
-}
-
+.product h3{font-size:16px}
 .product-info{
-  min-height:32px;
-  margin-top:7px;
-  color:var(--muted);
-  font-size:11px;
-  line-height:1.7;
+height:31px;
+margin-top:7px;
+font-size:11px;
+color:var(--muted)
 }
-
 .price{
-  margin:13px 0;
-  color:var(--gold);
-  font-size:17px;
-  font-weight:900;
+font-size:17px;
+font-weight:1000;
+color:var(--gold);
+margin:14px 0
 }
-
 .buy{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
-  color:#111;
-  font-weight:900;
-  transition:.25s;
+width:100%;
+padding:12px;
+border:0;
+border-radius:12px;
+background:linear-gradient(135deg,var(--gold),var(--orange));
+color:#111;
+font-weight:1000;
+cursor:pointer;
+transition:.2s
 }
+.buy:hover{filter:brightness(1.08);transform:scale(1.015)}
 
-.buy:hover{
-  filter:brightness(1.08);
-  transform:translateY(-2px);
-}
-
-/* ================= FEATURES ================= */
-
+/* FEATURES */
 .features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
 }
-
 .feature{
-  position:relative;
-  overflow:hidden;
-  padding:30px;
-  border-radius:22px;
-  background:linear-gradient(145deg,rgba(18,25,45,.9),rgba(10,14,27,.9));
-  border:1px solid var(--border);
+padding:28px;
+border-radius:20px;
+background:rgba(255,255,255,.035);
+border:1px solid var(--border)
 }
-
-.feature:after{
-  content:"";
-  position:absolute;
-  width:100px;
-  height:100px;
-  left:-50px;
-  bottom:-50px;
-  border-radius:50%;
-  background:var(--feature-color,var(--cyan));
-  opacity:.10;
-  filter:blur(15px);
-}
-
 .feature-icon{
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  border-radius:17px;
-  font-size:25px;
-  background:rgba(255,255,255,.05);
-  border:1px solid var(--border);
-  margin-bottom:20px;
+width:54px;height:54px;
+display:grid;
+place-items:center;
+border-radius:16px;
+font-size:24px;
+background:linear-gradient(135deg,rgba(0,217,255,.14),rgba(139,92,255,.16));
+margin-bottom:20px
 }
-
-.feature h3{
-  font-size:17px;
-}
-
+.feature h3{font-size:16px}
 .feature p{
-  margin-top:10px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:2;
+margin-top:9px;
+color:var(--muted);
+font-size:12px;
+line-height:1.9
 }
 
-/* ================= MODAL ================= */
-
+/* MODAL */
 .modal{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  background:rgba(2,4,10,.84);
-  backdrop-filter:blur(15px);
+position:fixed;
+inset:0;
+z-index:9999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:18px;
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(18px)
 }
-
-.modal.open{
-  display:flex;
-}
-
+.modal.open{display:flex}
 .modal-box{
-  width:min(480px,100%);
-  max-height:92vh;
-  overflow:auto;
-  border-radius:26px;
-  padding:25px;
-  background:
-    linear-gradient(145deg,rgba(20,27,48,.98),rgba(9,13,25,.98));
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 40px 120px #000;
-  animation:modalIn .25s ease;
+width:min(470px,100%);
+max-height:92vh;
+overflow:auto;
+padding:23px;
+border-radius:24px;
+background:linear-gradient(145deg,#151522,#0c0c15);
+border:1px solid rgba(255,255,255,.11);
+box-shadow:0 35px 100px #000
 }
-
-@keyframes modalIn{
-  from{
-    opacity:0;
-    transform:scale(.95) translateY(15px);
-  }
-  to{
-    opacity:1;
-    transform:scale(1) translateY(0);
-  }
-}
-
 .modal-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:18px
 }
-
-.modal-top h2{
-  font-size:21px;
-}
-
+.modal-top h2{font-size:20px}
 .close{
-  width:38px;
-  height:38px;
-  border:1px solid var(--border);
-  border-radius:11px;
-  background:rgba(255,255,255,.04);
-  color:#aaa;
-  font-size:24px;
+border:0;
+background:rgba(255,255,255,.06);
+color:#aaa;
+width:38px;height:38px;
+border-radius:11px;
+font-size:23px;
+cursor:pointer
 }
-
-.close:hover{
-  color:#fff;
-  background:rgba(255,255,255,.08);
-}
-
 .selected{
-  padding:17px;
-  border-radius:16px;
-  background:#080c17;
-  border:1px solid var(--border);
-  margin-bottom:20px;
+padding:16px;
+border-radius:15px;
+background:#090910;
+border:1px solid var(--border);
+margin-bottom:18px
 }
-
 .selected small{
-  display:block;
-  color:#7f899d;
-  font-size:10px;
+display:block;
+color:#858897;
+font-size:10px
 }
-
 .selected strong{
-  display:block;
-  margin:8px 0;
-  color:var(--gold);
-  font-size:18px;
+display:block;
+margin:7px 0;
+color:var(--gold);
+font-size:18px
 }
-
 .modal-box label{
-  display:block;
-  margin-bottom:9px;
-  font-size:13px;
+display:block;
+font-size:12px;
+margin-bottom:8px
 }
-
 .modal-box input{
-  width:100%;
-  height:52px;
-  padding:0 15px;
-  border-radius:13px;
-  background:#070b15;
-  border:1px solid #30394e;
-  color:#fff;
-  outline:none;
-  direction:ltr;
-  text-align:left;
-  font-size:15px;
-  transition:.2s;
+width:100%;
+height:52px;
+padding:0 15px;
+border-radius:12px;
+border:1px solid #30303d;
+background:#08080f;
+color:#fff;
+outline:none;
+direction:ltr;
+text-align:left;
+font-size:15px
 }
-
-.modal-box input:focus{
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(255,210,28,.08);
-}
-
+.modal-box input:focus{border-color:var(--gold)}
 .id-hint{
-  margin-top:9px;
-  color:#7f899d;
-  font-size:10px;
-  line-height:1.8;
+font-size:10px;
+color:#777b8b;
+margin-top:8px
 }
-
-/* ================= LOADING ================= */
-
+.account-loading,.account-result,.account-error{
+display:none;
+margin-top:15px;
+padding:14px;
+border-radius:13px
+}
 .account-loading{
-  display:none;
-  align-items:center;
-  gap:10px;
-  margin-top:17px;
-  padding:14px;
-  border-radius:13px;
-  background:rgba(255,210,28,.05);
-  border:1px solid rgba(255,210,28,.13);
-  color:#cbd2df;
-  font-size:12px;
+align-items:center;
+gap:10px;
+background:#171722;
+color:#c7c9d2;
+font-size:11px
 }
-
 .loader{
-  width:18px;
-  height:18px;
-  border:2px solid #444c5c;
-  border-top-color:var(--gold);
-  border-radius:50%;
-  animation:spin .7s linear infinite;
+width:19px;height:19px;
+border:2px solid #444;
+border-top-color:var(--gold);
+border-radius:50%;
+animation:spin .7s linear infinite
 }
-
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-/* ================= ACCOUNT RESULT ================= */
-
+@keyframes spin{to{transform:rotate(360deg)}}
 .account-result{
-  display:none;
-  margin-top:17px;
-  padding:16px;
-  border-radius:16px;
-  background:rgba(57,229,140,.055);
-  border:1px solid rgba(57,229,140,.25);
+background:rgba(55,230,154,.07);
+border:1px solid rgba(55,230,154,.28)
 }
-
 .account-title{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  margin-bottom:12px;
-  color:var(--green);
-  font-weight:bold;
-  font-size:13px;
+color:var(--green);
+font-weight:bold;
+font-size:13px;
+margin-bottom:10px
 }
-
-.account-title:before{
-  content:"✓";
-  width:22px;
-  height:22px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:rgba(57,229,140,.12);
-}
-
 .account-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  font-size:12px;
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:9px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
+font-size:11px
 }
-
-.account-row:last-child{
-  border-bottom:0;
-}
-
-.account-row span{
-  color:#8792a6;
-}
-
-.account-row b{
-  color:#fff;
-  max-width:65%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.account-name{
-  color:#ffd21c !important;
-}
-
-/* ================= ERROR ================= */
-
+.account-row:last-child{border:0}
+.account-row span{color:#818493}
+.account-row b{color:#fff;word-break:break-word}
 .account-error{
-  display:none;
-  margin-top:15px;
-  padding:13px;
-  border-radius:12px;
-  background:rgba(255,77,109,.07);
-  border:1px solid rgba(255,77,109,.25);
-  color:#ff9aac;
-  font-size:11px;
-  line-height:1.8;
+background:rgba(255,50,80,.08);
+border:1px solid rgba(255,50,80,.25);
+color:#ff909e;
+font-size:11px
 }
-
-/* ================= CONTINUE ================= */
-
 .continue-btn{
-  width:100%;
-  height:50px;
-  margin-top:18px;
-  border:0;
-  border-radius:13px;
-  background:linear-gradient(135deg,var(--gold),var(--orange));
-  color:#111;
-  font-weight:900;
-  transition:.25s;
+width:100%;
+height:49px;
+margin-top:17px;
+border:0;
+border-radius:12px;
+font-weight:1000;
+background:linear-gradient(135deg,var(--gold),var(--orange));
+cursor:pointer;
+color:#111
 }
-
-.continue-btn:not(:disabled):hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 35px rgba(255,145,0,.2);
-}
-
 .continue-btn:disabled{
-  opacity:.30;
-  cursor:not-allowed;
+opacity:.3;
+cursor:not-allowed
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
-  padding:35px 0;
-  text-align:center;
-  color:#6f798c;
-  border-top:1px solid var(--border);
-  font-size:11px;
+padding:35px 0;
+border-top:1px solid var(--border);
+text-align:center;
+color:#666a7b;
+font-size:11px
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:1050px){
-  .hero-card{
-    opacity:.45;
-    right:-20px;
-  }
-
-  .categories,
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
+/* MOBILE */
+@media(max-width:950px){
+.categories,.products{grid-template-columns:repeat(2,1fr)}
 }
-
-@media(max-width:700px){
-  .nav{
-    height:66px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    min-height:520px;
-  }
-
-  .hero-card{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:47px;
-    letter-spacing:-2px;
-  }
-
-  .hero p{
-    font-size:13px;
-  }
-
-  .stats{
-    margin-top:-35px;
-  }
-
-  .stats-grid{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:65px 0;
-  }
-
-  .title h2{
-    font-size:25px;
-  }
-
-  .categories,
-  .products{
-    gap:10px;
-  }
-
-  .category{
-    padding:12px;
-  }
-
-  .category-image{
-    height:95px;
-  }
-
-  .category-symbol{
-    font-size:43px;
-  }
-
-  .product{
-    padding:9px;
-  }
-
-  .product-image{
-    height:130px;
-  }
-
-  .product-symbol{
-    font-size:52px;
-  }
-
-  .product h3{
-    font-size:13px;
-  }
-
-  .product-info{
-    font-size:10px;
-  }
-
-  .price{
-    font-size:14px;
-  }
-
-  .buy{
-    padding:11px 7px;
-    font-size:12px;
-  }
-
-  .features{
-    grid-template-columns:1fr;
-  }
+@media(max-width:650px){
+.nav-links,.nav-btn{display:none}
+.nav{height:65px}
+.hero{min-height:560px}
+.hero h1{font-size:45px;letter-spacing:-2px}
+.hero p{font-size:12px}
+.categories,.products{grid-template-columns:1fr 1fr;gap:9px}
+.category{padding:14px;min-height:145px}
+.cat-icon{width:55px;height:55px;font-size:23px}
+.category h3{font-size:14px}
+.product{padding:9px}
+.product-image{height:125px}
+.product-emoji{font-size:45px}
+.product h3{font-size:13px}
+.product-info{font-size:10px}
+.price{font-size:14px}
+.features{grid-template-columns:1fr}
+.section-title h2{font-size:23px}
 }
+</style>
+</head>
 
-@media(max-width:430px){
-  .hero h1{
-    font-size:40px;
-  }
+<body>
 
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .hero-button,
-  .hero-secondary{
-    width:100%;
-  }
-
-  .modal-box{
-    padding:18px;
-  }
-}
-</style></head><body><!-- ================= HEADER ================= --><header>
-  <div class="nav"><div class="logo">
-  <div class="logo-icon">🎮</div>
-  <div>Loot Box <span>Store</span></div>
-</div>
+<header>
+<div class="container nav">
+<div class="logo">Loot Box <span>Store</span></div>
 
 <div class="nav-links">
-  <a href="#">خانه</a>
-  <a href="#categories">دسته‌بندی</a>
-  <a href="#products">محصولات</a>
-  <a href="#support">پشتیبانی</a>
+<a href="#">خانه</a>
+<a href="#categories">دسته‌بندی</a>
+<a href="#products">محصولات</a>
+<a href="#support">پشتیبانی</a>
 </div>
 
-  </div>
-</header><!-- ================= HERO ================= --><section class="hero">  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>  <div class="container hero-content"><div class="badge">
-  <span class="badge-dot"></span>
-  فروشگاه گیمینگ آنلاین
+<a class="nav-btn" href="#products">شروع خرید</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-orb orb1"></div>
+<div class="hero-orb orb2"></div>
+
+<div class="container hero-content">
+
+<div class="badge">
+<i></i>
+فروشگاه آنلاین محصولات گیمینگ
 </div>
 
 <h1>
-  دنیای
-  <span class="gradient-text">گیمینگ</span>
-  تو اینجاست
+قدرت بیشتر،
+<br>
+<span>بازی بهتر.</span>
 </h1>
 
 <p>
-  UC، Prime، Prime Plus و پک‌های ویژه PUBG Mobile
-  را با یک تجربه خرید سریع، ساده و حرفه‌ای انتخاب کنید.
+UC، Prime، Prime Plus و پک‌های ویژه پابجی موبایل
+را با تجربه‌ای سریع، ساده و حرفه‌ای تهیه کنید.
+برای ثبت سفارش فقط Player ID کافی است.
 </p>
 
-<div class="hero-buttons">
-  <button class="hero-button" onclick="showCategory('uc')">
-    مشاهده بسته‌های UC
-  </button>
+<div class="hero-actions">
+<button class="primary-btn" onclick="showCategory('uc')">
+مشاهده محصولات
+</button>
 
-  <button class="hero-secondary" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
-    مشاهده دسته‌بندی‌ها
-  </button>
+<button class="secondary-btn" onclick="document.getElementById('support').scrollIntoView()">
+چرا Loot Box؟
+</button>
 </div>
 
-  </div>  <div class="hero-card">
-    <div class="hero-card-inner">
-      <div class="hero-card-icon">💎</div>
-      <strong>UC & Gaming</strong>
-      <small>انتخاب کن و سفارشت رو ثبت کن</small>
-    </div>
-  </div></section><!-- ================= STATS ================= --><div class="stats">
-  <div class="container"><div class="stats-grid">
-
-  <div class="stat">
-    <div class="stat-icon">⚡</div>
-    <div>
-      <strong>پردازش سریع</strong>
-      <span>ثبت سریع اطلاعات سفارش</span>
-    </div>
-  </div>
-
-  <div class="stat">
-    <div class="stat-icon">🛡️</div>
-    <div>
-      <strong>بدون نیاز به رمز</strong>
-      <span>فقط Player ID کافی است</span>
-    </div>
-  </div>
-
-  <div class="stat">
-    <div class="stat-icon">🎯</div>
-    <div>
-      <strong>بررسی اکانت</strong>
-      <span>نمایش اطلاعات اکانت قبل از سفارش</span>
-    </div>
-  </div>
-
+<div class="stats">
+<div class="stat">
+<b>⚡ سریع</b>
+<span>پردازش سفارش</span>
 </div>
 
-  </div>
-</div><!-- ================= CATEGORIES ================= --><section id="categories">  <div class="container"><div class="title">
-  <div class="title-row">
-    <div>
-      <h2>دسته‌بندی محصولات</h2>
-      <p>محصول موردنظر خود را انتخاب کنید</p>
-    </div>
-  </div>
+<div class="stat">
+<b>🛡 امن</b>
+<span>بدون نیاز به رمز</span>
+</div>
+
+<div class="stat">
+<b>🎮 PUBG</b>
+<span>پشتیبانی از Global</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="categories">
+<div class="container">
+
+<div class="section-head">
+<div class="section-title">
+<h2>دسته‌بندی محصولات</h2>
+<p>محصول موردنظرت را انتخاب کن</p>
+</div>
+<div class="live">● سیستم آنلاین</div>
 </div>
 
 <div class="categories">
 
-  <div class="category active" onclick="showCategory('uc')">
-    <div class="category-image">
-      <div class="category-symbol">💎</div>
-    </div>
-    <h3>UC</h3>
-    <p>بسته‌های UC پابجی موبایل</p>
-  </div>
-
-  <div class="category" onclick="showCategory('prime')">
-    <div class="category-image">
-      <div class="category-symbol">👑</div>
-    </div>
-    <h3>Prime</h3>
-    <p>اشتراک‌های Prime</p>
-  </div>
-
-  <div class="category" onclick="showCategory('primeplus')">
-    <div class="category-image">
-      <div class="category-symbol">🔥</div>
-    </div>
-    <h3>Prime Plus</h3>
-    <p>اشتراک‌های Prime Plus</p>
-  </div>
-
-  <div class="category" onclick="showCategory('onetime')">
-    <div class="category-image">
-      <div class="category-symbol">🎁</div>
-    </div>
-    <h3>پک‌های ویژه</h3>
-    <p>پک‌های یک‌بارخرید</p>
-  </div>
-
+<div class="category active" onclick="showCategory('uc')">
+<div class="cat-icon">🪙</div>
+<h3>UC پابجی</h3>
+<p>بسته‌های مختلف UC</p>
 </div>
 
-  </div></section><!-- ================= PRODUCTS ================= --><section id="products">  <div class="container"><div class="title">
-  <h2 id="productTitle">UC</h2>
-  <p id="productSubtitle">تمام بسته‌های UC را انتخاب کنید</p>
+<div class="category" onclick="showCategory('prime')">
+<div class="cat-icon">👑</div>
+<h3>Prime</h3>
+<p>اشتراک‌های Prime</p>
+</div>
+
+<div class="category" onclick="showCategory('primeplus')">
+<div class="cat-icon">💎</div>
+<h3>Prime Plus</h3>
+<p>اشتراک‌های ویژه</p>
+</div>
+
+<div class="category" onclick="showCategory('onetime')">
+<div class="cat-icon">🎁</div>
+<h3>پک ویژه</h3>
+<p>خریدهای یک‌بار مصرف</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="products">
+<div class="container">
+
+<div class="section-head">
+<div class="section-title">
+<h2 id="productTitle">UC</h2>
+<p id="productSubtitle">بسته موردنظر خود را انتخاب کنید</p>
+</div>
 </div>
 
 <div class="products">
 
-  <!-- 60 UC -->
-
-  <div class="product show" data-category="uc">
-    <div class="product-image">
-      <div class="product-symbol">💎</div>
-    </div>
-
-    <div class="product-content">
-      <h3>60 UC</h3>
-      <div class="product-info">بسته UC</div>
-      <div class="price">197,000 تومان</div>
-
-      <button class="buy"
-        onclick="openBuy('60 UC','197,000 تومان')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- 180 UC -->
-
-  <div class="product show" data-category="uc">
-    <div class="product-image">
-      <div class="product-symbol">💎</div>
-    </div>
-
-    <div class="product-content">
-      <h3>180 UC</h3>
-      <div class="product-info">بسته UC</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('180 UC','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- 325 UC -->
-
-  <div class="product show" data-category="uc">
-    <div class="product-image">
-      <div class="product-symbol">💎</div>
-    </div>
-
-    <div class="product-content">
-      <h3>325 UC</h3>
-      <div class="product-info">بسته UC</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('325 UC','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- 660 UC -->
-
-  <div class="product show" data-category="uc">
-    <div class="product-image">
-      <div class="product-symbol">💎</div>
-    </div>
-
-    <div class="product-content">
-      <h3>660 UC</h3>
-      <div class="product-info">بسته محبوب</div>
-      <div class="price">1,970,000 تومان</div>
-
-      <button class="buy"
-        onclick="openBuy('660 UC','1,970,000 تومان')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- 1800 UC -->
-
-  <div class="product show" data-category="uc">
-    <div class="product-image">
-      <div class="product-symbol">💎</div>
-    </div>
-
-    <div class="product-content">
-      <h3>1800 UC</h3>
-      <div class="product-info">بسته ویژه</div>
-      <div class="price">4,925,000 تومان</div>
-
-      <button class="buy"
-        onclick="openBuy('1800 UC','4,925,000 تومان')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- PRIME -->
-
-  <div class="product" data-category="prime">
-    <div class="product-image">
-      <div class="product-symbol">👑</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime — 1 ماه</h3>
-      <div class="product-info">اشتراک Prime</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime — 1 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image">
-      <div class="product-symbol">👑</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime — 3 ماه</h3>
-      <div class="product-info">اشتراک Prime</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime — 3 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image">
-      <div class="product-symbol">👑</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime — 6 ماه</h3>
-      <div class="product-info">اشتراک Prime</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime — 6 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="prime">
-    <div class="product-image">
-      <div class="product-symbol">👑</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime — 12 ماه</h3>
-      <div class="product-info">اشتراک Prime</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime — 12 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- PRIME PLUS -->
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image">
-      <div class="product-symbol">🔥</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime Plus — 1 ماه</h3>
-      <div class="product-info">اشتراک Prime Plus</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime Plus — 1 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image">
-      <div class="product-symbol">🔥</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime Plus — 3 ماه</h3>
-      <div class="product-info">اشتراک Prime Plus</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime Plus — 3 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image">
-      <div class="product-symbol">🔥</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime Plus — 6 ماه</h3>
-      <div class="product-info">اشتراک Prime Plus</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime Plus — 6 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="primeplus">
-    <div class="product-image">
-      <div class="product-symbol">🔥</div>
-    </div>
-
-    <div class="product-content">
-      <h3>Prime Plus — 12 ماه</h3>
-      <div class="product-info">اشتراک Prime Plus</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('Prime Plus — 12 ماه','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <!-- ONE TIME -->
-
-  <div class="product" data-category="onetime">
-    <div class="product-image">
-      <div class="product-symbol">🎁</div>
-    </div>
-
-    <div class="product-content">
-      <h3>پک یک‌بارخرید اول</h3>
-      <div class="product-info">قابل خرید یک‌بار برای هر اکانت</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('پک یک‌بارخرید اول','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="onetime">
-    <div class="product-image">
-      <div class="product-symbol">🎁</div>
-    </div>
-
-    <div class="product-content">
-      <h3>پک یک‌بارخرید دوم</h3>
-      <div class="product-info">پک ویژه</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('پک یک‌بارخرید دوم','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
-  <div class="product" data-category="onetime">
-    <div class="product-image">
-      <div class="product-symbol">🎁</div>
-    </div>
-
-    <div class="product-content">
-      <h3>پک یک‌بارخرید سوم</h3>
-      <div class="product-info">پک ویژه</div>
-      <div class="price">قیمت به‌زودی</div>
-
-      <button class="buy"
-        onclick="openBuy('پک یک‌بارخرید سوم','قیمت به‌زودی')">
-        خرید
-      </button>
-    </div>
-  </div>
-
+<!-- UC -->
+<div class="product show" data-category="uc">
+<div class="product-image"><div class="product-emoji">🪙</div></div>
+<h3>60 UC</h3>
+<div class="product-info">بسته اقتصادی UC</div>
+<div class="price">197,000 تومان</div>
+<button class="buy" onclick="openBuy('60 UC','197,000 تومان')">خرید</button>
 </div>
 
-  </div>
-</section><!-- ================= SUPPORT ================= --><section id="support">  <div class="container"><div class="title">
-  <h2>چرا Loot Box Store؟</h2>
-  <p>تجربه‌ای ساده و حرفه‌ای برای گیمرها</p>
+<div class="product show" data-category="uc">
+<div class="product-image"><div class="product-emoji">🪙</div></div>
+<h3>180 UC</h3>
+<div class="product-info">بسته UC</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('180 UC','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product show" data-category="uc">
+<div class="product-image"><div class="product-emoji">🔥</div></div>
+<h3>325 UC</h3>
+<div class="product-info">بسته محبوب</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('325 UC','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product show" data-category="uc">
+<div class="product-image"><div class="product-emoji">💰</div></div>
+<h3>660 UC</h3>
+<div class="product-info">بسته محبوب</div>
+<div class="price">1,970,000 تومان</div>
+<button class="buy" onclick="openBuy('660 UC','1,970,000 تومان')">خرید</button>
+</div>
+
+<div class="product show" data-category="uc">
+<div class="product-image"><div class="product-emoji">💎</div></div>
+<h3>1800 UC</h3>
+<div class="product-info">بسته ویژه</div>
+<div class="price">4,925,000 تومان</div>
+<button class="buy" onclick="openBuy('1800 UC','4,925,000 تومان')">خرید</button>
+</div>
+
+<!-- PRIME -->
+<div class="product" data-category="prime">
+<div class="product-image"><div class="product-emoji">👑</div></div>
+<h3>Prime — 1 ماه</h3>
+<div class="product-info">اشتراک Prime</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime — 1 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="prime">
+<div class="product-image"><div class="product-emoji">👑</div></div>
+<h3>Prime — 3 ماه</h3>
+<div class="product-info">اشتراک Prime</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime — 3 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="prime">
+<div class="product-image"><div class="product-emoji">👑</div></div>
+<h3>Prime — 6 ماه</h3>
+<div class="product-info">اشتراک Prime</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime — 6 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="prime">
+<div class="product-image"><div class="product-emoji">👑</div></div>
+<h3>Prime — 12 ماه</h3>
+<div class="product-info">اشتراک Prime</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime — 12 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<!-- PRIME PLUS -->
+<div class="product" data-category="primeplus">
+<div class="product-image"><div class="product-emoji">💎</div></div>
+<h3>Prime Plus — 1 ماه</h3>
+<div class="product-info">اشتراک Prime Plus</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime Plus — 1 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="primeplus">
+<div class="product-image"><div class="product-emoji">💎</div></div>
+<h3>Prime Plus — 3 ماه</h3>
+<div class="product-info">اشتراک Prime Plus</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime Plus — 3 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="primeplus">
+<div class="product-image"><div class="product-emoji">💎</div></div>
+<h3>Prime Plus — 6 ماه</h3>
+<div class="product-info">اشتراک Prime Plus</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime Plus — 6 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="primeplus">
+<div class="product-image"><div class="product-emoji">💎</div></div>
+<h3>Prime Plus — 12 ماه</h3>
+<div class="product-info">اشتراک Prime Plus</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('Prime Plus — 12 ماه','قیمت به‌زودی')">خرید</button>
+</div>
+
+<!-- ONE TIME -->
+<div class="product" data-category="onetime">
+<div class="product-image"><div class="product-emoji">🎁</div></div>
+<h3>پک یک‌بارخرید اول</h3>
+<div class="product-info">پک ویژه</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('پک یک‌بارخرید اول','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="onetime">
+<div class="product-image"><div class="product-emoji">🎁</div></div>
+<h3>پک یک‌بارخرید دوم</h3>
+<div class="product-info">پک ویژه</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('پک یک‌بارخرید دوم','قیمت به‌زودی')">خرید</button>
+</div>
+
+<div class="product" data-category="onetime">
+<div class="product-image"><div class="product-emoji">🎁</div></div>
+<h3>پک یک‌بارخرید سوم</h3>
+<div class="product-info">پک ویژه</div>
+<div class="price">قیمت به‌زودی</div>
+<button class="buy" onclick="openBuy('پک یک‌بارخرید سوم','قیمت به‌زودی')">خرید</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="support">
+<div class="container">
+
+<div class="section-head">
+<div class="section-title">
+<h2>چرا Loot Box؟</h2>
+<p>تجربه خرید ساده و حرفه‌ای</p>
+</div>
 </div>
 
 <div class="features">
 
-  <div class="feature">
-    <div class="feature-icon">⚡</div>
-    <h3>پردازش سریع</h3>
-    <p>
-      اطلاعات سفارش شما به‌صورت سریع بررسی می‌شود
-      و در ادامه وارد مرحله پرداخت خواهد شد.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🔐</div>
-    <h3>بدون نیاز به رمز</h3>
-    <p>
-      برای بررسی اکانت فقط Player ID لازم است
-      و نیازی به وارد کردن رمز عبور ندارید.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🎧</div>
-    <h3>پشتیبانی</h3>
-    <p>
-      سیستم پشتیبانی و پیگیری سفارش در ادامه
-      به فروشگاه اضافه خواهد شد.
-    </p>
-  </div>
-
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>پردازش سریع</h3>
+<p>سفارش شما پس از تکمیل فرآیند خرید وارد مرحله پردازش می‌شود.</p>
 </div>
 
-  </div></section><!-- ================= BUY MODAL ================= --><div class="modal" id="buyModal">  <div class="modal-box"><div class="modal-top">
-  <h2>تکمیل سفارش</h2>
+<div class="feature">
+<div class="feature-icon">🛡️</div>
+<h3>بدون رمز عبور</h3>
+<p>برای بررسی اکانت فقط Player ID لازم است و رمز عبور دریافت نمی‌شود.</p>
+</div>
 
-  <button class="close" onclick="closeBuy()">×</button>
+<div class="feature">
+<div class="feature-icon">🎮</div>
+<h3>بررسی مستقیم اکانت</h3>
+<p>Player ID از طریق سیستم API بررسی می‌شود تا اطلاعات اکانت نمایش داده شود.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="buyModal">
+
+<div class="modal-box">
+
+<div class="modal-top">
+<h2>تکمیل سفارش</h2>
+<button class="close" onclick="closeBuy()">×</button>
 </div>
 
 <div class="selected">
-
-  <small>محصول انتخاب‌شده</small>
-
-  <strong id="selectedProduct">---</strong>
-
-  <small id="selectedPrice">---</small>
-
+<small>محصول انتخاب‌شده</small>
+<strong id="selectedProduct">---</strong>
+<small id="selectedPrice">---</small>
 </div>
 
-<label for="playerId">
-  Player ID
-</label>
+<label for="playerId">Player ID</label>
 
 <input
-  id="playerId"
-  type="text"
-  inputmode="numeric"
-  maxlength="20"
-  autocomplete="off"
-  placeholder="Player ID خود را وارد کنید"
-  oninput="checkId()"
->
+id="playerId"
+type="text"
+inputmode="numeric"
+maxlength="20"
+autocomplete="off"
+placeholder="Player ID خود را وارد کنید">
 
 <div class="id-hint">
-  Player ID را از پروفایل PUBG Mobile کپی کنید.
-  رمز عبور لازم نیست.
+Player ID را از پروفایل PUBG Mobile کپی کنید.
 </div>
 
 <div id="accountLoading" class="account-loading">
-  <div class="loader"></div>
-  <span>در حال بررسی Player ID...</span>
+<div class="loader"></div>
+<span>در حال بررسی اکانت...</span>
 </div>
 
 <div id="accountResult" class="account-result">
 
-  <div class="account-title">
-    اکانت با موفقیت پیدا شد
-  </div>
+<div class="account-title">
+✓ اکانت پیدا شد
+</div>
 
-  <div class="account-row">
-    <span>Player ID</span>
-    <b id="resultId">---</b>
-  </div>
+<div class="account-row">
+<span>Player ID</span>
+<b id="resultId">---</b>
+</div>
 
-  <div class="account-row">
-    <span>نام اکانت</span>
-    <b id="resultName" class="account-name">---</b>
-  </div>
+<div class="account-row">
+<span>نام اکانت</span>
+<b id="resultName">---</b>
+</div>
 
 </div>
 
 <div id="accountError" class="account-error"></div>
 
 <button
-  id="continueBtn"
-  class="continue-btn"
-  onclick="continueOrder()"
-  disabled
->
-  ادامه سفارش
+id="continueBtn"
+class="continue-btn"
+onclick="continueOrder()"
+disabled>
+ادامه سفارش
 </button>
 
-  </div></div><footer>
-  © 2026 Loot Box Store — تمامی حقوق محفوظ است.
-</footer><script>
+</div>
+</div>
 
-/* =========================================================
-   API
-   ========================================================= */
+<footer>
+© 2026 Loot Box Store — تمامی حقوق محفوظ است.
+</footer>
 
-const API_URL = "https://loot-box-api.mash43304.workers.dev";
+<script>
+
+/* =========================
+   CONFIG
+========================= */
+
+const API_URL =
+"https://loot-box-api.mash43304.workers.dev/check-player";
 
 
-/* =========================================================
+/* =========================
    CATEGORY
-   ========================================================= */
+========================= */
 
-const categoryInfo = {
-
-  uc:{
-    title:"UC",
-    subtitle:"تمام بسته‌های UC را انتخاب کنید"
-  },
-
-  prime:{
-    title:"Prime",
-    subtitle:"اشتراک‌های Prime"
-  },
-
-  primeplus:{
-    title:"Prime Plus",
-    subtitle:"اشتراک‌های Prime Plus"
-  },
-
-  onetime:{
-    title:"پک‌های ویژه",
-    subtitle:"پک‌های ویژه قابل خرید یک‌باره"
-  }
-
+const categoryInfo={
+uc:{
+title:"UC",
+subtitle:"بسته موردنظر خود را انتخاب کنید"
+},
+prime:{
+title:"Prime",
+subtitle:"اشتراک‌های Prime"
+},
+primeplus:{
+title:"Prime Plus",
+subtitle:"اشتراک‌های Prime Plus"
+},
+onetime:{
+title:"پک‌های ویژه",
+subtitle:"پک‌های یک‌بارخرید"
+}
 };
-
 
 function showCategory(category){
 
-  document
-    .querySelectorAll(".product")
-    .forEach(product=>{
+document.querySelectorAll(".product").forEach(product=>{
+product.classList.toggle(
+"show",
+product.dataset.category===category
+);
+});
 
-      if(product.dataset.category === category){
-        product.classList.add("show");
-      }else{
-        product.classList.remove("show");
-      }
+document.querySelectorAll(".category").forEach(item=>{
+item.classList.remove("active");
+});
 
-    });
+const indexes={
+uc:0,
+prime:1,
+primeplus:2,
+onetime:3
+};
 
+const cats=document.querySelectorAll(".category");
 
-  document
-    .querySelectorAll(".category")
-    .forEach(item=>{
-      item.classList.remove("active");
-    });
+if(cats[indexes[category]]){
+cats[indexes[category]].classList.add("active");
+}
 
+document.getElementById("productTitle").textContent=
+categoryInfo[category].title;
 
-  const indexes = {
-    uc:0,
-    prime:1,
-    primeplus:2,
-    onetime:3
-  };
+document.getElementById("productSubtitle").textContent=
+categoryInfo[category].subtitle;
 
-
-  const selectedCategory =
-    document.querySelectorAll(".category")[indexes[category]];
-
-
-  if(selectedCategory){
-    selectedCategory.classList.add("active");
-  }
-
-
-  document.getElementById("productTitle").textContent =
-    categoryInfo[category].title;
-
-
-  document.getElementById("productSubtitle").textContent =
-    categoryInfo[category].subtitle;
-
-
-  document.getElementById("products").scrollIntoView({
-    behavior:"smooth"
-  });
-
+document.getElementById("products").scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 }
 
 
-/* =========================================================
+/* =========================
    BUY
-   ========================================================= */
+========================= */
 
-let selectedProduct = "";
-let selectedPrice = "";
-let verifiedId = "";
-let verifiedName = "";
-
-let lookupTimer = null;
-let lookupController = null;
-
+let selectedProduct="";
+let selectedPrice="";
+let verifiedId="";
+let accountName="";
 
 function openBuy(product,price){
 
-  selectedProduct = product;
-  selectedPrice = price;
+selectedProduct=product;
+selectedPrice=price;
+verifiedId="";
+accountName="";
 
-  verifiedId = "";
-  verifiedName = "";
+document.getElementById("selectedProduct").textContent=product;
+document.getElementById("selectedPrice").textContent=price;
 
-  document.getElementById("selectedProduct").textContent = product;
-  document.getElementById("selectedPrice").textContent = price;
+document.getElementById("playerId").value="";
 
-  document.getElementById("playerId").value = "";
+document.getElementById("accountLoading").style.display="none";
+document.getElementById("accountResult").style.display="none";
+document.getElementById("accountError").style.display="none";
 
-  document.getElementById("accountLoading").style.display = "none";
-  document.getElementById("accountResult").style.display = "none";
-  document.getElementById("accountError").style.display = "none";
+document.getElementById("continueBtn").disabled=true;
 
-  document.getElementById("resultId").textContent = "---";
-  document.getElementById("resultName").textContent = "---";
+document.getElementById("buyModal").classList.add("open");
 
-  document.getElementById("continueBtn").disabled = true;
-
-  document.getElementById("buyModal").classList.add("open");
-
-  setTimeout(()=>{
-    document.getElementById("playerId").focus();
-  },150);
-
+setTimeout(()=>{
+document.getElementById("playerId").focus();
+},150);
 }
-
 
 function closeBuy(){
-
-  if(lookupController){
-    lookupController.abort();
-    lookupController = null;
-  }
-
-  clearTimeout(lookupTimer);
-
-  document.getElementById("buyModal").classList.remove("open");
-
+document.getElementById("buyModal").classList.remove("open");
 }
 
 
-/* =========================================================
-   ACCOUNT LOOKUP
-   ========================================================= */
+/* =========================
+   API RESPONSE PARSER
+========================= */
+
+function findValue(obj,keys){
+
+if(!obj || typeof obj!=="object") return null;
+
+for(const key of keys){
+
+if(
+Object.prototype.hasOwnProperty.call(obj,key) &&
+obj[key] !== null &&
+obj[key] !== undefined &&
+String(obj[key]).trim() !== ""
+){
+return obj[key];
+}
+}
+
+for(const key in obj){
+
+if(typeof obj[key]==="object"){
+
+const found=findValue(obj[key],keys);
+
+if(found !== null) return found;
+
+}
+}
+
+return null;
+}
+
+
+/* =========================
+   CHECK PLAYER
+========================= */
+
+let lookupTimer=null;
+let requestNumber=0;
 
 function checkId(){
 
-  const input =
-    document.getElementById("playerId").value.trim();
+const input=document
+.getElementById("playerId")
+.value
+.trim();
 
-  const loading =
-    document.getElementById("accountLoading");
+const loading=document.getElementById("accountLoading");
+const result=document.getElementById("accountResult");
+const error=document.getElementById("accountError");
+const button=document.getElementById("continueBtn");
 
-  const result =
-    document.getElementById("accountResult");
+clearTimeout(lookupTimer);
 
-  const error =
-    document.getElementById("accountError");
+requestNumber++;
 
-  const continueButton =
-    document.getElementById("continueBtn");
+const currentRequest=requestNumber;
 
+loading.style.display="none";
+result.style.display="none";
+error.style.display="none";
+button.disabled=true;
 
-  clearTimeout(lookupTimer);
+verifiedId="";
+accountName="";
 
+if(!input) return;
 
-  if(lookupController){
-    lookupController.abort();
-    lookupController = null;
-  }
+if(!/^[0-9]+$/.test(input)){
 
+error.textContent=
+"Player ID باید فقط شامل عدد باشد.";
 
-  loading.style.display = "none";
-  result.style.display = "none";
-  error.style.display = "none";
+error.style.display="block";
 
-  continueButton.disabled = true;
+return;
+}
 
-  verifiedId = "";
-  verifiedName = "";
+if(input.length<6) return;
 
+loading.style.display="flex";
 
-  if(input.length === 0){
-    return;
-  }
+lookupTimer=setTimeout(async()=>{
 
+try{
 
-  if(!/^[0-9]+$/.test(input)){
+const response=await fetch(
+API_URL+"?user_id="+encodeURIComponent(input),
+{
+method:"GET",
+headers:{
+"Accept":"application/json"
+}
+}
+);
 
-    error.textContent =
-      "Player ID باید فقط شامل عدد باشد.";
+if(currentRequest!==requestNumber) return;
 
-    error.style.display = "block";
+const text=await response.text();
 
-    return;
-  }
+let data;
 
+try{
+data=JSON.parse(text);
+}catch{
+throw new Error("پاسخ API معتبر نیست");
+}
 
-  if(input.length < 6){
-    return;
-  }
-
-
-  loading.style.display = "flex";
-
-
-  lookupTimer = setTimeout(()=>{
-    lookupAccount(input);
-  },500);
-
+if(!response.ok){
+throw new Error(
+data?.error ||
+data?.message ||
+"Player ID پیدا نشد"
+);
 }
 
 
-/* =========================================================
-   API REQUEST
-   ========================================================= */
+/*
+  API های مختلف ممکن است
+  نام فیلد را متفاوت برگردانند.
+  این بخش چند حالت رایج را
+  بررسی می‌کند.
+*/
 
-async function lookupAccount(playerId){
+const returnedId=findValue(
+data,
+[
+"user_id",
+"userId",
+"player_id",
+"playerId",
+"uid",
+"uid_id",
+"id"
+]
+);
 
-  const loading =
-    document.getElementById("accountLoading");
+const name=findValue(
+data,
+[
+"username",
+"user_name",
+"userName",
+"nickname",
+"nick_name",
+"nickname",
+"name",
+"player_name",
+"playerName"
+]
+);
 
-  const result =
-    document.getElementById("accountResult");
+if(!returnedId && !name){
 
-  const error =
-    document.getElementById("accountError");
+throw new Error(
+data?.error ||
+data?.message ||
+"اطلاعات اکانت در پاسخ API پیدا نشد."
+);
+}
 
-  const continueButton =
-    document.getElementById("continueBtn");
+verifiedId=input;
 
+accountName=
+name ?
+String(name) :
+"نام اکانت دریافت نشد";
 
-  try{
+document.getElementById("resultId").textContent=
+returnedId || input;
 
-    lookupController = new AbortController();
+document.getElementById("resultName").textContent=
+accountName;
 
+loading.style.display="none";
+result.style.display="block";
+button.disabled=false;
 
-    /*
-      API فعلی شما
-      ابتدا با player_id ارسال می‌شود.
-    */
+}catch(err){
 
-    const url =
-      API_URL +
-      "?player_id=" +
-      encodeURIComponent(playerId);
+if(currentRequest!==requestNumber) return;
 
+loading.style.display="none";
 
-    const response =
-      await fetch(url,{
-        method:"GET",
-        headers:{
-          "Accept":"application/json"
-        },
-        signal:lookupController.signal
-      });
+error.textContent=
+err.message ||
+"ارتباط با سرور برقرار نشد.";
 
+error.style.display="block";
 
-    if(!response.ok){
-      throw new Error("API_ERROR");
-    }
-
-
-    const json =
-      await response.json();
-
-
-    /*
-      ساختار پاسخ نمونه شما:
-
-      {
-        status:true,
-        code:200,
-        message:"ID Found",
-        data:{
-          username:"「・TIGER・」",
-          user_id:"51513088899",
-          show_uid:"51513088899",
-          zone:null,
-          game:"..."
-        }
-      }
-    */
-
-
-    if(
-      json &&
-      json.status === true &&
-      json.data
-    ){
-
-      const data = json.data;
-
-
-      const name =
-        data.username ||
-        data.name ||
-        data.nickname ||
-        data.player_name ||
-        data.playerName ||
-        "نام اکانت پیدا نشد";
-
-
-      const id =
-        data.user_id ||
-        data.show_uid ||
-        playerId;
-
-
-      loading.style.display = "none";
-
-
-      verifiedId = String(id);
-      verifiedName = String(name);
-
-
-      document.getElementById("resultId").textContent =
-        verifiedId;
-
-
-      document.getElementById("resultName").textContent =
-        verifiedName;
-
-
-      result.style.display = "block";
-
-
-      continueButton.disabled = false;
-
-
-      return;
-    }
-
-
-    throw new Error(
-      json && json.message
-        ? json.message
-        : "ACCOUNT_NOT_FOUND"
-    );
-
-
-  }catch(err){
-
-    if(err.name === "AbortError"){
-      return;
-    }
-
-
-    loading.style.display = "none";
-
-
-    error.textContent =
-      "اکانت پیدا نشد یا اتصال به سرویس بررسی اکانت با مشکل مواجه شد.";
-
-
-    error.style.display = "block";
-
-
-    continueButton.disabled = true;
-
-
-    verifiedId = "";
-    verifiedName = "";
-
-  }
+button.disabled=true;
 
 }
 
+},500);
+}
 
-/* =========================================================
+
+/* =========================
    CONTINUE
-   ========================================================= */
+========================= */
 
 function continueOrder(){
 
-  if(!verifiedId || !verifiedName){
-    return;
-  }
+if(!verifiedId) return;
 
-
-  alert(
-    "محصول: " +
-    selectedProduct +
-
-    "\nقیمت: " +
-    selectedPrice +
-
-    "\nPlayer ID: " +
-    verifiedId +
-
-    "\nنام اکانت: " +
-    verifiedName +
-
-    "\n\nمرحله پرداخت در ادامه اضافه می‌شود."
-  );
-
+alert(
+"محصول: "+selectedProduct+
+"\nPlayer ID: "+verifiedId+
+"\nنام اکانت: "+accountName+
+"\n\nمرحله پرداخت در ادامه اضافه می‌شود."
+);
 }
 
 
-/* =========================================================
-   CLOSE MODAL WITH BACKGROUND
-   ========================================================= */
+/* =========================
+   CLOSE MODAL
+========================= */
 
-document
-  .getElementById("buyModal")
-  .addEventListener("click",function(event){
+document.getElementById("buyModal")
+.addEventListener("click",function(event){
 
-    if(event.target === this){
-      closeBuy();
-    }
-
-  });
-
-
-/* =========================================================
-   ESC CLOSE
-   ========================================================= */
-
-document.addEventListener("keydown",function(event){
-
-  if(event.key === "Escape"){
-    closeBuy();
-  }
+if(event.target===this){
+closeBuy();
+}
 
 });
 
 
-/* =========================================================
-   DEFAULT CATEGORY
-   ========================================================= */
+/* =========================
+   ENTER KEY
+========================= */
 
-document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("playerId")
+.addEventListener("keydown",function(event){
 
-  showCategory("uc");
+if(event.key==="Enter" &&
+!document.getElementById("continueBtn").disabled){
+
+continueOrder();
+
+}
 
 });
 
-</script></body>
-</html>
+
+/* =========================
+   DEFAULT
+========================= */
+
+showCategory("uc");
+
+</script>
+
+</body>
+  </html>
