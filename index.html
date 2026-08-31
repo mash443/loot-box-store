@@ -58,10 +58,20 @@ justify-content:space-between;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:10px;
 font-size:22px;
 font-weight:900;
 letter-spacing:.5px;
 text-shadow:0 0 20px rgba(243,186,47,.3);
+}
+
+.logo img {
+width:32px;
+height:32px;
+object-fit:contain;
+filter:drop-shadow(0 0 8px rgba(243,186,47,0.4));
 }
 
 .logo span{color:var(--gold)}
@@ -259,18 +269,15 @@ overflow:hidden;
 position:relative;
 }
 
-.category-image:before{
-font-size:45px;
-filter:drop-shadow(0 5px 15px rgba(0,0,0,.5));
+.category-image img {
+width:55px;
+height:55px;
+object-fit:contain;
+filter:drop-shadow(0 6px 15px rgba(243,186,47,.3));
 transition:.3s;
 }
 
-.category:hover .category-image:before{transform:scale(1.1)}
-
-.category:nth-child(1) .category-image:before{content:"🪙"}
-.category:nth-child(2) .category-image:before{content:"👑"}
-.category:nth-child(3) .category-image:before{content:"💎"}
-.category:nth-child(4) .category-image:before{content:"🎁"}
+.category:hover .category-image img{transform:scale(1.15) rotate(5deg)}
 
 .category h3{font-size:18px;font-weight:700}
 
@@ -321,19 +328,15 @@ overflow:hidden;
 position:relative;
 }
 
-.product-image:before{
-font-size:60px;
-filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));
+.product-image img {
+width:85px;
+height:85px;
+object-fit:contain;
+filter:drop-shadow(0 10px 25px rgba(243,186,47,.35));
 transition:.3s;
 }
 
-.product:hover .product-image:before{transform:scale(1.08) rotate(5deg)}
-
-.product:nth-child(1) .product-image:before{content:"🪙"}
-.product:nth-child(2) .product-image:before{content:"🪙"}
-.product:nth-child(3) .product-image:before{content:"🪙"}
-.product:nth-child(4) .product-image:before{content:"💰"}
-.product:nth-child(5) .product-image:before{content:"💎"}
+.product:hover .product-image img{transform:scale(1.12) rotate(6deg)}
 
 .product h3{font-size:17px;font-weight:700}
 
@@ -721,6 +724,7 @@ padding:22px;
 <div class="nav">
 
 <div class="logo">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="Loot Box">
 Loot Box <span>Store</span>
 </div>
 
@@ -769,25 +773,33 @@ onclick="showCategory('uc')">
 <div class="categories">
 
 <div class="category active" onclick="showCategory('uc')">
-<div class="category-image"></div>
+<div class="category-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="UC">
+</div>
 <h3>UC</h3>
 <p>بسته‌های یوسی پابجی</p>
 </div>
 
 <div class="category" onclick="showCategory('prime')">
-<div class="category-image"></div>
+<div class="category-image">
+<img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Prime">
+</div>
 <h3>Prime</h3>
 <p>اشتراک پرایم معمولی</p>
 </div>
 
 <div class="category" onclick="showCategory('primeplus')">
-<div class="category-image"></div>
+<div class="category-image">
+<img src="https://cdn-icons-png.flaticon.com/512/2534/2534200.png" alt="Prime Plus">
+</div>
 <h3>Prime Plus</h3>
 <p>اشتراک پرایم پلاس</p>
 </div>
 
 <div class="category" onclick="showCategory('onetime')">
-<div class="category-image"></div>
+<div class="category-image">
+<img src="https://cdn-icons-png.flaticon.com/512/4264/4264833.png" alt="Special Pack">
+</div>
 <h3>پک‌های یک‌بارخرید</h3>
 <p>آفرها و پک‌های ویژه</p>
 </div>
@@ -807,7 +819,9 @@ onclick="showCategory('uc')">
 <div class="products">
 
 <div class="product show" data-category="uc">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="60 UC">
+</div>
 <h3>60 UC</h3>
 <div class="product-info">بسته UC</div>
 <div class="price">197,000 تومان</div>
@@ -815,7 +829,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product show" data-category="uc">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="180 UC">
+</div>
 <h3>180 UC</h3>
 <div class="product-info">بسته UC</div>
 <div class="price">قیمت به‌زودی</div>
@@ -823,7 +839,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product show" data-category="uc">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="325 UC">
+</div>
 <h3>325 UC</h3>
 <div class="product-info">بسته UC</div>
 <div class="price">قیمت به‌زودی</div>
@@ -831,7 +849,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product show" data-category="uc">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="660 UC">
+</div>
 <h3>660 UC</h3>
 <div class="product-info">بسته محبوب</div>
 <div class="price">1,970,000 تومان</div>
@@ -839,7 +859,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product show" data-category="uc">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/929/929571.png" alt="1800 UC">
+</div>
 <h3>1800 UC</h3>
 <div class="product-info">بسته ویژه</div>
 <div class="price">4,925,000 تومان</div>
@@ -847,7 +869,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="prime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Prime">
+</div>
 <h3>Prime — 1 ماه</h3>
 <div class="product-info">اشتراک Prime</div>
 <div class="price">قیمت به‌زودی</div>
@@ -855,7 +879,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="prime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Prime">
+</div>
 <h3>Prime — 3 ماه</h3>
 <div class="product-info">اشتراک Prime</div>
 <div class="price">قیمت به‌زودی</div>
@@ -863,7 +889,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="prime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Prime">
+</div>
 <h3>Prime — 6 ماه</h3>
 <div class="product-info">اشتراک Prime</div>
 <div class="price">قیمت به‌زودی</div>
@@ -871,7 +899,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="prime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Prime">
+</div>
 <h3>Prime — 12 ماه</h3>
 <div class="product-info">اشتراک Prime</div>
 <div class="price">قیمت به‌زودی</div>
@@ -879,7 +909,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="primeplus">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/2534/2534200.png" alt="Prime Plus">
+</div>
 <h3>Prime Plus — 1 ماه</h3>
 <div class="product-info">اشتراک Prime Plus</div>
 <div class="price">قیمت به‌زودی</div>
@@ -887,7 +919,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="primeplus">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/2534/2534200.png" alt="Prime Plus">
+</div>
 <h3>Prime Plus — 3 ماه</h3>
 <div class="product-info">اشتراک Prime Plus</div>
 <div class="price">قیمت به‌زودی</div>
@@ -895,7 +929,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="primeplus">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/2534/2534200.png" alt="Prime Plus">
+</div>
 <h3>Prime Plus — 6 ماه</h3>
 <div class="product-info">اشتراک Prime Plus</div>
 <div class="price">قیمت به‌زودی</div>
@@ -903,7 +939,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="primeplus">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/2534/2534200.png" alt="Prime Plus">
+</div>
 <h3>Prime Plus — 12 ماه</h3>
 <div class="product-info">اشتراک Prime Plus</div>
 <div class="price">قیمت به‌زودی</div>
@@ -911,7 +949,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="onetime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/4264/4264833.png" alt="One-time Pack">
+</div>
 <h3>پک یک‌بارخرید اول</h3>
 <div class="product-info">قابل خرید یک‌بار برای هر اکانت</div>
 <div class="price">قیمت به‌زودی</div>
@@ -919,7 +959,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="onetime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/4264/4264833.png" alt="One-time Pack">
+</div>
 <h3>پک یک‌بارخرید دوم</h3>
 <div class="product-info">پک ویژه</div>
 <div class="price">قیمت به‌زودی</div>
@@ -927,7 +969,9 @@ onclick="showCategory('uc')">
 </div>
 
 <div class="product" data-category="onetime">
-<div class="product-image"></div>
+<div class="product-image">
+<img src="https://cdn-icons-png.flaticon.com/512/4264/4264833.png" alt="One-time Pack">
+</div>
 <h3>پک یک‌بارخرید سوم</h3>
 <div class="product-info">پک ویژه</div>
 <div class="price">قیمت به‌زودی</div>
@@ -1376,7 +1420,6 @@ return;
 
 alert(
 "محصول: "+
-selectedPlayer+ // fix if needed, kept original logic flow
 selectedProduct+
 "\nقیمت: "+
 selectedPrice+
