@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Loot Box Store | فروشگاه تخصصی یوسی پابجی موبایل</title>
+<title>Loot Box Store | فروشگاه پابجی موبایل</title>
 
 <style>
 *{
@@ -17,14 +16,12 @@
     --gold:#f3ba2f;
     --orange:#ff6b00;
     --dark:#151a21;
-    --dark2:#1d242d;
     --bg:#f4f6f8;
     --white:#fff;
     --text:#171b21;
     --muted:#737b87;
     --border:#e5e8ed;
     --green:#18a76c;
-    --red:#e5484d;
     --shadow:0 15px 45px rgba(20,28,40,.09);
 }
 
@@ -38,7 +35,8 @@ body{
     color:var(--text);
 }
 
-button,input{
+button,
+input{
     font-family:inherit;
 }
 
@@ -49,7 +47,7 @@ header{
     top:0;
     z-index:1000;
     height:74px;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
     backdrop-filter:blur(15px);
     border-bottom:1px solid var(--border);
 }
@@ -67,7 +65,6 @@ header{
 .logo{
     font-size:21px;
     font-weight:900;
-    white-space:nowrap;
 }
 
 .logo span{
@@ -120,17 +117,6 @@ header{
         linear-gradient(135deg,#131820,#232c37);
     display:flex;
     align-items:center;
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:560px;
-    height:560px;
-    right:-100px;
-    top:-160px;
-    border:1px solid rgba(243,186,47,.15);
-    border-radius:50%;
 }
 
 .container{
@@ -199,6 +185,7 @@ header{
     font-size:13px;
     font-weight:900;
     cursor:pointer;
+    text-decoration:none;
 }
 
 .hero-btn.secondary{
@@ -231,9 +218,6 @@ header{
     place-items:center;
     background:rgba(255,255,255,.07);
     border:1px solid rgba(255,255,255,.12);
-}
-
-.hero-card-icon span{
     font-size:65px;
 }
 
@@ -250,10 +234,6 @@ header{
 }
 
 /* TRUST */
-
-.trust{
-    margin-top:-1px;
-}
 
 .trust-box{
     display:grid;
@@ -350,9 +330,6 @@ section{
     background:#f7f8fa;
     border-radius:15px;
     margin-bottom:15px;
-}
-
-.category-image span{
     font-size:45px;
 }
 
@@ -436,9 +413,6 @@ section{
     background:#f7f8fa;
     display:grid;
     place-items:center;
-}
-
-.product-image span{
     font-size:75px;
 }
 
@@ -787,6 +761,7 @@ footer{
 
     .hero-btn{
         width:100%;
+        text-align:center;
     }
 
     .categories,
@@ -808,9 +783,6 @@ footer{
 
     .product-image{
         height:125px;
-    }
-
-    .product-image span{
         font-size:55px;
     }
 
@@ -921,7 +893,7 @@ footer{
 <div>
 
     <div class="hero-card-icon">
-        <span>🎮</span>
+        🎮
     </div>
 
     <h2>
@@ -945,7 +917,7 @@ footer{
 
 <!-- TRUST -->
 
-<div class="container trust">
+<div class="container">
 
 <div class="trust-box">
 
@@ -1007,15 +979,13 @@ footer{
 
 <div class="categories">
 
-    <!-- UC -->
-
     <div
         class="category active"
         onclick="showCategory('uc')"
     >
 
         <div class="category-image">
-            <span>🪙</span>
+            🪙
         </div>
 
         <h3>
@@ -1029,15 +999,13 @@ footer{
     </div>
 
 
-    <!-- PRIME -->
-
     <div
         class="category"
         onclick="showCategory('prime')"
     >
 
         <div class="category-image">
-            <span>⭐</span>
+            ⭐
         </div>
 
         <h3>
@@ -1051,15 +1019,13 @@ footer{
     </div>
 
 
-    <!-- PRIME PLUS -->
-
     <div
         class="category"
         onclick="showCategory('primeplus')"
     >
 
         <div class="category-image">
-            <span>👑</span>
+            👑
         </div>
 
         <h3>
@@ -1081,7 +1047,7 @@ footer{
     >
 
         <div class="category-image">
-            <span>🎁</span>
+            🎁
         </div>
 
         <h3>
@@ -1089,7 +1055,7 @@ footer{
         </h3>
 
         <p>
-            پک‌های Ground Pack پابجی
+            Ground Pack 1، 2 و 3
         </p>
 
     </div>
@@ -1152,15 +1118,14 @@ footer{
 <div class="products">
 
 
-<!-- UC 60 -->
+<!-- =========================
+     UC
+========================= -->
 
-<div
-    class="product show"
-    data-category="uc"
->
+<div class="product show" data-category="uc">
 
     <div class="product-image">
-        <span>🪙</span>
+        🪙
     </div>
 
     <h3>
@@ -1185,15 +1150,10 @@ footer{
 </div>
 
 
-<!-- UC 180 -->
-
-<div
-    class="product show"
-    data-category="uc"
->
+<div class="product show" data-category="uc">
 
     <div class="product-image">
-        <span>🪙</span>
+        🪙
     </div>
 
     <h3>
@@ -1218,15 +1178,10 @@ footer{
 </div>
 
 
-<!-- UC 325 -->
-
-<div
-    class="product show"
-    data-category="uc"
->
+<div class="product show" data-category="uc">
 
     <div class="product-image">
-        <span>🪙</span>
+        🪙
     </div>
 
     <h3>
@@ -1251,15 +1206,10 @@ footer{
 </div>
 
 
-<!-- UC 660 -->
-
-<div
-    class="product show"
-    data-category="uc"
->
+<div class="product show" data-category="uc">
 
     <div class="product-image">
-        <span>🪙</span>
+        🪙
     </div>
 
     <h3>
@@ -1284,15 +1234,10 @@ footer{
 </div>
 
 
-<!-- UC 1800 -->
-
-<div
-    class="product show"
-    data-category="uc"
->
+<div class="product show" data-category="uc">
 
     <div class="product-image">
-        <span>🪙</span>
+        🪙
     </div>
 
     <h3>
@@ -1317,15 +1262,14 @@ footer{
 </div>
 
 
-<!-- PRIME 1 -->
+<!-- =========================
+     PRIME
+========================= -->
 
-<div
-    class="product"
-    data-category="prime"
->
+<div class="product" data-category="prime">
 
     <div class="product-image">
-        <span>⭐</span>
+        ⭐
     </div>
 
     <h3>
@@ -1350,15 +1294,10 @@ footer{
 </div>
 
 
-<!-- PRIME 3 -->
-
-<div
-    class="product"
-    data-category="prime"
->
+<div class="product" data-category="prime">
 
     <div class="product-image">
-        <span>⭐</span>
+        ⭐
     </div>
 
     <h3>
@@ -1383,15 +1322,10 @@ footer{
 </div>
 
 
-<!-- PRIME 6 -->
-
-<div
-    class="product"
-    data-category="prime"
->
+<div class="product" data-category="prime">
 
     <div class="product-image">
-        <span>⭐</span>
+        ⭐
     </div>
 
     <h3>
@@ -1416,15 +1350,10 @@ footer{
 </div>
 
 
-<!-- PRIME 12 -->
-
-<div
-    class="product"
-    data-category="prime"
->
+<div class="product" data-category="prime">
 
     <div class="product-image">
-        <span>⭐</span>
+        ⭐
     </div>
 
     <h3>
@@ -1449,15 +1378,14 @@ footer{
 </div>
 
 
-<!-- PRIME PLUS 1 -->
+<!-- =========================
+     PRIME PLUS
+========================= -->
 
-<div
-    class="product"
-    data-category="primeplus"
->
+<div class="product" data-category="primeplus">
 
     <div class="product-image">
-        <span>👑</span>
+        👑
     </div>
 
     <h3>
@@ -1482,15 +1410,10 @@ footer{
 </div>
 
 
-<!-- PRIME PLUS 3 -->
-
-<div
-    class="product"
-    data-category="primeplus"
->
+<div class="product" data-category="primeplus">
 
     <div class="product-image">
-        <span>👑</span>
+        👑
     </div>
 
     <h3>
@@ -1515,15 +1438,10 @@ footer{
 </div>
 
 
-<!-- PRIME PLUS 6 -->
-
-<div
-    class="product"
-    data-category="primeplus"
->
+<div class="product" data-category="primeplus">
 
     <div class="product-image">
-        <span>👑</span>
+        👑
     </div>
 
     <h3>
@@ -1548,15 +1466,10 @@ footer{
 </div>
 
 
-<!-- PRIME PLUS 12 -->
-
-<div
-    class="product"
-    data-category="primeplus"
->
+<div class="product" data-category="primeplus">
 
     <div class="product-image">
-        <span>👑</span>
+        👑
     </div>
 
     <h3>
@@ -1581,7 +1494,9 @@ footer{
 </div>
 
 
-<!-- GROUND PACK -->
+<!-- =========================
+     GROUND PACK 1
+========================= -->
 
 <div
     class="product"
@@ -1589,15 +1504,15 @@ footer{
 >
 
     <div class="product-image">
-        <span>🎁</span>
+        🎁
     </div>
 
     <h3>
-        Ground Pack
+        Ground Pack 1
     </h3>
 
     <div class="product-info">
-        پک ویژه Ground Pack
+        پک ویژه Ground Pack 1
     </div>
 
     <div class="price">
@@ -1606,7 +1521,7 @@ footer{
 
     <button
         class="buy"
-        onclick="openBuy('Ground Pack','قیمت به‌زودی')"
+        onclick="openBuy('Ground Pack 1','قیمت به‌زودی')"
     >
         خرید آنی
     </button>
@@ -1614,7 +1529,9 @@ footer{
 </div>
 
 
-<!-- GROUND PACK PLUS -->
+<!-- =========================
+     GROUND PACK 2
+========================= -->
 
 <div
     class="product"
@@ -1622,15 +1539,15 @@ footer{
 >
 
     <div class="product-image">
-        <span>🎁</span>
+        🎁
     </div>
 
     <h3>
-        Ground Pack Plus
+        Ground Pack 2
     </h3>
 
     <div class="product-info">
-        پک ویژه Ground Pack Plus
+        پک ویژه Ground Pack 2
     </div>
 
     <div class="price">
@@ -1639,7 +1556,42 @@ footer{
 
     <button
         class="buy"
-        onclick="openBuy('Ground Pack Plus','قیمت به‌زودی')"
+        onclick="openBuy('Ground Pack 2','قیمت به‌زودی')"
+    >
+        خرید آنی
+    </button>
+
+</div>
+
+
+<!-- =========================
+     GROUND PACK 3
+========================= -->
+
+<div
+    class="product"
+    data-category="groundpack"
+>
+
+    <div class="product-image">
+        🎁
+    </div>
+
+    <h3>
+        Ground Pack 3
+    </h3>
+
+    <div class="product-info">
+        پک ویژه Ground Pack 3
+    </div>
+
+    <div class="price">
+        قیمت به‌زودی
+    </div>
+
+    <button
+        class="buy"
+        onclick="openBuy('Ground Pack 3','قیمت به‌زودی')"
     >
         خرید آنی
     </button>
@@ -1676,7 +1628,10 @@ footer{
 <div class="features">
 
     <div class="feature">
-        <div class="feature-icon">⚡</div>
+
+        <div class="feature-icon">
+            ⚡
+        </div>
 
         <h3>
             پردازش سریع
@@ -1686,11 +1641,15 @@ footer{
             سفارش شما پس از پرداخت وارد فرآیند پردازش
             شده و در سریع‌ترین زمان ممکن انجام می‌شود.
         </p>
+
     </div>
 
 
     <div class="feature">
-        <div class="feature-icon">🔒</div>
+
+        <div class="feature-icon">
+            🔒
+        </div>
 
         <h3>
             بدون نیاز به رمز
@@ -1700,11 +1659,15 @@ footer{
             برای ثبت سفارش فقط Player ID موردنیاز است
             و نیازی به ارسال رمز عبور اکانت ندارید.
         </p>
+
     </div>
 
 
     <div class="feature">
-        <div class="feature-icon">🎧</div>
+
+        <div class="feature-icon">
+            🎧
+        </div>
 
         <h3>
             پشتیبانی
@@ -1714,6 +1677,7 @@ footer{
             در صورت وجود مشکل یا سؤال درباره سفارش،
             تیم پشتیبانی آماده پاسخگویی خواهد بود.
         </p>
+
     </div>
 
 </div>
@@ -1769,13 +1733,6 @@ footer{
     Player ID
 </label>
 
-
-<!--
-    مهم:
-    minlength = 8
-    maxlength = 12
-    فقط عدد
--->
 
 <input
     id="playerId"
@@ -1921,11 +1878,9 @@ const categoryInfo = {
         subtitle:"اشتراک‌های Prime Plus"
     },
 
-    /* تغییر اول: Ground Pack */
-
     groundpack:{
         title:"Ground Pack",
-        subtitle:"پک‌های Ground Pack پابجی موبایل"
+        subtitle:"Ground Pack 1، Ground Pack 2 و Ground Pack 3"
     }
 
 };
@@ -1941,30 +1896,21 @@ function showCategory(category){
         .querySelectorAll(".product")
         .forEach(product => {
 
-            if(
+            product.classList.toggle(
+                "show",
                 product.dataset.category === category
-            ){
-
-                product.classList.add("show");
-
-            }else{
-
-                product.classList.remove("show");
-
-            }
+            );
 
         });
 
 
-    const categories =
-        document.querySelectorAll(".category");
+    document
+        .querySelectorAll(".category")
+        .forEach(item => {
 
+            item.classList.remove("active");
 
-    categories.forEach(categoryElement => {
-
-        categoryElement.classList.remove("active");
-
-    });
+        });
 
 
     const indexes = {
@@ -1972,17 +1918,16 @@ function showCategory(category){
         uc:0,
         prime:1,
         primeplus:2,
-
-        /* تغییر اول */
-
         groundpack:3
 
     };
 
 
-    if(
-        categories[indexes[category]]
-    ){
+    const categories =
+        document.querySelectorAll(".category");
+
+
+    if(categories[indexes[category]]){
 
         categories[indexes[category]]
             .classList.add("active");
@@ -2023,7 +1968,6 @@ let verifiedId = "";
 let verifiedName = "";
 
 let lookupTimer = null;
-
 let requestController = null;
 
 
@@ -2039,15 +1983,15 @@ function openBuy(product,price){
     verifiedId = "";
     verifiedName = "";
 
+    clearTimeout(lookupTimer);
+
+
     if(requestController){
 
         requestController.abort();
-
         requestController = null;
 
     }
-
-    clearTimeout(lookupTimer);
 
 
     document
@@ -2128,7 +2072,6 @@ function closeBuy(){
     if(requestController){
 
         requestController.abort();
-
         requestController = null;
 
     }
@@ -2140,30 +2083,27 @@ function closeBuy(){
    PLAYER ID INPUT
 ========================= */
 
-const playerInput =
-    document.getElementById("playerId");
+document
+    .getElementById("playerId")
+    .addEventListener(
+        "input",
+        function(){
+
+            /*
+             * فقط عدد
+             * حداکثر ۱۲ رقم
+             */
+
+            this.value =
+                this.value
+                    .replace(/[^0-9]/g,"")
+                    .slice(0,12);
 
 
-playerInput.addEventListener(
-    "input",
-    function(){
+            checkId();
 
-        /*
-         * تغییر دوم:
-         * فقط اعداد
-         * حداکثر ۱۲ رقم
-         */
-
-        this.value =
-            this.value
-                .replace(/[^0-9]/g,"")
-                .slice(0,12);
-
-
-        checkId();
-
-    }
-);
+        }
+    );
 
 
 /* =========================
@@ -2201,23 +2141,19 @@ function checkId(){
     if(requestController){
 
         requestController.abort();
-
         requestController = null;
 
     }
 
 
     loading.style.display = "none";
-
     result.style.display = "none";
-
     error.style.display = "none";
 
     continueButton.disabled = true;
 
 
     verifiedId = "";
-
     verifiedName = "";
 
 
@@ -2245,7 +2181,6 @@ function checkId(){
 
 
     /*
-     * تغییر دوم:
      * حداقل ۸ رقم
      */
 
@@ -2321,8 +2256,7 @@ function checkId(){
 
                 try{
 
-                    data =
-                        JSON.parse(text);
+                    data = JSON.parse(text);
 
                 }catch(e){
 
@@ -2486,7 +2420,7 @@ function continueOrder(){
 
 
 /* =========================
-   MODAL BACKGROUND CLOSE
+   BACKGROUND CLOSE
 ========================= */
 
 document
@@ -2514,11 +2448,14 @@ document.addEventListener(
     function(event){
 
         if(
+
             event.key === "Escape" &&
+
             document
                 .getElementById("buyModal")
                 .classList
                 .contains("open")
+
         ){
 
             closeBuy();
@@ -2528,14 +2465,7 @@ document.addEventListener(
     }
 );
 
-
-/* =========================
-   DEFAULT
-========================= */
-
-showCategory("uc");
-
 </script>
 
 </body>
-    </html>
+</html>
