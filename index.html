@@ -3,22 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PUBG Zone | خرید UC پابجی موبایل</title>
+<title>PUBG Store | خرید UC</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
 :root{
-    --bg:#07090d;
-    --bg2:#0c1017;
-    --card:rgba(19,24,32,.82);
-    --border:rgba(255,255,255,.08);
-    --gold:#ffb800;
-    --gold2:#ffcf55;
-    --text:#fff;
-    --muted:#929aa8;
-    --green:#39d98a;
+    --orange:#ff9d00;
+    --orange2:#ffbd3b;
+    --dark:#17191d;
+    --text:#20242a;
+    --muted:#737982;
+    --bg:#f4f5f7;
+    --white:#ffffff;
+    --line:#e7e8eb;
+    --green:#18a96b;
 }
 
 *{
@@ -33,27 +32,8 @@ html{
 
 body{
     font-family:"Vazirmatn",sans-serif;
-    background:
-        radial-gradient(circle at 80% 0%,rgba(255,184,0,.09),transparent 25%),
-        radial-gradient(circle at 10% 30%,rgba(0,151,255,.06),transparent 25%),
-        var(--bg);
+    background:var(--bg);
     color:var(--text);
-    min-height:100vh;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.035;
-    background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-    z-index:999;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
 }
 
 .container{
@@ -61,239 +41,250 @@ a{
     margin:auto;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
 /* ================= HEADER ================= */
 
 header{
+    background:#fff;
+    border-bottom:1px solid var(--line);
     position:sticky;
     top:0;
     z-index:100;
-    border-bottom:1px solid var(--border);
-    background:rgba(7,9,13,.78);
-    backdrop-filter:blur(18px);
 }
 
 .nav{
-    height:76px;
+    height:74px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:30px;
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:10px;
-    font-size:21px;
     font-weight:900;
+    font-size:22px;
 }
 
 .logo-icon{
-    width:42px;
-    height:42px;
+    width:43px;
+    height:43px;
+    border-radius:12px;
     display:grid;
     place-items:center;
-    border-radius:12px;
-    background:linear-gradient(145deg,#ffd34f,#e89500);
-    color:#111;
-    box-shadow:0 8px 30px rgba(255,184,0,.2);
+    background:linear-gradient(135deg,#ffbd35,#ff8700);
+    box-shadow:0 8px 20px rgba(255,157,0,.25);
 }
 
 .logo span{
-    color:var(--gold);
+    color:#f49a00;
 }
 
-nav{
+.menu{
     display:flex;
     gap:30px;
-}
-
-nav a{
-    color:#aeb5c1;
+    list-style:none;
+    color:#666b73;
     font-size:14px;
-    transition:.25s;
 }
 
-nav a:hover{
-    color:#fff;
+.menu a{
+    transition:.2s;
 }
 
-.nav-button{
-    padding:10px 17px;
-    border:1px solid rgba(255,184,0,.3);
+.menu a:hover{
+    color:#ed9200;
+}
+
+.header-btn{
+    background:#181a1e;
+    color:white;
+    padding:11px 18px;
     border-radius:10px;
-    color:var(--gold);
     font-size:13px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    padding:75px 0 45px;
+    padding:35px 0;
 }
 
-.hero-content{
-    min-height:480px;
-    border-radius:30px;
+.hero-box{
+    min-height:445px;
+    border-radius:27px;
     overflow:hidden;
     position:relative;
     display:flex;
     align-items:center;
-    padding:65px;
-    border:1px solid var(--border);
 
     background:
-        linear-gradient(90deg,
-            rgba(7,9,13,.98) 0%,
-            rgba(7,9,13,.85) 45%,
-            rgba(7,9,13,.25) 100%
+        linear-gradient(
+            90deg,
+            rgba(18,20,23,.98) 0%,
+            rgba(18,20,23,.91) 40%,
+            rgba(18,20,23,.35) 100%
         ),
-        radial-gradient(circle at 80% 50%,
-            rgba(255,184,0,.28),
-            transparent 35%
-        ),
-        linear-gradient(135deg,#171d26,#090c11);
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
 }
 
-.hero-content:after{
+.hero-box:after{
     content:"";
     position:absolute;
     width:420px;
     height:420px;
-    border:1px solid rgba(255,184,0,.15);
-    border-radius:50%;
-    left:-130px;
-    bottom:-240px;
+    background:rgba(255,157,0,.16);
+    filter:blur(80px);
+    left:-120px;
+    bottom:-250px;
 }
 
-.hero-text{
+.hero-content{
     position:relative;
     z-index:2;
+    padding:55px;
+    color:white;
     max-width:650px;
 }
 
-.hero-label{
+.hero-tag{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    padding:8px 13px;
+    gap:7px;
+    padding:7px 13px;
     border-radius:30px;
-    background:rgba(255,184,0,.09);
-    border:1px solid rgba(255,184,0,.2);
-    color:var(--gold2);
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.live-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#39d98a;
-    box-shadow:0 0 12px #39d98a;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.14);
+    color:#ffc24d;
+    font-size:12px;
+    margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:clamp(36px,5vw,65px);
-    line-height:1.15;
+    font-size:clamp(35px,5vw,60px);
+    line-height:1.18;
     font-weight:900;
-    letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:var(--gold);
+    color:#ffad18;
 }
 
-.hero-description{
-    color:#9da5b2;
-    margin:22px 0 30px;
-    max-width:570px;
+.hero p{
+    color:#c4c7cb;
     line-height:2;
+    font-size:14px;
+    margin:18px 0 27px;
 }
 
-.hero-buttons{
+.hero-actions{
     display:flex;
-    gap:12px;
+    gap:11px;
 }
 
-.primary-btn{
-    padding:14px 25px;
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     border:0;
-    border-radius:12px;
-    background:linear-gradient(135deg,#ffd052,#f4a900);
-    color:#111;
-    font-family:inherit;
-    font-weight:900;
     cursor:pointer;
-    box-shadow:0 12px 35px rgba(255,184,0,.16);
-    transition:.25s;
+    font-family:inherit;
+    font-weight:800;
+    border-radius:11px;
+    padding:13px 23px;
 }
 
-.primary-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 16px 40px rgba(255,184,0,.25);
+.btn-orange{
+    background:linear-gradient(135deg,#ffc044,#f49300);
+    color:#161616;
+    box-shadow:0 10px 25px rgba(255,157,0,.2);
 }
 
-.secondary-btn{
-    padding:14px 25px;
-    border:1px solid var(--border);
-    border-radius:12px;
-    color:#d8dde5;
-    transition:.25s;
+.btn-light{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.18);
+    color:white;
 }
 
-.secondary-btn:hover{
-    background:rgba(255,255,255,.05);
-}
+/* ================= CATEGORY ================= */
 
-/* ================= STATS ================= */
-
-.stats{
+.categories{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    gap:13px;
     margin-top:15px;
 }
 
-.stat{
-    padding:19px;
-    border:1px solid var(--border);
-    border-radius:16px;
-    background:rgba(255,255,255,.025);
+.category{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:18px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    transition:.25s;
 }
 
-.stat strong{
+.category:hover{
+    transform:translateY(-3px);
+    border-color:#ffd17a;
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+}
+
+.category-icon{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:#fff4df;
+    font-size:21px;
+}
+
+.category strong{
     display:block;
-    color:#fff;
-    font-size:20px;
+    font-size:14px;
 }
 
-.stat span{
-    color:var(--muted);
-    font-size:12px;
+.category span{
+    color:#9499a0;
+    font-size:11px;
 }
 
 /* ================= SECTION ================= */
 
 .section{
-    padding:65px 0;
+    padding:60px 0;
 }
 
 .section-head{
     display:flex;
-    justify-content:space-between;
     align-items:end;
+    justify-content:space-between;
     margin-bottom:25px;
 }
 
 .section-head h2{
-    font-size:30px;
+    font-size:28px;
+    font-weight:900;
 }
 
 .section-head p{
     color:var(--muted);
     font-size:13px;
-    margin-top:6px;
+    margin-top:5px;
+}
+
+.more{
+    color:#ed9200;
+    font-size:13px;
 }
 
 /* ================= PRODUCTS ================= */
@@ -301,130 +292,202 @@ nav a:hover{
 .products{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:14px;
+    gap:15px;
 }
 
 .product{
-    position:relative;
-    padding:21px;
-    border:1px solid var(--border);
-    background:linear-gradient(145deg,rgba(22,27,36,.95),rgba(12,15,21,.95));
-    border-radius:20px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:19px;
+    padding:19px;
     cursor:pointer;
-    transition:.3s;
-    overflow:hidden;
-}
-
-.product:before{
-    content:"";
-    position:absolute;
-    width:130px;
-    height:130px;
-    background:rgba(255,184,0,.09);
-    filter:blur(35px);
-    top:-60px;
-    right:-50px;
+    position:relative;
+    transition:.25s;
 }
 
 .product:hover{
-    transform:translateY(-6px);
-    border-color:rgba(255,184,0,.35);
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(22,25,30,.08);
 }
 
 .product.active{
-    border-color:var(--gold);
-    box-shadow:
-        0 0 0 1px rgba(255,184,0,.18),
-        0 20px 50px rgba(255,184,0,.08);
+    border:2px solid #ffac19;
+    padding:18px;
+    box-shadow:0 12px 35px rgba(255,157,0,.1);
 }
 
-.product-badge{
+.sale{
     position:absolute;
-    top:13px;
-    left:13px;
-    background:rgba(57,217,138,.1);
-    color:var(--green);
-    border:1px solid rgba(57,217,138,.18);
-    padding:4px 8px;
+    left:12px;
+    top:12px;
+    background:#fff0dd;
+    color:#e98500;
+    padding:5px 8px;
     border-radius:7px;
     font-size:10px;
+    font-weight:700;
 }
 
-.uc-icon{
-    width:66px;
-    height:66px;
+.uc-art{
+    height:125px;
+    border-radius:15px;
+    background:
+        radial-gradient(circle at 50% 40%,#ffd66e,transparent 23%),
+        linear-gradient(135deg,#fff7e6,#f3f4f5);
     display:grid;
     place-items:center;
-    border-radius:18px;
-    margin-bottom:17px;
-    font-size:29px;
-    background:linear-gradient(145deg,#252b34,#11151b);
-    border:1px solid rgba(255,255,255,.08);
+    margin-bottom:15px;
+    position:relative;
+    overflow:hidden;
+}
+
+.uc-art:before,
+.uc-art:after{
+    content:"";
+    position:absolute;
+    width:85px;
+    height:85px;
+    border:1px solid rgba(255,157,0,.15);
+    border-radius:50%;
+}
+
+.uc-art:before{
+    transform:scale(1.5);
+}
+
+.uc-art:after{
+    transform:scale(2.2);
+}
+
+.uc-number{
+    position:relative;
+    z-index:2;
+    font-size:34px;
+    font-weight:900;
+    color:#e58b00;
+}
+
+.uc-label{
+    font-size:11px;
+    color:#a47a32;
 }
 
 .product h3{
-    font-size:21px;
+    font-size:17px;
 }
 
-.product-sub{
-    color:#777f8c;
-    font-size:12px;
-    margin-top:3px;
+.product-description{
+    color:#92979e;
+    font-size:11px;
+    margin-top:2px;
 }
 
 .product-bottom{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-top:20px;
+    margin-top:17px;
 }
 
 .price{
-    color:var(--gold2);
-    font-weight:800;
     font-size:14px;
+    color:#20242a;
+    font-weight:800;
 }
 
-.select-icon{
-    width:29px;
-    height:29px;
+.old-price{
+    color:#a9adb3;
+    text-decoration:line-through;
+    font-size:10px;
+    display:block;
+}
+
+.buy-mini{
+    width:34px;
+    height:34px;
+    border-radius:10px;
     display:grid;
     place-items:center;
-    border-radius:50%;
-    border:1px solid #3a424e;
-    color:#555e6c;
+    background:#fff3dd;
+    color:#e98f00;
 }
 
-.product.active .select-icon{
-    background:var(--gold);
-    color:#111;
-    border-color:var(--gold);
+/* ================= OFFER ================= */
+
+.offer{
+    border-radius:23px;
+    padding:38px 45px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    overflow:hidden;
+    position:relative;
+
+    background:
+        linear-gradient(100deg,#15181c,#272a2e);
+}
+
+.offer:after{
+    content:"UC";
+    position:absolute;
+    left:40px;
+    top:-50px;
+    font-size:210px;
+    font-weight:900;
+    color:rgba(255,255,255,.025);
+}
+
+.offer-content{
+    position:relative;
+    z-index:2;
+}
+
+.offer small{
+    color:#ffbd3c;
+}
+
+.offer h2{
+    font-size:30px;
+    margin:7px 0;
+}
+
+.offer p{
+    color:#aaaeb4;
+    font-size:13px;
+}
+
+.offer-btn{
+    position:relative;
+    z-index:2;
 }
 
 /* ================= PURCHASE ================= */
 
-.purchase{
+.purchase-wrapper{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1.05fr .95fr;
     gap:18px;
 }
 
-.purchase-card{
-    padding:30px;
-    border-radius:22px;
-    border:1px solid var(--border);
-    background:linear-gradient(145deg,#121821,#0c1016);
+.card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:21px;
+    padding:28px;
 }
 
-.purchase-card h3{
-    font-size:22px;
-    margin-bottom:5px;
+.card-title{
+    margin-bottom:22px;
 }
 
-.purchase-card>p{
+.card-title h3{
+    font-size:21px;
+}
+
+.card-title p{
     color:var(--muted);
-    font-size:13px;
-    margin-bottom:25px;
+    font-size:12px;
 }
 
 .form{
@@ -436,7 +499,7 @@ nav a:hover{
 .field{
     display:flex;
     flex-direction:column;
-    gap:8px;
+    gap:7px;
 }
 
 .field.full{
@@ -444,100 +507,98 @@ nav a:hover{
 }
 
 .field label{
-    color:#bdc4ce;
-    font-size:13px;
+    font-size:12px;
+    font-weight:600;
 }
 
 .field input,
 .field select{
-    width:100%;
-    background:#090c11;
-    border:1px solid #272e38;
-    color:#fff;
-    border-radius:11px;
+    border:1px solid #dedfe2;
+    background:#fafafa;
     padding:13px;
-    outline:none;
+    border-radius:10px;
     font-family:inherit;
-    transition:.2s;
+    outline:none;
 }
 
 .field input:focus,
 .field select:focus{
-    border-color:rgba(255,184,0,.65);
-    box-shadow:0 0 0 3px rgba(255,184,0,.06);
+    border-color:#f3a315;
+    background:#fff;
 }
 
-.order-summary{
+.summary{
+    background:#17191d;
+    color:white;
     position:relative;
     overflow:hidden;
 }
 
-.order-summary:before{
+.summary:after{
     content:"";
     position:absolute;
-    width:220px;
-    height:220px;
-    background:rgba(255,184,0,.1);
+    width:250px;
+    height:250px;
+    background:rgba(255,157,0,.13);
     border-radius:50%;
-    filter:blur(50px);
-    top:-110px;
+    filter:blur(55px);
+    top:-120px;
     left:-80px;
 }
 
-.summary-product{
+.summary>*{
     position:relative;
+    z-index:2;
+}
+
+.summary-product{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:14px;
     padding-bottom:22px;
-    margin-bottom:22px;
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid rgba(255,255,255,.09);
 }
 
 .summary-icon{
-    width:60px;
-    height:60px;
+    width:65px;
+    height:65px;
     display:grid;
     place-items:center;
-    border-radius:16px;
-    background:linear-gradient(145deg,#2a3039,#11151b);
-    font-size:27px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#ffbd3b,#e77f00);
+    color:#111;
+    font-weight:900;
+    font-size:20px;
 }
 
 .summary-product strong{
     display:block;
-    font-size:19px;
+    font-size:20px;
 }
 
 .summary-product span{
-    color:var(--muted);
-    font-size:12px;
+    color:#858b94;
+    font-size:11px;
 }
 
 .summary-row{
     display:flex;
     justify-content:space-between;
-    color:#aeb5c0;
-    font-size:13px;
-    margin:15px 0;
+    margin-top:18px;
+    color:#969ca5;
+    font-size:12px;
 }
 
 .summary-row.total{
-    margin-top:25px;
+    border-top:1px solid rgba(255,255,255,.09);
     padding-top:20px;
-    border-top:1px solid var(--border);
-    color:#fff;
-    font-size:15px;
+    margin-top:22px;
+    color:white;
 }
 
 .summary-row.total strong{
-    color:var(--gold);
-    font-size:24px;
-}
-
-.full-btn{
-    width:100%;
-    margin-top:18px;
+    color:#ffb52b;
+    font-size:23px;
 }
 
 /* ================= FEATURES ================= */
@@ -549,10 +610,10 @@ nav a:hover{
 }
 
 .feature{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:18px;
     padding:25px;
-    border-radius:19px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
 }
 
 .feature-icon{
@@ -561,20 +622,21 @@ nav a:hover{
     display:grid;
     place-items:center;
     border-radius:13px;
-    background:rgba(255,184,0,.08);
-    margin-bottom:16px;
-    font-size:21px;
+    background:#fff3dd;
+    color:#e99100;
+    font-size:20px;
+    margin-bottom:15px;
 }
 
 .feature h3{
-    font-size:17px;
-    margin-bottom:7px;
+    font-size:16px;
+    margin-bottom:6px;
 }
 
 .feature p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.9;
+    color:#838991;
+    font-size:12px;
+    line-height:2;
 }
 
 /* ================= FAQ ================= */
@@ -585,17 +647,17 @@ nav a:hover{
 }
 
 details{
-    background:rgba(18,23,31,.75);
-    border:1px solid var(--border);
-    border-radius:14px;
-    margin-bottom:10px;
-    overflow:hidden;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:13px;
+    margin-bottom:9px;
 }
 
 summary{
-    padding:19px 22px;
+    padding:18px 20px;
     cursor:pointer;
     font-weight:600;
+    font-size:13px;
     list-style:none;
 }
 
@@ -606,8 +668,8 @@ summary::-webkit-details-marker{
 summary:after{
     content:"+";
     float:left;
-    color:var(--gold);
-    font-size:20px;
+    color:#ed9200;
+    font-size:18px;
 }
 
 details[open] summary:after{
@@ -615,34 +677,35 @@ details[open] summary:after{
 }
 
 details p{
-    color:var(--muted);
-    font-size:13px;
+    color:#858b93;
+    padding:0 20px 18px;
+    font-size:12px;
     line-height:2;
-    padding:0 22px 20px;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    margin-top:30px;
-    border-top:1px solid var(--border);
+    background:#17191d;
+    color:#9298a0;
     padding:40px 0;
-    color:#6f7886;
+    margin-top:40px;
 }
 
-.footer-inner{
+.footer{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .footer-logo{
+    color:white;
     font-weight:900;
-    color:#fff;
+    font-size:20px;
 }
 
 .footer-logo span{
-    color:var(--gold);
+    color:#ffad19;
 }
 
 .footer-links{
@@ -657,45 +720,53 @@ footer{
     position:fixed;
     bottom:25px;
     right:25px;
-    z-index:1000;
-    background:#161c25;
-    border:1px solid rgba(255,184,0,.3);
-    border-radius:13px;
-    padding:15px 20px;
-    box-shadow:0 20px 50px rgba(0,0,0,.4);
-    transform:translateY(100px);
+    background:#191c20;
+    color:white;
+    padding:14px 20px;
+    border-radius:11px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
     opacity:0;
+    transform:translateY(20px);
     transition:.3s;
+    z-index:500;
+    font-size:12px;
 }
 
 .toast.show{
-    transform:translateY(0);
     opacity:1;
+    transform:translateY(0);
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1000px){
+@media(max-width:950px){
 
     .products{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .purchase{
+    .categories{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .purchase-wrapper{
         grid-template-columns:1fr;
     }
 
 }
 
-@media(max-width:750px){
+@media(max-width:700px){
 
-    nav{
+    .menu{
         display:none;
     }
 
     .hero-content{
-        padding:40px 25px;
-        min-height:450px;
+        padding:35px 25px;
+    }
+
+    .hero-box{
+        min-height:500px;
     }
 
     .stats{
@@ -703,6 +774,30 @@ footer{
     }
 
     .features{
+        grid-template-columns:1fr;
+    }
+
+    .offer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:22px;
+        padding:30px;
+    }
+
+    .footer{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
         grid-template-columns:1fr;
     }
 
@@ -714,74 +809,50 @@ footer{
         grid-column:auto;
     }
 
-    .footer-inner{
-        flex-direction:column;
-        gap:20px;
-    }
-
-}
-
-@media(max-width:500px){
-
-    .hero{
-        padding-top:35px;
-    }
-
     .hero h1{
-        font-size:37px;
+        font-size:38px;
     }
 
-    .hero-buttons{
+    .hero-actions{
         flex-direction:column;
     }
 
-    .hero-buttons>*{
-        text-align:center;
-    }
-
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:45px 0;
-    }
-
-    .section-head h2{
-        font-size:25px;
-    }
-
-    .purchase-card{
-        padding:22px;
+    .hero-actions .btn{
+        width:100%;
     }
 
 }
 </style>
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
 <header>
-    <div class="container nav">
 
-        <a href="#" class="logo">
-            <div class="logo-icon">⚡</div>
-            PUBG<span>ZONE</span>
-        </a>
+<div class="container nav">
 
-        <nav>
-            <a href="#uc">خرید UC</a>
-            <a href="#services">خدمات</a>
-            <a href="#faq">سوالات متداول</a>
-        </nav>
+    <a class="logo" href="#">
+        <div class="logo-icon">⚡</div>
+        PUBG<span>STORE</span>
+    </a>
 
-        <a href="#purchase" class="nav-button">
-            خرید سریع
-        </a>
+    <ul class="menu">
+        <li><a href="#uc">خرید UC</a></li>
+        <li><a href="#services">خدمات پابجی</a></li>
+        <li><a href="#guide">راهنمای خرید</a></li>
+        <li><a href="#faq">سوالات</a></li>
+    </ul>
 
-    </div>
+    <a href="#purchase" class="header-btn">
+        خرید سریع
+    </a>
+
+</div>
+
 </header>
 
 
@@ -791,85 +862,137 @@ footer{
 
 <div class="container">
 
-    <div class="hero-content">
+<div class="hero-box">
 
-        <div class="hero-text">
+<div class="hero-content">
 
-            <div class="hero-label">
-                <span class="live-dot"></span>
-                سرویس فعال و آماده سفارش
-            </div>
+    <div class="hero-tag">
+        ● سرویس فعال
+    </div>
 
-            <h1>
-                دنیای <span>PUBG</span><br>
-                از همین‌جا شروع میشه
-            </h1>
+    <h1>
+        برای نبرد آماده‌ای؟
+        <br>
+        <span>UC خودت رو بگیر!</span>
+    </h1>
 
-            <p class="hero-description">
-                خرید UC، سرویس‌های ویژه و محصولات PUBG Mobile
-                با تجربه‌ای سریع و ساده. بسته موردنظرت را انتخاب کن
-                و سفارش خودت را در چند مرحله ثبت کن.
-            </p>
+    <p>
+        خرید سریع UC و سرویس‌های PUBG Mobile
+        با طراحی ساده، پرداخت راحت و پردازش سریع سفارش.
+    </p>
 
-            <div class="hero-buttons">
-                <a href="#uc" class="primary-btn">
-                    مشاهده بسته‌های UC
-                </a>
+    <div class="hero-actions">
 
-                <a href="#guide" class="secondary-btn">
-                    راهنمای خرید
-                </a>
-            </div>
+        <a href="#uc" class="btn btn-orange">
+            مشاهده UC ها
+        </a>
 
-        </div>
+        <a href="#guide" class="btn btn-light">
+            راهنمای خرید
+        </a>
 
     </div>
 
-    <div class="stats">
+</div>
 
-        <div class="stat">
-            <strong>24/7</strong>
-            <span>ثبت سفارش</span>
+</div>
+
+
+<div class="categories">
+
+    <a class="category" href="#uc">
+        <div class="category-icon">💎</div>
+        <div>
+            <strong>UC پابجی</strong>
+            <span>بسته‌های مختلف</span>
         </div>
+    </a>
 
-        <div class="stat">
-            <strong>سریع</strong>
-            <span>پردازش سفارش</span>
+    <a class="category" href="#services">
+        <div class="category-icon">👑</div>
+        <div>
+            <strong>Prime</strong>
+            <span>سرویس ویژه</span>
         </div>
+    </a>
 
-        <div class="stat">
-            <strong>امن</strong>
-            <span>فرآیند خرید</span>
+    <a class="category" href="#services">
+        <div class="category-icon">🎟️</div>
+        <div>
+            <strong>Royale Pass</strong>
+            <span>فصل جدید</span>
         </div>
+    </a>
 
-        <div class="stat">
-            <strong>+16</strong>
-            <span>بسته مختلف UC</span>
+    <a class="category" href="#services">
+        <div class="category-icon">🔥</div>
+        <div>
+            <strong>پیشنهاد ویژه</strong>
+            <span>محصولات منتخب</span>
         </div>
+    </a>
 
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- UC -->
+<!-- PRODUCTS -->
 
 <section class="section" id="uc">
 
 <div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div>
-            <h2>بسته‌های UC</h2>
-            <p>بسته موردنظرت را انتخاب کن</p>
-        </div>
+    <div>
+        <h2>پرفروش‌ترین UC ها</h2>
+        <p>بسته موردنظر خود را انتخاب کنید</p>
+    </div>
+
+    <a href="#" class="more">
+        مشاهده همه ←
+    </a>
+
+</div>
+
+
+<div class="products" id="products"></div>
+
+</div>
+
+</section>
+
+
+<!-- OFFER -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="offer">
+
+    <div class="offer-content">
+
+        <small>پیشنهاد ویژه</small>
+
+        <h2>
+            برای خرید بیشتر آماده‌ای؟
+        </h2>
+
+        <p>
+            بسته‌های بالاتر را با قیمت مناسب‌تر بررسی کن.
+        </p>
 
     </div>
 
-    <div class="products" id="products"></div>
+    <a href="#uc" class="btn btn-orange offer-btn">
+        مشاهده بسته‌ها
+    </a>
+
+</div>
 
 </div>
 
@@ -882,55 +1005,73 @@ footer{
 
 <div class="container">
 
-<div class="purchase">
+<div class="purchase-wrapper">
 
-    <div class="purchase-card">
+    <div class="card">
 
-        <h3>ثبت سفارش</h3>
+        <div class="card-title">
 
-        <p>
-            اطلاعات مقصد را وارد کنید تا سفارش آماده شود.
-        </p>
+            <h3>اطلاعات سفارش</h3>
+
+            <p>
+                اطلاعات بازیکن را با دقت وارد کنید.
+            </p>
+
+        </div>
+
 
         <div class="form">
 
             <div class="field">
+
                 <label>Player ID</label>
+
                 <input
                     id="playerId"
                     type="text"
                     inputmode="numeric"
-                    placeholder="شناسه عددی بازیکن"
+                    placeholder="مثلاً 51234567890"
                 >
+
             </div>
 
+
             <div class="field">
+
                 <label>Nickname</label>
+
                 <input
                     id="nickname"
                     type="text"
                     placeholder="نام داخل بازی"
                 >
+
             </div>
 
-            <div class="field">
-                <label>نوع سرویس</label>
 
-                <select id="service">
+            <div class="field">
+
+                <label>سرویس</label>
+
+                <select>
                     <option>UC</option>
                     <option>Prime</option>
                     <option>Prime Plus</option>
                     <option>Royale Pass</option>
                 </select>
+
             </div>
 
+
             <div class="field">
-                <label>روش تحویل</label>
+
+                <label>نوع تحویل</label>
 
                 <select>
                     <option>تحویل سریع</option>
                     <option>تحویل عادی</option>
                 </select>
+
             </div>
 
         </div>
@@ -938,45 +1079,66 @@ footer{
     </div>
 
 
-    <div class="purchase-card order-summary">
+    <div class="card summary">
 
         <div class="summary-product">
 
             <div class="summary-icon">
-                💎
+                UC
             </div>
 
             <div>
-                <strong id="summaryUc">
+
+                <strong id="summaryUC">
                     60 UC
                 </strong>
 
                 <span>
                     PUBG Mobile
                 </span>
+
             </div>
 
         </div>
 
-        <div class="summary-row">
-            <span>قیمت محصول</span>
-            <span id="productPrice">207,000 تومان</span>
-        </div>
 
         <div class="summary-row">
-            <span>هزینه پردازش</span>
-            <span>رایگان</span>
+
+            <span>قیمت بسته</span>
+
+            <span id="summaryPrice">
+                207,000 تومان
+            </span>
+
         </div>
+
+
+        <div class="summary-row">
+
+            <span>هزینه پردازش</span>
+
+            <span>رایگان</span>
+
+        </div>
+
 
         <div class="summary-row total">
+
             <span>مبلغ نهایی</span>
+
             <strong id="totalPrice">
                 207,000 تومان
             </strong>
+
         </div>
 
-        <button class="primary-btn full-btn" onclick="checkout()">
-            ادامه و ثبت سفارش
+
+        <button
+            class="btn btn-orange"
+            style="width:100%;margin-top:20px"
+            onclick="checkout()"
+        >
+            ادامه ثبت سفارش
         </button>
 
     </div>
@@ -988,96 +1150,69 @@ footer{
 </section>
 
 
-<!-- FEATURES -->
+<!-- SERVICES -->
 
 <section class="section" id="services">
 
 <div class="container">
 
-    <div class="section-head">
-        <div>
-            <h2>خدمات PUBG</h2>
-            <p>همه‌چیز در یک فروشگاه</p>
-        </div>
-    </div>
+<div class="section-head">
 
-    <div class="features">
-
-        <div class="feature">
-            <div class="feature-icon">💎</div>
-            <h3>خرید UC</h3>
-            <p>
-                انتخاب بسته موردنظر و ثبت سفارش برای PUBG Mobile.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">👑</div>
-            <h3>Prime و Prime Plus</h3>
-            <p>
-                دسترسی به سرویس‌های ویژه و محصولات درون بازی.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">🎟️</div>
-            <h3>Royale Pass</h3>
-            <p>
-                سرویس‌های مرتبط با فصل‌ها و محتوای ویژه بازی.
-            </p>
-        </div>
-
+    <div>
+        <h2>خدمات PUBG Mobile</h2>
+        <p>سرویس‌های محبوب بازیکنان</p>
     </div>
 
 </div>
 
-</section>
 
+<div class="features">
 
-<!-- GUIDE -->
+    <div class="feature">
 
-<section class="section" id="guide">
-
-<div class="container">
-
-    <div class="purchase-card">
-
-        <div class="section-head">
-            <div>
-                <h2>راهنمای خرید</h2>
-                <p>سه مرحله ساده</p>
-            </div>
+        <div class="feature-icon">
+            💎
         </div>
 
-        <div class="features">
+        <h3>خرید UC</h3>
 
-            <div class="feature">
-                <div class="feature-icon">01</div>
-                <h3>انتخاب محصول</h3>
-                <p>
-                    بسته UC یا سرویس موردنظر خود را انتخاب کنید.
-                </p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">02</div>
-                <h3>ورود Player ID</h3>
-                <p>
-                    شناسه بازیکن را با دقت وارد کنید.
-                </p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">03</div>
-                <h3>ثبت سفارش</h3>
-                <p>
-                    سفارش را ثبت کرده و مراحل پرداخت را تکمیل کنید.
-                </p>
-            </div>
-
-        </div>
+        <p>
+            بسته‌های متنوع UC برای شارژ حساب PUBG Mobile.
+        </p>
 
     </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            👑
+        </div>
+
+        <h3>Prime و Prime Plus</h3>
+
+        <p>
+            سرویس‌های ویژه برای بازیکنان PUBG Mobile.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🎟️
+        </div>
+
+        <h3>Royale Pass</h3>
+
+        <p>
+            محصولات و سرویس‌های مرتبط با فصل‌های بازی.
+        </p>
+
+    </div>
+
+</div>
 
 </div>
 
@@ -1090,59 +1225,72 @@ footer{
 
 <div class="container">
 
-    <div class="section-head">
-        <div>
-            <h2>سوالات متداول</h2>
-            <p>پاسخ سوالات رایج درباره خرید</p>
-        </div>
+<div class="section-head">
+
+    <div>
+        <h2>سوالات متداول</h2>
+        <p>پاسخ سوالات رایج</p>
     </div>
 
-    <div class="faq">
+</div>
 
-        <details>
-            <summary>
-                برای خرید UC چه اطلاعاتی لازم است؟
-            </summary>
 
-            <p>
-                اطلاعات موردنیاز به نوع سرویس بستگی دارد.
-                برای شارژ مستقیم، معمولاً Player ID مقصد کافی است.
-            </p>
-        </details>
+<div class="faq">
 
-        <details>
-            <summary>
-                آیا وارد کردن رمز اکانت لازم است؟
-            </summary>
+<details>
 
-            <p>
-                در سرویس‌هایی که بر اساس Player ID انجام می‌شوند،
-                رمز عبور اکانت نباید در اختیار فروشنده قرار گیرد.
-            </p>
-        </details>
+    <summary>
+        برای خرید UC چه چیزی لازم است؟
+    </summary>
 
-        <details>
-            <summary>
-                اگر Player ID را اشتباه وارد کنم چه می‌شود؟
-            </summary>
+    <p>
+        بسته موردنظر و Player ID مقصد را وارد کنید.
+        اطلاعات موردنیاز ممکن است بر اساس نوع سرویس متفاوت باشد.
+    </p>
 
-            <p>
-                قبل از ثبت سفارش، شناسه را دوباره بررسی کنید.
-                اطلاعات اشتباه ممکن است باعث ارسال سرویس به مقصد نادرست شود.
-            </p>
-        </details>
+</details>
 
-        <details>
-            <summary>
-                آیا برای شخص دیگری هم می‌توانم خرید کنم؟
-            </summary>
 
-            <p>
-                بله. کافی است Player ID مقصد را هنگام سفارش وارد کنید.
-            </p>
-        </details>
+<details>
 
-    </div>
+    <summary>
+        آیا رمز اکانت لازم است؟
+    </summary>
+
+    <p>
+        برای سرویس‌هایی که بر اساس Player ID انجام می‌شوند،
+        نباید رمز عبور حساب را در اختیار شخص دیگری قرار دهید.
+    </p>
+
+</details>
+
+
+<details>
+
+    <summary>
+        آیا می‌توانم برای دوست خود UC بخرم؟
+    </summary>
+
+    <p>
+        بله؛ کافی است Player ID مقصد را به‌درستی وارد کنید.
+    </p>
+
+</details>
+
+
+<details>
+
+    <summary>
+        اگر Player ID اشتباه باشد چه می‌شود؟
+    </summary>
+
+    <p>
+        قبل از ثبت نهایی سفارش، Player ID را با دقت بررسی کنید.
+    </p>
+
+</details>
+
+</div>
 
 </div>
 
@@ -1153,20 +1301,20 @@ footer{
 
 <footer>
 
-<div class="container footer-inner">
+<div class="container footer">
 
     <div class="footer-logo">
-        PUBG<span>ZONE</span>
+        PUBG<span>STORE</span>
     </div>
 
     <div class="footer-links">
         <a href="#uc">UC</a>
         <a href="#services">خدمات</a>
-        <a href="#faq">FAQ</a>
+        <a href="#faq">سوالات</a>
     </div>
 
     <div>
-        © 2026 PUBG Zone
+        © 2026 PUBG Store
     </div>
 
 </div>
@@ -1179,116 +1327,126 @@ footer{
 
 <script>
 
-/* ================= PRODUCTS ================= */
-
 const products = [
-    { uc:60,    price:207000 },
-    { uc:120,   price:414000 },
-    { uc:180,   price:621000 },
-    { uc:325,   price:1035000 },
-    { uc:385,   price:1242000 },
-    { uc:660,   price:2070000 },
-    { uc:720,   price:2277000 },
-    { uc:985,   price:3105000 },
-    { uc:1320,  price:4140000 },
-    { uc:1800,  price:5175000 },
-    { uc:2460,  price:7245000 },
-    { uc:3850,  price:10350000 },
-    { uc:5650,  price:15525000 },
-    { uc:8100,  price:20700000 },
-    { uc:11950, price:31050000 },
-    { uc:16200, price:41400000 }
+
+    {uc:60,price:207000},
+    {uc:120,price:414000},
+    {uc:180,price:621000},
+    {uc:325,price:1035000},
+    {uc:385,price:1242000},
+    {uc:660,price:2070000},
+    {uc:720,price:2277000},
+    {uc:985,price:3105000},
+    {uc:1320,price:4140000},
+    {uc:1800,price:5175000},
+    {uc:2460,price:7245000},
+    {uc:3850,price:10350000}
+
 ];
 
 let selected = products[0];
 
-const productsBox =
-    document.getElementById("products");
+const box = document.getElementById("products");
 
 
 function money(value){
 
-    return value.toLocaleString("fa-IR") + " تومان";
+    return value.toLocaleString("fa-IR")
+        + " تومان";
 
 }
 
 
-function renderProducts(){
+products.forEach((item,index)=>{
 
-    productsBox.innerHTML = "";
+    const card =
+        document.createElement("div");
 
-    products.forEach((product,index)=>{
+    card.className =
+        "product" +
+        (index===0 ? " active" : "");
 
-        const card =
-            document.createElement("div");
+    card.innerHTML = `
 
-        card.className =
-            "product" +
-            (index === 0 ? " active" : "");
+        ${index < 3
+            ? `<div class="sale">پرفروش</div>`
+            : ""
+        }
 
-        card.innerHTML = `
+        <div class="uc-art">
 
-            ${index < 3
-                ? `<div class="product-badge">پرفروش</div>`
-                : ""
-            }
-
-            <div class="uc-icon">
-                💎
-            </div>
-
-            <h3>
-                ${product.uc.toLocaleString("fa-IR")} UC
-            </h3>
-
-            <div class="product-sub">
-                شارژ PUBG Mobile
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">
-                    ${money(product.price)}
+            <div>
+                <div class="uc-number">
+                    ${item.uc.toLocaleString("fa-IR")}
                 </div>
 
-                <div class="select-icon">
-                    ✓
+                <div class="uc-label">
+                    UC
                 </div>
-
             </div>
-        `;
 
-        card.onclick = ()=>{
+        </div>
 
-            document
-                .querySelectorAll(".product")
-                .forEach(item=>{
-                    item.classList.remove("active");
-                });
+        <h3>
+            ${item.uc.toLocaleString("fa-IR")} UC
+        </h3>
 
-            card.classList.add("active");
+        <div class="product-description">
+            شارژ PUBG Mobile
+        </div>
 
-            selected = product;
+        <div class="product-bottom">
 
-            updateSummary();
+            <div class="price">
+                ${money(item.price)}
+            </div>
 
-        };
+            <div class="buy-mini">
+                +
+            </div>
 
-        productsBox.appendChild(card);
+        </div>
 
-    });
+    `;
 
-}
+
+    card.onclick = ()=>{
+
+        document
+            .querySelectorAll(".product")
+            .forEach(x=>{
+                x.classList.remove("active");
+            });
+
+        card.classList.add("active");
+
+        selected = item;
+
+        updateSummary();
+
+        document
+            .getElementById("purchase")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+    };
+
+
+    box.appendChild(card);
+
+});
 
 
 function updateSummary(){
 
-    document.getElementById("summaryUc")
+    document.getElementById("summaryUC")
         .textContent =
         selected.uc.toLocaleString("fa-IR")
         + " UC";
 
-    document.getElementById("productPrice")
+    document.getElementById("summaryPrice")
         .textContent =
         money(selected.price);
 
@@ -1299,35 +1457,31 @@ function updateSummary(){
 }
 
 
-function showToast(message){
+function toast(message){
 
-    const toast =
+    const el =
         document.getElementById("toast");
 
-    toast.textContent = message;
+    el.textContent = message;
 
-    toast.classList.add("show");
+    el.classList.add("show");
 
     setTimeout(()=>{
-        toast.classList.remove("show");
-    },3500);
+        el.classList.remove("show");
+    },3000);
 
 }
 
 
 function checkout(){
 
-    const playerId =
+    const id =
         document.getElementById("playerId")
         .value.trim();
 
-    const nickname =
-        document.getElementById("nickname")
-        .value.trim();
+    if(!id){
 
-    if(!playerId){
-
-        showToast("لطفاً Player ID را وارد کنید.");
+        toast("لطفاً Player ID را وارد کنید.");
 
         document
             .getElementById("playerId")
@@ -1336,29 +1490,22 @@ function checkout(){
         return;
     }
 
-    if(!/^[0-9]+$/.test(playerId)){
+    if(!/^[0-9]+$/.test(id)){
 
-        showToast(
-            "Player ID باید فقط شامل عدد باشد."
-        );
+        toast("Player ID باید فقط عدد باشد.");
 
         return;
     }
 
-    showToast(
-        `سفارش ${selected.uc.toLocaleString("fa-IR")} UC برای Player ID ${playerId} آماده ثبت است.`
+    toast(
+        "سفارش " +
+        selected.uc.toLocaleString("fa-IR") +
+        " UC آماده ثبت است."
     );
-
-    /*
-       در سایت واقعی، این قسمت باید
-       به بک‌اند / WooCommerce / API
-       متصل شود.
-    */
 
 }
 
 
-renderProducts();
 updateSummary();
 
 </script>
