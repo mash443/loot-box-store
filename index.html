@@ -23,7 +23,7 @@
     --muted:#808996;
     --border:rgba(255,255,255,0.08);
     --green:#18a76c;
-    --shadow:0 15px 45px rgba(0,0,0,.4);
+    --shadow:0 15px 45px rgba(0,0,0,.5);
 }
 
 html{
@@ -47,7 +47,7 @@ header{
     top:0;
     z-index:1000;
     height:74px;
-    background:rgba(15,22,32,.95);
+    background:rgba(11,15,22,.92);
     backdrop-filter:blur(15px);
     border-bottom:1px solid var(--border);
 }
@@ -91,7 +91,7 @@ header{
 
 .search-bar{
     flex:1;
-    max-width:300px;
+    max-width:320px;
     margin:0 20px;
     position:relative;
     display:flex;
@@ -100,8 +100,8 @@ header{
 
 .search-bar input{
     width:100%;
-    height:40px;
-    padding:0 38px 0 15px;
+    height:42px;
+    padding:0 40px 0 15px;
     border-radius:12px;
     background:rgba(255,255,255,.05);
     border:1px solid var(--border);
@@ -118,14 +118,14 @@ header{
 
 .search-bar span{
     position:absolute;
-    right:12px;
+    right:14px;
     color:var(--muted);
     font-size:14px;
 }
 
 .nav-links{
     display:flex;
-    gap:20px;
+    gap:22px;
 }
 
 .nav-links a{
@@ -163,17 +163,18 @@ header{
     color:var(--gold);
 }
 
-/* HERO SECTION */
+/* HERO BANNER (EXACTLY MATCHING IMAGE BACKGROUND & CHARACTER) */
 .hero{
-    min-height:480px;
+    min-height:460px;
     position:relative;
     overflow:hidden;
-    background:
-        radial-gradient(circle at 75% 45%,rgba(243,186,47,.12),transparent 35%),
-        linear-gradient(135deg,#0d131d,#161f2c);
+    background: 
+        linear-gradient(90deg, rgba(11,15,22,0.95) 0%, rgba(11,15,22,0.6) 50%, rgba(11,15,22,0.2) 100%),
+        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
     display:flex;
     align-items:center;
-    padding:40px 0;
+    padding:50px 0;
+    border-bottom:1px solid var(--border);
 }
 
 .container{
@@ -184,9 +185,9 @@ header{
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1.2fr 0.8fr;
     align-items:center;
-    gap:40px;
+    gap:30px;
 }
 
 .hero-content{
@@ -196,10 +197,10 @@ header{
 
 .badge{
     display:inline-block;
-    padding:8px 14px;
+    padding:7px 14px;
     border-radius:30px;
-    background:rgba(243,186,47,.1);
-    border:1px solid rgba(243,186,47,.25);
+    background:rgba(243,186,47,.12);
+    border:1px solid rgba(243,186,47,.3);
     color:#ffd45c;
     font-size:11px;
     font-weight:800;
@@ -208,54 +209,53 @@ header{
 
 .hero h1{
     color:white;
-    font-size:clamp(30px,4.5vw,56px);
+    font-size:clamp(30px,4.2vw,50px);
     line-height:1.25;
     font-weight:950;
+    text-shadow:0 2px 10px rgba(0,0,0,.6);
 }
 
 .hero h1 span{
-    background:linear-gradient(135deg,var(--gold),var(--orange));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    color:var(--gold);
 }
 
 .hero p{
     max-width:550px;
-    margin-top:15px;
-    color:var(--muted);
-    font-size:12px;
+    margin-top:14px;
+    color:#d0d7de;
+    font-size:12.5px;
     line-height:2.2;
 }
 
 .hero-features-mini{
     display:flex;
     flex-wrap:wrap;
-    gap:16px;
-    margin-top:22px;
+    gap:20px;
+    margin-top:20px;
 }
 
 .hero-feat-item{
     display:flex;
     align-items:center;
     gap:8px;
-    font-size:11px;
-    color:#b0bac8;
+    font-size:11.5px;
+    color:#e1e4e8;
     font-weight:700;
 }
 
 .hero-feat-item span{
     color:var(--gold);
-    font-size:14px;
+    font-size:15px;
 }
 
 .hero-buttons{
     display:flex;
     gap:12px;
-    margin-top:26px;
+    margin-top:25px;
 }
 
 .hero-btn{
-    padding:12px 22px;
+    padding:13px 24px;
     border:0;
     border-radius:12px;
     background:linear-gradient(135deg,var(--gold),var(--orange));
@@ -264,7 +264,7 @@ header{
     font-weight:900;
     cursor:pointer;
     text-decoration:none;
-    box-shadow:0 8px 25px rgba(243,186,47,.3);
+    box-shadow:0 8px 25px rgba(243,186,47,.35);
     transition:.2s;
 }
 
@@ -272,59 +272,37 @@ header{
     transform:translateY(-2px);
 }
 
-.hero-btn.secondary{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.13);
-    color:white;
-    box-shadow:none;
-}
-
-/* HERO BANNER CARD (Right side of hero) */
-.hero-card{
-    min-height:280px;
-    border-radius:24px;
-    background:
-        radial-gradient(circle at center,rgba(243,186,47,.2),transparent 50%),
-        linear-gradient(145deg,#1b2431,#0f151f);
-    border:1px solid rgba(255,255,255,.1);
+/* RIGHT HERO CHEST GRAPHIC (Like Image) */
+.hero-visual{
     display:flex;
-    flex-direction:column;
+    justify-content:flex-end;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
+}
+
+.hero-chest-box{
+    width:100%;
+    max-width:420px;
+    height:240px;
+    border-radius:20px;
+    background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+    border:1px solid rgba(243,186,47,.3);
     box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
 }
 
-.hero-card-icon{
-    width:100px;
-    height:100px;
-    border-radius:24px;
-    display:grid;
-    place-items:center;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.hero-card h2{
-    color:white;
-    font-size:20px;
-    font-weight:900;
-}
-
-.hero-card p{
-    margin-top:6px;
-    color:var(--muted);
-    font-size:11px;
+.hero-chest-box::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(11,15,22,0.9), transparent);
 }
 
 /* TRUST BOX */
 .trust-box{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:16px;
     margin-top:-35px;
     position:relative;
     z-index:5;
@@ -334,7 +312,7 @@ header{
     background:var(--card-bg);
     border:1px solid var(--border);
     border-radius:18px;
-    padding:16px;
+    padding:18px;
     display:flex;
     align-items:center;
     gap:14px;
@@ -342,20 +320,20 @@ header{
 }
 
 .trust-icon{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
     flex:none;
     display:grid;
     place-items:center;
     background:rgba(243,186,47,.1);
     color:var(--gold);
     border-radius:12px;
-    font-size:18px;
+    font-size:20px;
 }
 
 .trust-item strong{
     display:block;
-    font-size:11px;
+    font-size:11.5px;
     color:white;
 }
 
@@ -363,12 +341,12 @@ header{
     display:block;
     margin-top:3px;
     color:var(--muted);
-    font-size:9.5px;
+    font-size:10px;
 }
 
-/* MAIN LAYOUT (Products + Live Ticker) */
+/* MAIN LAYOUT */
 .main-section{
-    padding:40px 0;
+    padding:45px 0;
 }
 
 .main-layout{
@@ -401,12 +379,12 @@ header{
 .products{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    gap:16px;
 }
 
 .product{
     display:none;
-    padding:14px;
+    padding:15px;
     background:var(--card-bg);
     border:1px solid var(--border);
     border-radius:20px;
@@ -422,7 +400,7 @@ header{
 .product:hover{
     transform:translateY(-4px);
     box-shadow:var(--shadow);
-    border-color:rgba(255,255,255,.15);
+    border-color:rgba(243,186,47,.3);
 }
 
 .product-tag{
@@ -431,8 +409,9 @@ header{
     left:14px;
     padding:4px 10px;
     border-radius:8px;
-    font-size:9px;
+    font-size:9.5px;
     font-weight:900;
+    z-index:2;
 }
 
 .product-tag.pop{
@@ -450,16 +429,35 @@ header{
 .product-image{
     height:140px;
     border-radius:14px;
-    background:rgba(255,255,255,.02);
+    background: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
+    position:relative;
+    margin-bottom:12px;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.product-image::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    border-radius:14px;
+}
+
+.product-image span{
+    position:absolute;
+    inset:0;
     display:grid;
     place-items:center;
-    font-size:55px;
-    margin-bottom:12px;
+    font-size:26px;
+    font-weight:950;
+    color:white;
+    text-shadow:0 2px 8px rgba(0,0,0,.8);
+    z-index:1;
 }
 
 .product h3{
     margin:0 4px;
-    font-size:13.5px;
+    font-size:14px;
     color:white;
     font-weight:900;
 }
@@ -468,7 +466,7 @@ header{
     margin:4px 4px 12px;
     min-height:18px;
     color:var(--muted);
-    font-size:10px;
+    font-size:10.5px;
 }
 
 .price-buy-wrap{
@@ -482,17 +480,17 @@ header{
 
 .price{
     color:var(--gold);
-    font-size:12.5px;
+    font-size:13px;
     font-weight:950;
 }
 
 .buy{
-    padding:9px 14px;
+    padding:9px 16px;
     border:0;
     border-radius:10px;
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.07);
     color:white;
-    font-size:10.5px;
+    font-size:11px;
     font-weight:900;
     cursor:pointer;
     transition:.2s;
@@ -503,20 +501,21 @@ header{
     color:#111;
 }
 
-/* CATEGORIES (Bottom Section as in image) */
+/* CATEGORIES (Bottom Grid matching image) */
 .categories{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:16px;
     margin-top:25px;
 }
 
 .category{
     cursor:pointer;
-    padding:18px;
+    padding:20px;
     background:
-        radial-gradient(circle at center,rgba(243,186,47,.08),transparent 70%),
-        var(--card-bg);
+        linear-gradient(135deg, rgba(21,28,39,0.9), rgba(11,15,22,0.9)),
+        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500&auto=format&fit=crop') center/cover no-repeat;
+    background-blend-mode: overlay;
     border:1px solid var(--border);
     border-radius:18px;
     transition:.25s;
@@ -535,16 +534,14 @@ header{
 
 .category.active{
     border-color:var(--gold);
-    background:
-        radial-gradient(circle at center,rgba(243,186,47,.18),transparent 60%),
-        rgba(243,186,47,.04);
+    box-shadow:0 0 20px rgba(243,186,47,.2);
 }
 
 .cat-icon-badge{
-    width:36px;
-    height:36px;
+    width:38px;
+    height:38px;
     border-radius:10px;
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.08);
     border:1px solid var(--border);
     display:grid;
     place-items:center;
@@ -553,7 +550,7 @@ header{
 }
 
 .category h3{
-    font-size:14px;
+    font-size:14.5px;
     font-weight:950;
     color:white;
     margin-top:10px;
@@ -561,7 +558,7 @@ header{
 
 .category p{
     color:var(--muted);
-    font-size:9.5px;
+    font-size:10px;
     margin-top:2px;
 }
 
@@ -580,7 +577,7 @@ header{
     display:flex;
     align-items:center;
     gap:8px;
-    font-size:13px;
+    font-size:13.5px;
     font-weight:900;
     color:white;
     margin-bottom:14px;
@@ -598,7 +595,7 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:9px 11px;
+    padding:10px 12px;
     border-radius:11px;
     background:rgba(255,255,255,.02);
     border:1px solid rgba(255,255,255,.04);
@@ -606,29 +603,32 @@ header{
 
 .ticker-info strong{
     display:block;
-    font-size:10.5px;
+    font-size:11px;
     color:white;
 }
 
 .ticker-info span{
     display:block;
-    font-size:9px;
+    font-size:9.5px;
     color:var(--muted);
     margin-top:2px;
 }
 
 .ticker-badge{
-    font-size:9.5px;
+    font-size:10px;
     font-weight:900;
     color:var(--gold);
     background:rgba(243,186,47,.1);
-    padding:3px 7px;
+    padding:4px 8px;
     border-radius:7px;
 }
 
-/* PROMO SIDE CARD */
+/* PROMO SIDE CARD (Bottom right matching image) */
 .promo-side-card{
-    background:linear-gradient(135deg,rgba(15,22,32,.95),rgba(21,28,39,.95));
+    background: 
+        linear-gradient(135deg, rgba(15,22,32,0.95), rgba(21,28,39,0.95)),
+        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop') center/cover no-repeat;
+    background-blend-mode: overlay;
     border:1px solid var(--border);
     border-radius:20px;
     padding:20px;
@@ -647,7 +647,7 @@ header{
 
 .promo-side-card p{
     color:var(--muted);
-    font-size:9.5px;
+    font-size:10px;
     margin-top:3px;
 }
 
@@ -660,7 +660,7 @@ header{
     align-items:center;
     justify-content:center;
     padding:20px;
-    background:rgba(5,8,12,.75);
+    background:rgba(5,8,12,.8);
     backdrop-filter:blur(12px);
 }
 
@@ -674,7 +674,7 @@ header{
     border-radius:22px;
     background:#161f2c;
     border:1px solid var(--border);
-    box-shadow:0 30px 90px rgba(0,0,0,.5);
+    box-shadow:0 30px 90px rgba(0,0,0,.6);
 }
 
 .modal-header{
@@ -691,8 +691,8 @@ header{
 }
 
 .close{
-    width:30px;
-    height:30px;
+    width:32px;
+    height:32px;
     border:0;
     border-radius:50%;
     background:rgba(255,255,255,.06);
@@ -714,7 +714,7 @@ header{
 
 .selected small{
     color:var(--muted);
-    font-size:9px;
+    font-size:9.5px;
 }
 
 .selected strong{
@@ -726,14 +726,14 @@ header{
 
 .selected span{
     color:var(--gold);
-    font-size:11px;
+    font-size:12px;
     font-weight:900;
 }
 
 label{
     display:block;
     margin-bottom:6px;
-    font-size:10.5px;
+    font-size:11px;
     font-weight:800;
     color:#b0bac8;
 }
@@ -762,7 +762,7 @@ label{
 .id-hint{
     margin-top:6px;
     color:var(--muted);
-    font-size:9px;
+    font-size:9.5px;
     line-height:1.7;
 }
 
@@ -776,7 +776,7 @@ label{
     border:1px solid rgba(243,186,47,.2);
     border-radius:10px;
     color:#ffd45c;
-    font-size:10px;
+    font-size:10.5px;
 }
 
 .loader{
@@ -803,7 +803,7 @@ label{
 
 .result-title{
     color:var(--green);
-    font-size:10.5px;
+    font-size:11px;
     font-weight:900;
     margin-bottom:5px;
 }
@@ -813,7 +813,7 @@ label{
     justify-content:space-between;
     padding:4px 0;
     border-bottom:1px solid rgba(255,255,255,.04);
-    font-size:9.5px;
+    font-size:10px;
 }
 
 .result-row:last-child{border:0;}
@@ -828,7 +828,7 @@ label{
     background:rgba(215,58,73,.1);
     border:1px solid rgba(215,58,73,.3);
     color:#ff7b82;
-    font-size:10px;
+    font-size:10.5px;
     font-weight:700;
 }
 
@@ -840,7 +840,7 @@ label{
     border-radius:11px;
     background:linear-gradient(135deg,var(--gold),var(--orange));
     color:#111;
-    font-size:11.5px;
+    font-size:12px;
     font-weight:950;
     cursor:pointer;
     transition:.2s;
@@ -853,8 +853,8 @@ label{
 
 /* FOOTER */
 footer{
-    padding:35px 20px;
-    background:#0d121a;
+    padding:40px 20px;
+    background:#080b10;
     border-top:1px solid var(--border);
     text-align:center;
     color:var(--muted);
@@ -862,7 +862,7 @@ footer{
 
 .footer-logo{
     color:white;
-    font-size:17px;
+    font-size:18px;
     font-weight:950;
 }
 
@@ -871,20 +871,20 @@ footer{
 }
 
 .footer-text{
-    margin:8px auto;
+    margin:10px auto;
     max-width:480px;
-    font-size:9.5px;
+    font-size:10px;
     line-height:2;
 }
 
 .copyright{
-    margin-top:18px;
-    padding-top:12px;
+    margin-top:20px;
+    padding-top:14px;
     border-top:1px solid var(--border);
-    font-size:9px;
+    font-size:9.5px;
 }
 
-/* RESPONSIVE DESIGN FOR ALL DEVICES */
+/* RESPONSIVE DESIGN */
 @media(max-width:1150px){
     .main-layout{grid-template-columns:1fr;}
     .ticker-card{display:none;}
@@ -895,12 +895,11 @@ footer{
 
 @media(max-width:768px){
     .nav-links, .search-bar{display:none;}
-    .hero-grid{grid-template-columns:1fr; gap:25px;}
-    .hero-card{display:none;}
+    .hero-grid{grid-template-columns:1fr; gap:20px;}
+    .hero-visual{display:none;}
     .products{grid-template-columns:1fr;}
     .categories{grid-template-columns:1fr;}
     .trust-box{grid-template-columns:1fr;}
-    .hero{min-height:auto; padding:30px 0;}
 }
 </style>
 </head>
@@ -933,31 +932,28 @@ footer{
 </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
 <div class="container">
 <div class="hero-grid">
 <div class="hero-content">
     <div class="badge">⚡ فروشگاه تخصصی PUBG Mobile</div>
-    <h1>خرید یوسی پابجی، <span>سریع و مطمئن</span></h1>
+    <h1>خرید یوسی پابجی موبایل،<br><span>سریع، امن، مطمئن</span></h1>
     <p>خرید UC، Prime، Prime Plus و Ground Pack پابجی موبایل با سیستم استعلام دقیق Player ID، درگاه امن بانکی و واریز اتوماتیک لحظه‌ای.</p>
     
     <div class="hero-features-mini">
-        <div class="hero-feat-item"><span>✓</span> تحویل آنی</div>
-        <div class="hero-feat-item"><span>✓</span> بدون نیاز به رمز اکانت</div>
         <div class="hero-feat-item"><span>✓</span> پشتیبانی ۲۴/۷</div>
+        <div class="hero-feat-item"><span>✓</span> بدون نیاز به رمز</div>
+        <div class="hero-feat-item"><span>✓</span> تحویل آنی</div>
     </div>
 
     <div class="hero-buttons">
-        <button class="hero-btn" onclick="showCategory('uc')">مشاهده بسته‌های UC</button>
-        <a href="#categories" class="hero-btn secondary">همه دسته‌بندی‌ها</a>
+        <button class="hero-btn" onclick="showCategory('uc')">مشاهده بسته‌های UC ←</button>
     </div>
 </div>
 
-<div class="hero-card">
-    <div class="hero-card-icon">🎮</div>
-    <h2>PUBG Mobile</h2>
-    <p>UC • Prime • Prime Plus • Ground Pack</p>
+<div class="hero-visual">
+    <div class="hero-chest-box"></div>
 </div>
 </div>
 </div>
@@ -967,20 +963,20 @@ footer{
 <div class="container">
 <div class="trust-box">
     <div class="trust-item">
-        <div class="trust-icon">⚡</div>
-        <div><strong>تحویل سریع</strong><span>پردازش اتوماتیک سفارش</span></div>
-    </div>
-    <div class="trust-item">
-        <div class="trust-icon">🔒</div>
+        <div class="trust-icon">🛡️</div>
         <div><strong>پرداخت امن</strong><span>با درگاه‌های معتبر بانکی</span></div>
     </div>
     <div class="trust-item">
-        <div class="trust-icon">🎮</div>
-        <div><strong>مخصوص PUBG</strong><span>محصولات اورجینال بازی</span></div>
+        <div class="trust-icon">⚡</div>
+        <div><strong>تحویل آنی</strong><span>پردازش سریع سفارش</span></div>
     </div>
     <div class="trust-item">
         <div class="trust-icon">🎧</div>
         <div><strong>پشتیبانی ۲۴/۷</strong><span>پاسخگویی سریع و حرفه‌ای</span></div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon">⭐</div>
+        <div><strong>ضمانت اصالت</strong><span>محصولات اورجینال و تضمینی</span></div>
     </div>
 </div>
 </div>
@@ -1002,120 +998,93 @@ footer{
     <div class="products">
         <!-- UC PRODUCTS -->
         <div class="product show" data-category="uc">
-            <div class="product-image">🪙</div>
+            <div class="product-image"><span>60 UC</span></div>
             <h3>60 UC</h3>
             <div class="product-info">بسته پایه UC</div>
             <div class="price-buy-wrap">
-                <div class="price">197,000 تومان</div>
-                <button class="buy" onclick="openBuy('60 UC','197,000 تومان')">خرید آنی</button>
+                <div class="price">۱۹۷,۰۰۰ تومان</div>
+                <button class="buy" onclick="openBuy('60 UC','۱۹۷,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
         <div class="product show" data-category="uc">
-            <div class="product-image">🪙</div>
+            <div class="product-tag pop">محبوب</div>
+            <div class="product-image"><span>180 UC</span></div>
             <h3>180 UC</h3>
             <div class="product-info">بسته اقتصادی UC</div>
-            <div class="product-tag pop">محبوب</div>
             <div class="price-buy-wrap">
-                <div class="price">695,000 تومان</div>
-                <button class="buy" onclick="openBuy('180 UC','695,000 تومان')">خرید آنی</button>
+                <div class="price">۶۹۵,۰۰۰ تومان</div>
+                <button class="buy" onclick="openBuy('180 UC','۶۹۵,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
         <div class="product show" data-category="uc">
-            <div class="product-image">🪙</div>
+            <div class="product-image"><span>325 UC</span></div>
             <h3>325 UC</h3>
             <div class="product-info">بسته استاندارد UC</div>
             <div class="price-buy-wrap">
-                <div class="price">1,020,000 تومان</div>
-                <button class="buy" onclick="openBuy('325 UC','1,020,000 تومان')">خرید آنی</button>
+                <div class="price">۱,۰۲۰,۰۰۰ تومان</div>
+                <button class="buy" onclick="openBuy('325 UC','۱,۰۲۰,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
         <div class="product show" data-category="uc">
-            <div class="product-image">🪙</div>
+            <div class="product-tag best">پرفروش</div>
+            <div class="product-image"><span>660 UC</span></div>
             <h3>660 UC</h3>
             <div class="product-info">بسته پرفروش UC</div>
-            <div class="product-tag best">پرفروش</div>
             <div class="price-buy-wrap">
-                <div class="price">1,970,000 تومان</div>
-                <button class="buy" onclick="openBuy('660 UC','1,970,000 تومان')">خرید آنی</button>
+                <div class="price">۱,۹۷۰,۰۰۰ تومان</div>
+                <button class="buy" onclick="openBuy('660 UC','۱,۹۷۰,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
         <div class="product show" data-category="uc">
-            <div class="product-image">🪙</div>
+            <div class="product-image"><span>1800 UC</span></div>
             <h3>1800 UC</h3>
             <div class="product-info">بسته ویژه UC</div>
             <div class="price-buy-wrap">
-                <div class="price">4,975,000 تومان</div>
-                <button class="buy" onclick="openBuy('1800 UC','4,975,000 تومان')">خرید آنی</button>
+                <div class="price">۴,۹۷۵,۰۰۰ تومان</div>
+                <button class="buy" onclick="openBuy('1800 UC','۴,۹۷۵,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
-        <!-- PRIME PRODUCTS -->
+        <!-- PRIME -->
         <div class="product" data-category="prime">
-            <div class="product-image">⭐</div>
-            <h3>Prime — ۱ ماه</h3>
-            <div class="product-info">اشتراک رسمی پرایم</div>
+            <div class="product-image"><span>Prime</span></div>
+            <h3>اشتراک پرایم</h3>
+            <div class="product-info">اشتراک رسمی ۱ ماهه</div>
             <div class="price-buy-wrap">
                 <div class="price">۲۹۵,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Prime — ۱ ماه','۲۹۵,۰۰۰ تومان')">خرید آنی</button>
-            </div>
-        </div>
-        <div class="product" data-category="prime">
-            <div class="product-image">⭐</div>
-            <h3>Prime — ۳ ماه</h3>
-            <div class="product-info">اشتراک رسمی پرایم</div>
-            <div class="price-buy-wrap">
-                <div class="price">۸۲۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Prime — ۳ ماه','۸۲۰,۰۰۰ تومان')">خرید آنی</button>
+                <button class="buy" onclick="openBuy('اشتراک پرایم','۲۹۵,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
-        <!-- PRIME PLUS PRODUCTS -->
+        <!-- PRIME PLUS -->
         <div class="product" data-category="primeplus">
-            <div class="product-image">👑</div>
-            <h3>Prime Plus — ۱ ماه</h3>
-            <div class="product-info">اشتراک ویژه پرایم پلاس</div>
             <div class="product-tag best">پرفروش</div>
+            <div class="product-image"><span>Prime+</span></div>
+            <h3>Prime Plus</h3>
+            <div class="product-info">اشتراک ویژه پرایم پلاس</div>
             <div class="price-buy-wrap">
                 <div class="price">۹۹۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Prime Plus — ۱ ماه','۹۹۰,۰۰۰ تومان')">خرید آنی</button>
+                <button class="buy" onclick="openBuy('Prime Plus','۹۹۰,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
 
         <!-- GROUND PACK -->
         <div class="product" data-category="groundpack">
-            <div class="product-image">🎁</div>
-            <h3>Ground Pack 1</h3>
-            <div class="product-info">پک تخصصی گراند پک ۱</div>
+            <div class="product-image"><span>Ground Pack</span></div>
+            <h3>Ground Pack 1, 2, 3</h3>
+            <div class="product-info">پک تخصصی گراند پک</div>
             <div class="price-buy-wrap">
                 <div class="price">۴۸۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Ground Pack 1','۴۸۰,۰۰۰ تومان')">خرید آنی</button>
-            </div>
-        </div>
-        <div class="product" data-category="groundpack">
-            <div class="product-image">🎁</div>
-            <h3>Ground Pack 2</h3>
-            <div class="product-info">پک تخصصی گراند پک ۲</div>
-            <div class="price-buy-wrap">
-                <div class="price">۸۹۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Ground Pack 2','۸۹۰,۰۰۰ تومان')">خرید آنی</button>
-            </div>
-        </div>
-        <div class="product" data-category="groundpack">
-            <div class="product-image">🎁</div>
-            <h3>Ground Pack 3</h3>
-            <div class="product-info">پک تخصصی گراند پک ۳</div>
-            <div class="price-buy-wrap">
-                <div class="price">۱,۴۵۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Ground Pack 3','۱,۴۵۰,۰۰۰ تومان')">خرید آنی</button>
+                <button class="buy" onclick="openBuy('Ground Pack','۴۸۰,۰۰۰ تومان')">خرید آنی</button>
             </div>
         </div>
     </div>
 
-    <!-- CATEGORIES SECTION AT BOTTOM -->
+    <!-- CATEGORIES BOTTOM -->
     <div id="categories" style="margin-top:45px;">
         <div class="title" style="margin-bottom:18px;">
             <div>
@@ -1157,7 +1126,7 @@ footer{
     </div>
 </div>
 
-<!-- RIGHT COLUMN: LIVE RECENT PURCHASES & PROMO CARD -->
+<!-- RIGHT COLUMN: LIVE TICKER -->
 <div>
     <div class="ticker-card">
         <div class="ticker-header">
@@ -1166,28 +1135,28 @@ footer{
         <div class="ticker-list">
             <div class="ticker-item">
                 <div class="ticker-info">
-                    <strong>مشتری آرمیس</strong>
+                    <strong>کاربر ۷۷۴۲</strong>
                     <span>۲ دقیقه پیش</span>
                 </div>
                 <div class="ticker-badge">660 UC</div>
             </div>
             <div class="ticker-item">
                 <div class="ticker-info">
-                    <strong>مشتری آرشام</strong>
+                    <strong>کاربر ۵۹۲۱</strong>
                     <span>۷ دقیقه پیش</span>
                 </div>
                 <div class="ticker-badge">1800 UC</div>
             </div>
             <div class="ticker-item">
                 <div class="ticker-info">
-                    <strong>مشتری ماهان</strong>
+                    <strong>کاربر ۳۴۷۶</strong>
                     <span>۱۲ دقیقه پیش</span>
                 </div>
                 <div class="ticker-badge">325 UC</div>
             </div>
             <div class="ticker-item">
                 <div class="ticker-info">
-                    <strong>مشتری تام</strong>
+                    <strong>کاربر ۶۱۲۰</strong>
                     <span>۱۵ دقیقه پیش</span>
                 </div>
                 <div class="ticker-badge">60 UC</div>
@@ -1208,7 +1177,7 @@ footer{
 </div>
 </section>
 
-<!-- MODAL: BUY / PLAYER ID CHECK -->
+<!-- MODAL BUY -->
 <div class="modal" id="buyModal">
 <div class="modal-box">
 <div class="modal-header">
@@ -1243,7 +1212,7 @@ footer{
 </div>
 </div>
 
-<!-- MODAL: AUTH -->
+<!-- MODAL AUTH -->
 <div class="modal" id="authModal">
 <div class="modal-box">
 <div class="modal-header">
