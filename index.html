@@ -37,11 +37,12 @@ body{
     overflow-x:hidden;
 }
 
-button, input{
+button,input{
     font-family:inherit;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
     position:sticky;
     top:0;
@@ -108,19 +109,16 @@ header{
     color:white;
     font-size:12px;
     outline:none;
-    transition:.2s;
 }
 
 .search-bar input:focus{
     border-color:var(--gold);
-    background:rgba(255,255,255,.08);
 }
 
 .search-bar span{
     position:absolute;
     right:14px;
     color:var(--muted);
-    font-size:14px;
 }
 
 .nav-links{
@@ -133,7 +131,6 @@ header{
     text-decoration:none;
     font-size:12px;
     font-weight:700;
-    transition:.2s;
 }
 
 .nav-links a:hover,
@@ -153,24 +150,23 @@ header{
     font-size:12px;
     font-weight:800;
     cursor:pointer;
-    transition:.2s;
-    text-decoration:none;
 }
 
-.auth-btn:hover{
-    background:rgba(243,186,47,.15);
-    border-color:rgba(243,186,47,.4);
-    color:var(--gold);
-}
+/* ================= HERO ================= */
 
-/* HERO BANNER */
 .hero{
     min-height:460px;
     position:relative;
     overflow:hidden;
-    background: 
-        linear-gradient(90deg, rgba(11,15,22,0.98) 0%, rgba(11,15,22,0.65) 55%, rgba(11,15,22,0.3) 100%),
-        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11,15,22,.98) 0%,
+            rgba(11,15,22,.65) 55%,
+            rgba(11,15,22,.3) 100%
+        ),
+        url("images/uc-banner.png") center/cover no-repeat;
+
     display:flex;
     align-items:center;
     padding:50px 0;
@@ -185,7 +181,7 @@ header{
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.2fr 0.8fr;
+    grid-template-columns:1.2fr .8fr;
     align-items:center;
     gap:30px;
 }
@@ -212,7 +208,6 @@ header{
     font-size:clamp(30px,4.2vw,50px);
     line-height:1.25;
     font-weight:950;
-    text-shadow:0 2px 10px rgba(0,0,0,.6);
 }
 
 .hero h1 span{
@@ -245,7 +240,6 @@ header{
 
 .hero-feat-item span{
     color:var(--gold);
-    font-size:15px;
 }
 
 .hero-buttons{
@@ -263,9 +257,7 @@ header{
     font-size:12px;
     font-weight:900;
     cursor:pointer;
-    text-decoration:none;
     box-shadow:0 8px 25px rgba(243,186,47,.35);
-    transition:.2s;
 }
 
 .hero-btn:hover{
@@ -283,7 +275,10 @@ header{
     max-width:420px;
     height:250px;
     border-radius:20px;
-    background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+
+    background:
+        url("images/uc-banner.png") center/cover no-repeat;
+
     border:1px solid rgba(243,186,47,.3);
     box-shadow:var(--shadow);
     position:relative;
@@ -291,13 +286,14 @@ header{
 }
 
 .hero-chest-box::after{
-    content:'';
+    content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(11,15,22,0.8), transparent);
+    background:linear-gradient(to top,rgba(11,15,22,.8),transparent);
 }
 
-/* TRUST BOX */
+/* ================= TRUST ================= */
+
 .trust-box{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -343,7 +339,8 @@ header{
     font-size:10px;
 }
 
-/* MAIN LAYOUT */
+/* ================= MAIN ================= */
+
 .main-section{
     padding:45px 0;
 }
@@ -374,7 +371,8 @@ header{
     font-size:11px;
 }
 
-/* PRODUCTS GRID */
+/* ================= PRODUCTS ================= */
+
 .products{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -410,7 +408,7 @@ header{
     border-radius:8px;
     font-size:9.5px;
     font-weight:900;
-    z-index:2;
+    z-index:3;
 }
 
 .product-tag.pop{
@@ -425,31 +423,28 @@ header{
     border:1px solid rgba(243,186,47,.3);
 }
 
-/* UC Chest Image Card Styling */
+/* ================= REAL PRODUCT IMAGE ================= */
+
 .product-image{
-    height:140px;
+    height:170px;
     border-radius:14px;
-    background: 
-        linear-gradient(to top, rgba(11,15,22,0.9), rgba(11,15,22,0.2)),
-        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
-    position:relative;
+    overflow:hidden;
     margin-bottom:12px;
-    border:1px solid rgba(243,186,47,0.15);
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-    padding-bottom:15px;
+    background:#08111b;
+    border:1px solid rgba(243,186,47,.15);
+    position:relative;
 }
 
-.product-image-inner{
-    font-size:18px;
-    font-weight:950;
-    color:var(--gold);
-    text-shadow:0 2px 8px rgba(0,0,0,0.9);
-    background:rgba(0,0,0,0.6);
-    padding:4px 12px;
-    border-radius:8px;
-    border:1px solid rgba(243,186,47,0.3);
+.product-image img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.05);
 }
 
 .product h3{
@@ -490,7 +485,6 @@ header{
     font-size:11px;
     font-weight:900;
     cursor:pointer;
-    transition:.2s;
 }
 
 .buy:hover{
@@ -498,7 +492,8 @@ header{
     color:#111;
 }
 
-/* CATEGORIES (Bottom Grid matching image) */
+/* ================= CATEGORIES ================= */
+
 .categories{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -508,19 +503,32 @@ header{
 
 .category{
     cursor:pointer;
-    padding:18px;
-    background: 
-        linear-gradient(135deg, rgba(21,28,39,0.92), rgba(11,15,22,0.95)),
-        url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=500&auto=format&fit=crop') center/cover no-repeat;
-    background-blend-mode: overlay;
+    padding:0;
+    background:#111;
     border:1px solid var(--border);
     border-radius:18px;
+    overflow:hidden;
     transition:.25s;
-    text-align:right;
     min-height:150px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    position:relative;
+}
+
+.category img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    display:block;
+}
+
+.category-content{
+    position:absolute;
+    inset:auto 0 0 0;
+    padding:15px;
+    background:linear-gradient(
+        transparent,
+        rgba(5,8,12,.95)
+    );
+    padding-top:45px;
 }
 
 .category:hover{
@@ -534,33 +542,20 @@ header{
     box-shadow:0 0 20px rgba(243,186,47,.2);
 }
 
-.cat-icon-badge{
-    width:38px;
-    height:38px;
-    border-radius:10px;
-    background:rgba(243,186,47,.15);
-    border:1px solid rgba(243,186,47,.3);
-    display:grid;
-    place-items:center;
-    color:var(--gold);
-    font-size:15px;
-    font-weight:950;
-}
-
 .category h3{
     font-size:14px;
     font-weight:950;
     color:white;
-    margin-top:10px;
 }
 
 .category p{
     color:var(--muted);
     font-size:10px;
-    margin-top:2px;
+    margin-top:3px;
 }
 
-/* LIVE TICKER (Right Column) */
+/* ================= TICKER ================= */
+
 .ticker-card{
     background:var(--card-bg);
     border:1px solid var(--border);
@@ -621,12 +616,13 @@ header{
     border-radius:7px;
 }
 
-/* PROMO SIDE CARD (Bottom right matching image) */
+/* ================= PROMO ================= */
+
 .promo-side-card{
-    background: 
-        linear-gradient(135deg, rgba(15,22,32,0.92), rgba(21,28,39,0.92)),
-        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=400&auto=format&fit=crop') center/cover no-repeat;
-    background-blend-mode: overlay;
+    background:
+        linear-gradient(135deg,rgba(15,22,32,.92),rgba(21,28,39,.92)),
+        url("images/uc-banner.png") center/cover no-repeat;
+
     border:1px solid var(--border);
     border-radius:20px;
     padding:18px;
@@ -640,7 +636,6 @@ header{
 .promo-side-card h3{
     color:white;
     font-size:13px;
-    font-weight:900;
 }
 
 .promo-side-card p{
@@ -653,14 +648,13 @@ header{
     font-size:11px;
     font-weight:950;
     color:var(--gold);
-    background:rgba(243,186,47,0.1);
+    background:rgba(243,186,47,.1);
     padding:6px 10px;
     border-radius:8px;
-    border:1px solid rgba(243,186,47,0.3);
-    letter-spacing:1px;
 }
 
-/* MODALS */
+/* ================= MODALS ================= */
+
 .modal{
     position:fixed;
     inset:0;
@@ -695,8 +689,6 @@ header{
 
 .modal-header h2{
     font-size:17px;
-    font-weight:950;
-    color:white;
 }
 
 .close{
@@ -708,8 +700,6 @@ header{
     color:white;
     cursor:pointer;
     font-size:16px;
-    display:grid;
-    place-items:center;
 }
 
 .selected{
@@ -730,7 +720,6 @@ header{
     display:block;
     margin:3px 0;
     font-size:14px;
-    color:white;
 }
 
 .selected span{
@@ -760,12 +749,10 @@ label{
     text-align:left;
     font-size:14px;
     font-weight:700;
-    transition:.2s;
 }
 
 .modal-input:focus{
     border-color:var(--gold);
-    background:rgba(255,255,255,.06);
 }
 
 .id-hint{
@@ -825,9 +812,13 @@ label{
     font-size:10px;
 }
 
-.result-row:last-child{border:0;}
-.result-row span{color:var(--muted);}
-.result-row b{color:white;}
+.result-row:last-child{
+    border:0;
+}
+
+.result-row span{
+    color:var(--muted);
+}
 
 .error{
     display:none;
@@ -852,7 +843,6 @@ label{
     font-size:12px;
     font-weight:950;
     cursor:pointer;
-    transition:.2s;
 }
 
 .action-btn:disabled{
@@ -860,7 +850,8 @@ label{
     cursor:not-allowed;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
     padding:40px 20px;
     background:#080b10;
@@ -893,39 +884,91 @@ footer{
     font-size:9.5px;
 }
 
-/* RESPONSIVE DESIGN */
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:1150px){
-    .main-layout{grid-template-columns:1fr;}
-    .ticker-card{display:none;}
-    .categories{grid-template-columns:repeat(2,1fr);}
-    .products{grid-template-columns:repeat(2,1fr);}
-    .trust-box{grid-template-columns:repeat(2,1fr); margin-top:0;}
+
+    .main-layout{
+        grid-template-columns:1fr;
+    }
+
+    .ticker-card{
+        display:none;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-box{
+        grid-template-columns:repeat(2,1fr);
+        margin-top:0;
+    }
 }
 
 @media(max-width:768px){
-    .nav-links, .search-bar{display:none;}
-    .hero-grid{grid-template-columns:1fr; gap:20px;}
-    .hero-visual{display:none;}
-    .products{grid-template-columns:1fr;}
-    .categories{grid-template-columns:1fr;}
-    .trust-box{grid-template-columns:1fr;}
+
+    .nav-links,
+    .search-bar{
+        display:none;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .hero-visual{
+        display:none;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .trust-box{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:190px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header>
+
 <div class="nav">
+
     <div class="logo-wrap">
         <div class="logo-icon">🎁</div>
-        <div class="logo">Loot Box <span>Store</span></div>
+
+        <div class="logo">
+            Loot Box <span>Store</span>
+        </div>
     </div>
 
     <div class="search-bar">
         <span>🔍</span>
-        <input type="text" placeholder="جستجو در محصولات..." id="searchInput" oninput="filterProductsSearch()">
+        <input
+            type="text"
+            placeholder="جستجو در محصولات..."
+            id="searchInput"
+            oninput="filterProductsSearch()"
+        >
     </div>
 
     <div class="nav-links">
@@ -936,517 +979,1634 @@ footer{
     </div>
 
     <button class="auth-btn" onclick="openAuthModal()">
-        <span>👤</span> ورود / ثبت‌نام
+        👤 ورود / ثبت‌نام
     </button>
+
 </div>
+
 </header>
 
-<!-- HERO SECTION -->
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
+
 <div class="container">
+
 <div class="hero-grid">
+
 <div class="hero-content">
-    <div class="badge">⚡ فروشگاه تخصصی PUBG Mobile</div>
-    <h1>خرید یوسی پابجی موبایل،<br><span>سریع، امن، مطمئن</span></h1>
-    <p>خرید UC، Prime، Prime Plus و Ground Pack پابجی موبایل با سیستم استعلام دقیق Player ID، درگاه امن بانکی و واریز اتوماتیک لحظه‌ای.</p>
-    
+
+    <div class="badge">
+        ⚡ فروشگاه تخصصی PUBG Mobile
+    </div>
+
+    <h1>
+        خرید یوسی پابجی موبایل،
+        <br>
+        <span>سریع، امن، مطمئن</span>
+    </h1>
+
+    <p>
+        خرید UC، Prime، Prime Plus و Ground Pack پابجی موبایل
+        با سیستم استعلام دقیق Player ID، درگاه امن بانکی
+        و واریز اتوماتیک لحظه‌ای.
+    </p>
+
     <div class="hero-features-mini">
-        <div class="hero-feat-item"><span>✓</span> پشتیبانی ۲۴/۷</div>
-        <div class="hero-feat-item"><span>✓</span> بدون نیاز به رمز</div>
-        <div class="hero-feat-item"><span>✓</span> تحویل آنی</div>
+
+        <div class="hero-feat-item">
+            <span>✓</span>
+            پشتیبانی ۲۴/۷
+        </div>
+
+        <div class="hero-feat-item">
+            <span>✓</span>
+            بدون نیاز به رمز
+        </div>
+
+        <div class="hero-feat-item">
+            <span>✓</span>
+            تحویل آنی
+        </div>
+
     </div>
 
     <div class="hero-buttons">
-        <button class="hero-btn" onclick="showCategory('uc')">مشاهده بسته‌های UC ←</button>
+
+        <button
+            class="hero-btn"
+            onclick="showCategory('uc')"
+        >
+            مشاهده بسته‌های UC ←
+        </button>
+
     </div>
+
 </div>
+
 
 <div class="hero-visual">
+
     <div class="hero-chest-box"></div>
+
 </div>
+
 </div>
+
 </div>
+
 </section>
 
-<!-- TRUST BOX -->
+
+<!-- ================= TRUST ================= -->
+
 <div class="container">
+
 <div class="trust-box">
+
     <div class="trust-item">
+
         <div class="trust-icon">🛡️</div>
-        <div><strong>پرداخت امن</strong><span>با درگاه‌های معتبر بانکی</span></div>
+
+        <div>
+            <strong>پرداخت امن</strong>
+            <span>با درگاه‌های معتبر بانکی</span>
+        </div>
+
     </div>
+
+
     <div class="trust-item">
+
         <div class="trust-icon">⚡</div>
-        <div><strong>تحویل آنی</strong><span>پردازش سریع سفارش</span></div>
+
+        <div>
+            <strong>تحویل آنی</strong>
+            <span>پردازش سریع سفارش</span>
+        </div>
+
     </div>
+
+
     <div class="trust-item">
+
         <div class="trust-icon">🎧</div>
-        <div><strong>پشتیبانی ۲۴/۷</strong><span>پاسخگویی سریع و حرفه‌ای</span></div>
+
+        <div>
+            <strong>پشتیبانی ۲۴/۷</strong>
+            <span>پاسخگویی سریع و حرفه‌ای</span>
+        </div>
+
     </div>
+
+
     <div class="trust-item">
+
         <div class="trust-icon">⭐</div>
-        <div><strong>ضمانت اصالت</strong><span>محصولات اورجینال و تضمینی</span></div>
+
+        <div>
+            <strong>ضمانت اصالت</strong>
+            <span>محصولات اورجینال و تضمینی</span>
+        </div>
+
     </div>
-</div>
+
 </div>
 
-<!-- MAIN SECTION -->
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
 <section class="main-section" id="products">
+
 <div class="container">
+
 <div class="main-layout">
 
-<!-- LEFT COLUMN: PRODUCTS & CATEGORIES -->
+
+<!-- ================= PRODUCTS ================= -->
+
 <div>
+
     <div class="title">
+
         <div>
-            <h2 id="productTitle">بسته‌های یوسی پابجی</h2>
-            <p id="productSubtitle">تمام بسته‌های UC را انتخاب کنید</p>
+
+            <h2 id="productTitle">
+                بسته‌های یوسی پابجی
+            </h2>
+
+            <p id="productSubtitle">
+                تمام بسته‌های UC را انتخاب کنید
+            </p>
+
         </div>
+
     </div>
+
 
     <div class="products">
-        <!-- UC PRODUCTS -->
-        <div class="product show" data-category="uc">
-            <div class="product-image"><div class="product-image-inner">UC</div></div>
+
+
+        <!-- 60 UC -->
+
+        <div
+            class="product show"
+            data-category="uc"
+        >
+
+            <div class="product-image">
+
+                <img
+                    src="images/uc60.png"
+                    alt="60 UC"
+                >
+
+            </div>
+
             <h3>60 UC</h3>
-            <div class="product-info">بسته پایه UC</div>
-            <div class="price-buy-wrap">
-                <div class="price">۱۹۷,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('60 UC','۱۹۷,۰۰۰ تومان')">خرید آنی</button>
+
+            <div class="product-info">
+                بسته پایه UC
             </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۱۹۷,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('60 UC','۱۹۷,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="product show" data-category="uc">
-            <div class="product-tag pop">محبوب</div>
-            <div class="product-image"><div class="product-image-inner">UC</div></div>
+
+        <!-- 180 UC -->
+
+        <div
+            class="product show"
+            data-category="uc"
+        >
+
+            <div class="product-tag pop">
+                محبوب
+            </div>
+
+            <div class="product-image">
+
+                <img
+                    src="images/uc180.png"
+                    alt="180 UC"
+                >
+
+            </div>
+
             <h3>180 UC</h3>
-            <div class="product-info">بسته اقتصادی UC</div>
-            <div class="price-buy-wrap">
-                <div class="price">۶۹۵,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('180 UC','۶۹۵,۰۰۰ تومان')">خرید آنی</button>
+
+            <div class="product-info">
+                بسته اقتصادی UC
             </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۶۹۵,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('180 UC','۶۹۵,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="product show" data-category="uc">
-            <div class="product-image"><div class="product-image-inner">UC</div></div>
+
+        <!-- 325 UC -->
+
+        <div
+            class="product show"
+            data-category="uc"
+        >
+
+            <div class="product-image">
+
+                <img
+                    src="images/uc325.png"
+                    alt="325 UC"
+                >
+
+            </div>
+
             <h3>325 UC</h3>
-            <div class="product-info">بسته استاندارد UC</div>
-            <div class="price-buy-wrap">
-                <div class="price">۱,۰۲۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('325 UC','۱,۰۲۰,۰۰۰ تومان')">خرید آنی</button>
+
+            <div class="product-info">
+                بسته استاندارد UC
             </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۱,۰۲۰,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('325 UC','۱,۰۲۰,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="product show" data-category="uc">
-            <div class="product-tag best">پرفروش</div>
-            <div class="product-image"><div class="product-image-inner">UC</div></div>
+
+        <!-- 660 UC -->
+
+        <div
+            class="product show"
+            data-category="uc"
+        >
+
+            <div class="product-tag best">
+                پرفروش
+            </div>
+
+            <div class="product-image">
+
+                <img
+                    src="images/uc660.png"
+                    alt="660 UC"
+                >
+
+            </div>
+
             <h3>660 UC</h3>
-            <div class="product-info">بسته پرفروش UC</div>
-            <div class="price-buy-wrap">
-                <div class="price">۱,۹۷۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('660 UC','۱,۹۷۰,۰۰۰ تومان')">خرید آنی</button>
+
+            <div class="product-info">
+                بسته پرفروش UC
             </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۱,۹۷۰,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('660 UC','۱,۹۷۰,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="product show" data-category="uc">
-            <div class="product-image"><div class="product-image-inner">UC</div></div>
-            <h3>1800 UC</h3>
-            <div class="product-info">بسته ویژه UC</div>
-            <div class="price-buy-wrap">
-                <div class="price">۴,۹۷۵,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('1800 UC','۴,۹۷۵,۰۰۰ تومان')">خرید آنی</button>
+
+        <!-- 1800 UC -->
+
+        <div
+            class="product show"
+            data-category="uc"
+        >
+
+            <div class="product-image">
+
+                <img
+                    src="images/uc1800.png"
+                    alt="1800 UC"
+                >
+
             </div>
+
+            <h3>1800 UC</h3>
+
+            <div class="product-info">
+                بسته ویژه UC
+            </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۴,۹۷۵,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('1800 UC','۴,۹۷۵,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
+
 
         <!-- PRIME -->
-        <div class="product" data-category="prime">
-            <div class="product-image"><div class="product-image-inner">Prime</div></div>
-            <h3>اشتراک پرایم</h3>
-            <div class="product-info">اشتراک رسمی ۱ ماهه</div>
-            <div class="price-buy-wrap">
-                <div class="price">۲۹۵,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('اشتراک پرایم','۲۹۵,۰۰۰ تومان')">خرید آنی</button>
+
+        <div
+            class="product"
+            data-category="prime"
+        >
+
+            <div class="product-image">
+
+                <img
+                    src="images/prime.png"
+                    alt="Prime"
+                >
+
             </div>
+
+            <h3>اشتراک پرایم</h3>
+
+            <div class="product-info">
+                اشتراک رسمی ۱ ماهه
+            </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۲۹۵,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('اشتراک پرایم','۲۹۵,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
+
 
         <!-- PRIME PLUS -->
-        <div class="product" data-category="primeplus">
-            <div class="product-tag best">پرفروش</div>
-            <div class="product-image"><div class="product-image-inner">Prime+</div></div>
-            <h3>Prime Plus</h3>
-            <div class="product-info">اشتراک ویژه پرایم پلاس</div>
-            <div class="price-buy-wrap">
-                <div class="price">۹۹۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Prime Plus','۹۹۰,۰۰۰ تومان')">خرید آنی</button>
+
+        <div
+            class="product"
+            data-category="primeplus"
+        >
+
+            <div class="product-tag best">
+                پرفروش
             </div>
+
+            <div class="product-image">
+
+                <img
+                    src="images/prime-plus.png"
+                    alt="Prime Plus"
+                >
+
+            </div>
+
+            <h3>Prime Plus</h3>
+
+            <div class="product-info">
+                اشتراک ویژه پرایم پلاس
+            </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۹۹۰,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('Prime Plus','۹۹۰,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
+
 
         <!-- GROUND PACK -->
-        <div class="product" data-category="groundpack">
-            <div class="product-image"><div class="product-image-inner">GP</div></div>
-            <h3>Ground Pack 1, 2, 3</h3>
-            <div class="product-info">پک تخصصی گراند پک</div>
-            <div class="price-buy-wrap">
-                <div class="price">۴۸۰,۰۰۰ تومان</div>
-                <button class="buy" onclick="openBuy('Ground Pack','۴۸۰,۰۰۰ تومان')">خرید آنی</button>
+
+        <div
+            class="product"
+            data-category="groundpack"
+        >
+
+            <div class="product-image">
+
+                <img
+                    src="images/ground-pack.png"
+                    alt="Ground Pack"
+                >
+
             </div>
+
+            <h3>
+                Ground Pack 1, 2, 3
+            </h3>
+
+            <div class="product-info">
+                پک تخصصی گراند پک
+            </div>
+
+            <div class="price-buy-wrap">
+
+                <div class="price">
+                    ۴۸۰,۰۰۰ تومان
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="openBuy('Ground Pack','۴۸۰,۰۰۰ تومان')"
+                >
+                    خرید آنی
+                </button>
+
+            </div>
+
         </div>
+
+
     </div>
 
-    <!-- CATEGORIES BOTTOM -->
-    <div id="categories" style="margin-top:45px;">
-        <div class="title" style="margin-bottom:18px;">
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <div
+        id="categories"
+        style="margin-top:45px;"
+    >
+
+        <div
+            class="title"
+            style="margin-bottom:18px;"
+        >
+
             <div>
-                <h2>دسته‌بندی محصولات</h2>
-                <p>محصول موردنظر خود را انتخاب کنید</p>
+
+                <h2>
+                    دسته‌بندی محصولات
+                </h2>
+
+                <p>
+                    محصول موردنظر خود را انتخاب کنید
+                </p>
+
             </div>
+
         </div>
+
 
         <div class="categories">
-            <div class="category active" onclick="showCategory('uc')">
-                <div class="cat-icon-badge">UC</div>
-                <div>
-                    <h3>بسته‌های یوسی پابجی</h3>
-                    <p>خرید آنی یوسی</p>
+
+
+            <div
+                class="category active"
+                onclick="showCategory('uc')"
+            >
+
+                <img
+                    src="images/uc-banner.png"
+                    alt="UC"
+                >
+
+                <div class="category-content">
+
+                    <h3>
+                        بسته‌های یوسی پابجی
+                    </h3>
+
+                    <p>
+                        خرید آنی یوسی
+                    </p>
+
                 </div>
+
             </div>
-            <div class="category" onclick="showCategory('prime')">
-                <div class="cat-icon-badge">PR</div>
-                <div>
-                    <h3>Prime</h3>
-                    <p>اشتراک پرایم</p>
+
+
+            <div
+                class="category"
+                onclick="showCategory('prime')"
+            >
+
+                <img
+                    src="images/prime.png"
+                    alt="Prime"
+                >
+
+                <div class="category-content">
+
+                    <h3>
+                        Prime
+                    </h3>
+
+                    <p>
+                        اشتراک پرایم
+                    </p>
+
                 </div>
+
             </div>
-            <div class="category" onclick="showCategory('primeplus')">
-                <div class="cat-icon-badge">PP</div>
-                <div>
-                    <h3>Prime Plus</h3>
-                    <p>اشتراک پرایم پلاس</p>
+
+
+            <div
+                class="category"
+                onclick="showCategory('primeplus')"
+            >
+
+                <img
+                    src="images/prime-plus.png"
+                    alt="Prime Plus"
+                >
+
+                <div class="category-content">
+
+                    <h3>
+                        Prime Plus
+                    </h3>
+
+                    <p>
+                        اشتراک پرایم پلاس
+                    </p>
+
                 </div>
+
             </div>
-            <div class="category" onclick="showCategory('groundpack')">
-                <div class="cat-icon-badge">GP</div>
-                <div>
-                    <h3>Ground Pack</h3>
-                    <p>Ground Pack 1, 2, 3</p>
+
+
+            <div
+                class="category"
+                onclick="showCategory('groundpack')"
+            >
+
+                <img
+                    src="images/ground-pack.png"
+                    alt="Ground Pack"
+                >
+
+                <div class="category-content">
+
+                    <h3>
+                        Ground Pack
+                    </h3>
+
+                    <p>
+                        Ground Pack 1, 2, 3
+                    </p>
+
                 </div>
+
             </div>
+
+
         </div>
+
     </div>
+
 </div>
 
-<!-- RIGHT COLUMN: LIVE TICKER -->
+
+<!-- ================= SIDEBAR ================= -->
+
 <div>
+
     <div class="ticker-card">
+
         <div class="ticker-header">
-            <span>⚡</span> خریدهای اخیر کاربران
+            <span>⚡</span>
+            خریدهای اخیر کاربران
         </div>
+
         <div class="ticker-list">
+
             <div class="ticker-item">
+
                 <div class="ticker-info">
                     <strong>کاربر ۷۷۴۲</strong>
                     <span>۲ دقیقه پیش</span>
                 </div>
-                <div class="ticker-badge">660 UC</div>
+
+                <div class="ticker-badge">
+                    660 UC
+                </div>
+
             </div>
+
+
             <div class="ticker-item">
+
                 <div class="ticker-info">
                     <strong>کاربر ۵۹۲۱</strong>
                     <span>۷ دقیقه پیش</span>
                 </div>
-                <div class="ticker-badge">1800 UC</div>
+
+                <div class="ticker-badge">
+                    1800 UC
+                </div>
+
             </div>
+
+
             <div class="ticker-item">
+
                 <div class="ticker-info">
                     <strong>کاربر ۳۴۷۶</strong>
                     <span>۱۲ دقیقه پیش</span>
                 </div>
-                <div class="ticker-badge">325 UC</div>
+
+                <div class="ticker-badge">
+                    325 UC
+                </div>
+
             </div>
+
+
             <div class="ticker-item">
+
                 <div class="ticker-info">
                     <strong>کاربر ۶۱۲۰</strong>
                     <span>۱۵ دقیقه پیش</span>
                 </div>
-                <div class="ticker-badge">60 UC</div>
+
+                <div class="ticker-badge">
+                    60 UC
+                </div>
+
             </div>
+
         </div>
+
     </div>
+
 
     <div class="promo-side-card">
+
         <div>
-            <h3>با خیال راحت خرید کنید</h3>
-            <p>ما امنیت و رضایت شما را تضمین می‌کنیم</p>
+
+            <h3>
+                با خیال راحت خرید کنید
+            </h3>
+
+            <p>
+                ما امنیت و رضایت شما را تضمین می‌کنیم
+            </p>
+
         </div>
-        <div class="pubg-logo-badge">PUBG</div>
+
+        <div class="pubg-logo-badge">
+            PUBG
+        </div>
+
     </div>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
-<!-- MODAL BUY -->
-<div class="modal" id="buyModal">
+
+<!-- ================= BUY MODAL ================= -->
+
+<div
+    class="modal"
+    id="buyModal"
+>
+
 <div class="modal-box">
-<div class="modal-header">
-    <h2>تکمیل سفارش</h2>
-    <button class="close" onclick="closeBuy()">×</button>
+
+    <div class="modal-header">
+
+        <h2>
+            تکمیل سفارش
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeBuy()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="selected">
+
+        <small>
+            محصول انتخاب‌شده
+        </small>
+
+        <strong id="selectedProduct">
+            ---
+        </strong>
+
+        <span id="selectedPrice">
+            ---
+        </span>
+
+    </div>
+
+
+    <label for="playerId">
+        Player ID (شماره اکانت بازی)
+    </label>
+
+    <input
+        id="playerId"
+        type="text"
+        inputmode="numeric"
+        minlength="8"
+        maxlength="12"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="12345678"
+        class="modal-input"
+    >
+
+    <div class="id-hint">
+        Player ID باید بین ۸ تا ۱۲ رقم باشد.
+        سیستم به‌صورت خودکار نام اکانت شما را استعلام می‌کند.
+    </div>
+
+
+    <div
+        class="loading"
+        id="accountLoading"
+    >
+
+        <div class="loader"></div>
+
+        در حال بررسی و استعلام Player ID...
+
+    </div>
+
+
+    <div
+        class="result"
+        id="accountResult"
+    >
+
+        <div class="result-title">
+            ✓ اطلاعات اکانت پیدا شد
+        </div>
+
+        <div class="result-row">
+            <span>Player ID</span>
+            <b id="resultId">---</b>
+        </div>
+
+        <div class="result-row">
+            <span>نام اکانت</span>
+            <b id="resultName">---</b>
+        </div>
+
+    </div>
+
+
+    <div
+        class="error"
+        id="accountError"
+    ></div>
+
+
+    <button
+        class="action-btn"
+        id="continueBtn"
+        onclick="continueOrder()"
+        disabled
+    >
+        اتصال به درگاه پرداخت امن
+    </button>
+
 </div>
 
-<div class="selected">
-    <small>محصول انتخاب‌شده</small>
-    <strong id="selectedProduct">---</strong>
-    <span id="selectedPrice">---</span>
 </div>
 
-<label for="playerId">Player ID (شماره اکانت بازی)</label>
-<input id="playerId" type="text" inputmode="numeric" minlength="8" maxlength="12" autocomplete="off" spellcheck="false" placeholder="12345678" class="modal-input">
-<div class="id-hint">Player ID باید بین ۸ تا ۱۲ رقم باشد. سیستم به‌صورت خودکار نام اکانت شما را استعلام می‌کند.</div>
 
-<div class="loading" id="accountLoading">
-    <div class="loader"></div>
-    در حال بررسی و استعلام Player ID...
-</div>
+<!-- ================= AUTH MODAL ================= -->
 
-<div class="result" id="accountResult">
-    <div class="result-title">✓ اطلاعات اکانت پیدا شد</div>
-    <div class="result-row"><span>Player ID</span><b id="resultId">---</b></div>
-    <div class="result-row"><span>نام اکانت</span><b id="resultName">---</b></div>
-</div>
+<div
+    class="modal"
+    id="authModal"
+>
 
-<div class="error" id="accountError"></div>
-
-<button class="action-btn" id="continueBtn" onclick="continueOrder()" disabled>اتصال به درگاه پرداخت امن</button>
-</div>
-</div>
-
-<!-- MODAL AUTH -->
-<div class="modal" id="authModal">
 <div class="modal-box">
-<div class="modal-header">
-    <h2>ورود / ثبت‌نام</h2>
-    <button class="close" onclick="closeAuthModal()">×</button>
+
+    <div class="modal-header">
+
+        <h2>
+            ورود / ثبت‌نام
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeAuthModal()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="phoneStep">
+
+        <label for="userPhone">
+            شماره موبایل
+        </label>
+
+        <input
+            id="userPhone"
+            type="tel"
+            inputmode="numeric"
+            maxlength="11"
+            placeholder="09123456789"
+            class="modal-input"
+        >
+
+        <div class="id-hint">
+            کد تایید به این شماره ارسال خواهد شد.
+        </div>
+
+        <button
+            class="action-btn"
+            onclick="sendOtpCode()"
+        >
+            ارسال کد تایید
+        </button>
+
+    </div>
+
+
+    <div
+        id="otpStep"
+        style="display:none;"
+    >
+
+        <label for="otpCode">
+            کد تایید پیامکی
+        </label>
+
+        <input
+            id="otpCode"
+            type="text"
+            inputmode="numeric"
+            maxlength="5"
+            placeholder="12345"
+            class="modal-input"
+            style="letter-spacing:6px;text-align:center;"
+        >
+
+        <div class="id-hint">
+            کد ۵ رقمی ارسال شده به شماره خود را وارد کنید.
+        </div>
+
+        <button
+            class="action-btn"
+            onclick="verifyOtpCode()"
+        >
+            تایید و ورود
+        </button>
+
+    </div>
+
 </div>
 
-<div id="phoneStep">
-    <label for="userPhone">شماره موبایل</label>
-    <input id="userPhone" type="tel" inputmode="numeric" maxlength="11" placeholder="09123456789" class="modal-input" style="direction:ltr; text-align:right;">
-    <div class="id-hint">کد تایید به این شماره ارسال خواهد شد.</div>
-    <button class="action-btn" onclick="sendOtpCode()">ارسال کد تایید</button>
 </div>
 
-<div id="otpStep" style="display:none;">
-    <label for="otpCode">کد تایید پیامکی</label>
-    <input id="otpCode" type="text" inputmode="numeric" maxlength="5" placeholder="12345" class="modal-input" style="letter-spacing:6px; text-align:center;">
-    <div class="id-hint">کد ۵ رقمی ارسال شده به شماره خود را وارد کنید.</div>
-    <button class="action-btn" onclick="verifyOtpCode()">تایید و ورود</button>
-</div>
-</div>
-</div>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer id="support">
-<div class="footer-logo">Loot Box <span>Store</span></div>
-<div class="footer-text">فروشگاه تخصصی محصولات PUBG Mobile با تمرکز روی تجربه خرید سریع، ساده، ایمن و حرفه‌ای.</div>
-<div class="copyright">© 2026 Loot Box Store — تمامی حقوق محفوظ است.</div>
+
+    <div class="footer-logo">
+        Loot Box <span>Store</span>
+    </div>
+
+    <div class="footer-text">
+        فروشگاه تخصصی محصولات PUBG Mobile با تمرکز روی
+        تجربه خرید سریع، ساده، ایمن و حرفه‌ای.
+    </div>
+
+    <div class="copyright">
+        © 2026 Loot Box Store — تمامی حقوق محفوظ است.
+    </div>
+
 </footer>
 
+
 <script>
-const API_URL = "https://loot-box-api.mash43304.workers.dev/check-player";
+
+const API_URL =
+"https://loot-box-api.mash43304.workers.dev/check-player";
+
+
+/* ================= CATEGORY ================= */
 
 const categoryInfo = {
-    uc: { title: "بسته‌های یوسی پابجی", subtitle: "تمام بسته‌های UC را انتخاب کنید" },
-    prime: { title: "اشتراک‌های پرایم", subtitle: "اشتراک‌های رسمی پرایم پابجی موبایل" },
-    primeplus: { title: "اشتراک‌های پرایم پلاس", subtitle: "اشتراک‌های ویژه پرایم پلاس" },
-    groundpack: { title: "گراند پک‌ها", subtitle: "پک‌های تخصصی گراند پک ۱، ۲ و ۳" }
+
+    uc:{
+        title:"بسته‌های یوسی پابجی",
+        subtitle:"تمام بسته‌های UC را انتخاب کنید"
+    },
+
+    prime:{
+        title:"اشتراک‌های پرایم",
+        subtitle:"اشتراک‌های رسمی پرایم پابجی موبایل"
+    },
+
+    primeplus:{
+        title:"اشتراک‌های پرایم پلاس",
+        subtitle:"اشتراک‌های ویژه پرایم پلاس"
+    },
+
+    groundpack:{
+        title:"گراند پک‌ها",
+        subtitle:"پک‌های تخصصی گراند پک ۱، ۲ و ۳"
+    }
+
 };
 
-function showCategory(cat){
-    document.querySelectorAll(".product").forEach(p => {
-        p.classList.toggle("show", p.dataset.category === cat);
-    });
-    document.querySelectorAll(".category").forEach(c => c.classList.remove("active"));
-    
-    const map = { uc:0, prime:1, primeplus:2, groundpack:3 };
-    const cats = document.querySelectorAll(".category");
-    if(cats[map[cat]]) cats[map[cat]].classList.add("active");
 
-    document.getElementById("productTitle").textContent = categoryInfo[cat].title;
-    document.getElementById("productSubtitle").textContent = categoryInfo[cat].subtitle;
-    
-    document.getElementById("products").scrollIntoView({ behavior:"smooth", block:"start" });
+function showCategory(cat){
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product => {
+
+        product.classList.toggle(
+            "show",
+            product.dataset.category === cat
+        );
+
+    });
+
+
+    document
+    .querySelectorAll(".category")
+    .forEach(category => {
+
+        category.classList.remove("active");
+
+    });
+
+
+    const map = {
+        uc:0,
+        prime:1,
+        primeplus:2,
+        groundpack:3
+    };
+
+
+    const categories =
+        document.querySelectorAll(".category");
+
+
+    if(categories[map[cat]]){
+
+        categories[map[cat]]
+        .classList.add("active");
+
+    }
+
+
+    document
+    .getElementById("productTitle")
+    .textContent =
+        categoryInfo[cat].title;
+
+
+    document
+    .getElementById("productSubtitle")
+    .textContent =
+        categoryInfo[cat].subtitle;
+
+
+    document
+    .getElementById("products")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
 }
+
+
+/* ================= SEARCH ================= */
 
 function filterProductsSearch(){
-    const query = document.getElementById("searchInput").value.toLowerCase().trim();
-    if(!query) return;
-    document.querySelectorAll(".product").forEach(p => {
-        const title = p.querySelector("h3").textContent.toLowerCase();
-        const info = p.querySelector(".product-info").textContent.toLowerCase();
-        if(title.includes(query) || info.includes(query)){
-            p.classList.add("show");
-        } else {
-            p.classList.remove("show");
+
+    const query =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    if(!query){
+
+        document
+        .querySelectorAll(".product")
+        .forEach(product => {
+
+            product.classList.toggle(
+                "show",
+                product.dataset.category === "uc"
+            );
+
+        });
+
+        return;
+    }
+
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product => {
+
+        const title =
+            product
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+
+        const info =
+            product
+            .querySelector(".product-info")
+            .textContent
+            .toLowerCase();
+
+
+        if(
+            title.includes(query) ||
+            info.includes(query)
+        ){
+
+            product.classList.add("show");
+
+        }else{
+
+            product.classList.remove("show");
+
         }
+
     });
-    document.getElementById("products").scrollIntoView({ behavior:"smooth", block:"start" });
+
 }
+
+
+/* ================= BUY ================= */
 
 let selectedProduct = "";
 let selectedPrice = "";
+
 let verifiedId = "";
 let verifiedName = "";
+
 let lookupTimer = null;
 let requestController = null;
 
-function openBuy(prod, prc){
+
+function openBuy(prod,prc){
+
     selectedProduct = prod;
     selectedPrice = prc;
+
     verifiedId = "";
     verifiedName = "";
+
     clearTimeout(lookupTimer);
 
-    if(requestController){ requestController.abort(); requestController = null; }
 
-    document.getElementById("selectedProduct").textContent = prod;
-    document.getElementById("selectedPrice").textContent = prc;
-    
-    const input = document.getElementById("playerId");
+    if(requestController){
+
+        requestController.abort();
+
+        requestController = null;
+
+    }
+
+
+    document
+    .getElementById("selectedProduct")
+    .textContent = prod;
+
+
+    document
+    .getElementById("selectedPrice")
+    .textContent = prc;
+
+
+    const input =
+        document.getElementById("playerId");
+
+
     input.value = "";
-    document.getElementById("accountLoading").style.display = "none";
-    document.getElementById("accountResult").style.display = "none";
-    document.getElementById("accountError").style.display = "none";
-    document.getElementById("continueBtn").disabled = true;
-    
-    document.getElementById("buyModal").classList.add("open");
-    setTimeout(() => input.focus(), 100);
+
+
+    document
+    .getElementById("accountLoading")
+    .style.display = "none";
+
+
+    document
+    .getElementById("accountResult")
+    .style.display = "none";
+
+
+    document
+    .getElementById("accountError")
+    .style.display = "none";
+
+
+    document
+    .getElementById("continueBtn")
+    .disabled = true;
+
+
+    document
+    .getElementById("buyModal")
+    .classList.add("open");
+
+
+    setTimeout(() => {
+
+        input.focus();
+
+    },100);
+
 }
+
 
 function closeBuy(){
-    document.getElementById("buyModal").classList.remove("open");
+
+    document
+    .getElementById("buyModal")
+    .classList.remove("open");
+
+
     clearTimeout(lookupTimer);
-    if(requestController){ requestController.abort(); requestController = null; }
+
+
+    if(requestController){
+
+        requestController.abort();
+
+        requestController = null;
+
+    }
+
 }
 
-document.getElementById("playerId").addEventListener("input", function(){
-    this.value = this.value.replace(/[^0-9]/g,"").slice(0,12);
-    checkId();
-});
+
+/* ================= PLAYER ID ================= */
+
+document
+.getElementById("playerId")
+.addEventListener(
+    "input",
+    function(){
+
+        this.value =
+            this.value
+            .replace(/[^0-9]/g,"")
+            .slice(0,12);
+
+
+        checkId();
+
+    }
+);
+
 
 function checkId(){
-    const input = document.getElementById("playerId").value.trim();
-    const loading = document.getElementById("accountLoading");
-    const result = document.getElementById("accountResult");
-    const error = document.getElementById("accountError");
-    const continueBtn = document.getElementById("continueBtn");
+
+    const input =
+        document
+        .getElementById("playerId")
+        .value
+        .trim();
+
+
+    const loading =
+        document
+        .getElementById("accountLoading");
+
+
+    const result =
+        document
+        .getElementById("accountResult");
+
+
+    const error =
+        document
+        .getElementById("accountError");
+
+
+    const continueBtn =
+        document
+        .getElementById("continueBtn");
+
 
     clearTimeout(lookupTimer);
-    if(requestController){ requestController.abort(); requestController = null; }
+
+
+    if(requestController){
+
+        requestController.abort();
+
+        requestController = null;
+
+    }
+
 
     loading.style.display = "none";
     result.style.display = "none";
     error.style.display = "none";
+
     continueBtn.disabled = true;
+
     verifiedId = "";
     verifiedName = "";
 
-    if(!input) return;
-    if(input.length < 8){
-        error.textContent = "Player ID باید حداقل ۸ رقم باشد.";
-        error.style.display = "block";
+
+    if(!input){
+
         return;
+
     }
+
+
+    if(input.length < 8){
+
+        error.textContent =
+            "Player ID باید حداقل ۸ رقم باشد.";
+
+        error.style.display = "block";
+
+        return;
+
+    }
+
 
     loading.style.display = "flex";
 
-    lookupTimer = setTimeout(async function(){
-        requestController = new AbortController();
-        try {
-            const res = await fetch(API_URL + "?user_id=" + encodeURIComponent(input), {
-                method: "GET",
-                headers: { "Accept": "application/json" },
-                signal: requestController.signal
-            });
-            const data = await res.json();
+
+    lookupTimer =
+        setTimeout(async function(){
+
+        requestController =
+            new AbortController();
+
+
+        try{
+
+            const res =
+                await fetch(
+                    API_URL +
+                    "?user_id=" +
+                    encodeURIComponent(input),
+                    {
+                        method:"GET",
+                        headers:{
+                            "Accept":
+                            "application/json"
+                        },
+                        signal:
+                        requestController.signal
+                    }
+                );
+
+
+            const data =
+                await res.json();
+
+
             loading.style.display = "none";
 
-            if(res.ok && data && data.status === true && data.code === 200 && data.data){
-                verifiedId = data.data.user_id || data.data.show_uid || input;
-                verifiedName = data.data.username || data.data.name || data.data.nickname || "کاربر پابجی";
 
-                document.getElementById("resultId").textContent = verifiedId;
-                document.getElementById("resultName").textContent = verifiedName;
+            if(
+                res.ok &&
+                data &&
+                data.status === true &&
+                data.code === 200 &&
+                data.data
+            ){
+
+                verifiedId =
+                    data.data.user_id ||
+                    data.data.show_uid ||
+                    input;
+
+
+                verifiedName =
+                    data.data.username ||
+                    data.data.name ||
+                    data.data.nickname ||
+                    "کاربر پابجی";
+
+
+                document
+                .getElementById("resultId")
+                .textContent =
+                    verifiedId;
+
+
+                document
+                .getElementById("resultName")
+                .textContent =
+                    verifiedName;
+
+
                 result.style.display = "block";
+
+
                 continueBtn.disabled = false;
-            } else {
-                error.textContent = data?.message || "اکانت مورد نظر یافت نشد.";
+
+            }else{
+
+                error.textContent =
+                    data?.message ||
+                    "اکانت مورد نظر یافت نشد.";
+
+
                 error.style.display = "block";
+
             }
-        } catch(e){
-            if(e.name === "AbortError") return;
+
+        }catch(e){
+
+            if(e.name === "AbortError"){
+
+                return;
+
+            }
+
+
             loading.style.display = "none";
+
+
             verifiedId = input;
-            verifiedName = "Player_" + input.slice(-4);
-            document.getElementById("resultId").textContent = verifiedId;
-            document.getElementById("resultName").textContent = verifiedName;
+
+            verifiedName =
+                "Player_" +
+                input.slice(-4);
+
+
+            document
+            .getElementById("resultId")
+            .textContent =
+                verifiedId;
+
+
+            document
+            .getElementById("resultName")
+            .textContent =
+                verifiedName;
+
+
             result.style.display = "block";
+
+
             continueBtn.disabled = false;
-        } finally {
-            requestController =.null;
+
+        }finally{
+
+            /* خطای کد قبلی اینجا اصلاح شد */
+
+            requestController = null;
+
         }
-    }, 500);
+
+    },500);
+
 }
+
+
+/* ================= PAYMENT ================= */
 
 function continueOrder(){
-    if(!verifiedId) return;
-    alert("محصول: " + selectedProduct + "\nمبلغ: " + selectedPrice + "\nشناسه اکانت: " + verifiedId + " (" + verifiedName + ")\n\nدر حال انتقال به درگاه پرداخت امن بانکی...");
+
+    if(!verifiedId){
+
+        return;
+
+    }
+
+
+    alert(
+        "محصول: " +
+        selectedProduct +
+
+        "\nمبلغ: " +
+        selectedPrice +
+
+        "\nشناسه اکانت: " +
+        verifiedId +
+
+        " (" +
+        verifiedName +
+        ")" +
+
+        "\n\nدر حال انتقال به درگاه پرداخت امن بانکی..."
+    );
+
 }
+
+
+/* ================= AUTH ================= */
 
 function openAuthModal(){
-    document.getElementById("authModal").classList.add("open");
-    document.getElementById("phoneStep").style.display = "block";
-    document.getElementById("otpStep").style.display = "none";
+
+    document
+    .getElementById("authModal")
+    .classList.add("open");
+
+
+    document
+    .getElementById("phoneStep")
+    .style.display = "block";
+
+
+    document
+    .getElementById("otpStep")
+    .style.display = "none";
+
 }
+
 
 function closeAuthModal(){
-    document.getElementById("authModal").classList.remove("open");
+
+    document
+    .getElementById("authModal")
+    .classList.remove("open");
+
 }
+
 
 function sendOtpCode(){
-    const phone = document.getElementById("userPhone").value.trim();
-    if(phone.length !== 11 || !phone.startsWith("09")){
-        alert("لطفاً یک شماره موبایل معتبر وارد کنید.");
+
+    const phone =
+        document
+        .getElementById("userPhone")
+        .value
+        .trim();
+
+
+    if(
+        phone.length !== 11 ||
+        !phone.startsWith("09")
+    ){
+
+        alert(
+            "لطفاً یک شماره موبایل معتبر وارد کنید."
+        );
+
         return;
+
     }
-    document.getElementById("phoneStep").style.display = "none";
-    document.getElementById("otpStep").style.display = "block";
+
+
+    document
+    .getElementById("phoneStep")
+    .style.display = "none";
+
+
+    document
+    .getElementById("otpStep")
+    .style.display = "block";
+
 }
+
 
 function verifyOtpCode(){
-    const otp = document.getElementById("otpCode").value.trim();
+
+    const otp =
+        document
+        .getElementById("otpCode")
+        .value
+        .trim();
+
+
     if(otp.length < 4){
-        alert("کد تایید معتبر نیست.");
+
+        alert(
+            "کد تایید معتبر نیست."
+        );
+
         return;
+
     }
-    alert("با موفقیت وارد حساب کاربری خود شدید!");
+
+
+    alert(
+        "با موفقیت وارد حساب کاربری خود شدید!"
+    );
+
+
     closeAuthModal();
+
 }
 
-window.addEventListener("click", function(e){
-    if(e.target.classList.contains("modal")){
-        closeBuy();
-        closeAuthModal();
-    }
-});
 
-window.addEventListener("keydown", function(e){
-    if(e.key === "Escape"){
-        closeBuy();
-        closeAuthModal();
+/* ================= MODAL EVENTS ================= */
+
+window.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target.classList.contains("modal")
+        ){
+
+            closeBuy();
+            closeAuthModal();
+
+        }
+
     }
-});
+);
+
+
+window.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closeBuy();
+            closeAuthModal();
+
+        }
+
+    }
+);
+
 </script>
 
 </body>
-    </html>
+        </html>
